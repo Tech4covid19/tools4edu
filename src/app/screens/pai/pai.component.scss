@@ -1,0 +1,113 @@
+.header {
+  min-height: 31.625rem;
+  display: flex;
+  flex-direction: column;
+  background: linear-gradient(180deg, #FFFFFF 16.72%,
+            rgba(55, 114, 255, 0.5) 59.46%,
+            rgba(55, 114, 255, 0.9) 86.72%,
+            rgba(55, 114, 255, 0.893552) 112.19%),
+              url(./../../../assets/pai/header-background.jpg);
+  background-size: cover;
+  margin: 0;
+
+  .row {
+    height: 21.125rem;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+    padding: 8rem 12rem 2.5rem 12rem;
+
+    .title {
+      font-family: Amatic SC;
+      font-style: normal;
+      font-weight: bold;
+      font-size: 4rem;
+      line-height: 74px;
+      letter-spacing: 0.04em;
+      color: #fff;
+
+      p {
+        font-family: Barlow;
+        font-style: normal;
+        font-weight: 300;
+        font-size: 1.25rem;
+        line-height: 130%;
+        max-width: 55%;
+        color: #fff;
+        margin-top: 2.5rem;
+      }
+    }
+  }
+}
+
+section {
+  padding: 0 16rem 7.5rem 16rem;
+
+  &:not(:last-of-type) {
+    padding-top: 7.5rem;
+  }
+
+  .row {
+    display: flex;
+    
+    .image {
+      flex-basis: 60%;
+
+      img {
+        display: block;
+        width: 40rem;
+        margin: 0 3rem 0 auto;
+      }
+    }
+
+    .description {
+      flex-basis: 40%;
+    
+      .description-title {
+        margin-top: 0;
+      }
+
+      .description-subtitle {
+        margin: 1rem 0 1rem 0;
+      }
+
+      .dsecription-body {
+        font-size: 1.25rem;
+      }
+
+      .description-actions {
+        max-width: 20rem;
+        display: flex;
+        justify-content: space-between;
+        margin-top: 3rem;
+
+        button.btn {
+          flex-basis: 47.5%;
+
+          &#previous svg {
+            margin: 0 1rem 0 0;
+          }
+
+          &#next svg {
+            margin: 0 0 0 1rem;
+          }
+        }
+      }
+    }
+  }
+
+  @media (max-width: 1720px) {
+    padding: 0 12.5rem 7.5rem 12.5rem;
+  }
+
+  @media (max-width: 1440px) {
+    padding: 0 12rem 7.5rem 12rem;
+
+    .row {
+      .image img {
+        width: 30rem;
+      }
+    }
+  }
+}
