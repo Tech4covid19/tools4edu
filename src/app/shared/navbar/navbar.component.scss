@@ -19,106 +19,71 @@
     justify-content: space-around;
     width: 70%;
 
-    .home {
-      font-family: Amatic SC;
-      font-style: normal;
-      font-weight: bold;
-      font-size: 24px;
-      line-height: 24px;
-      /* identical to box height, or 100% */
-
+    > div {
+      position: relative;
       display: flex;
       align-items: center;
       text-align: center;
-
-      /* Red */
+      font-family: Amatic SC;
+      font-style: normal;
+      font-weight: bold;
+      font-size: 1.5rem;
+      line-height: 1.5rem;
       cursor: pointer;
-      color: #E03616;
+      color: var(--color);
+
+      &.active {
+        &::after {
+          content: '';
+          position: absolute;
+          top: 125%;
+          left: 50%;
+          width: 0;
+          height: 0.25rem;
+          display: block;
+          background-color: var(--color);
+          border-radius: 1rem;
+          transform: translate(-50%, 0);
+          animation-name: grow;
+          animation-timing-function: ease;
+          animation-duration: 0.4s;
+          animation-fill-mode: forwards;
+          animation-iteration-count: 1;
+        }
+      }
+    }
+
+    .home {
+      --color: #E03616;
     }
 
     .professores{
-      font-family: Amatic SC;
-      font-style: normal;
-      font-weight: bold;
-      font-size: 24px;
-      line-height: 24px;
-      /* identical to box height, or 100% */
-
-      display: flex;
-      align-items: center;
-      text-align: center;
-
-      /* Orange */
-      cursor: pointer;
-      color: #FF8811;
+      --color: #FF8811;
     }
 
     .aluno {
-      font-family: Amatic SC;
-      font-style: normal;
-      font-weight: bold;
-      font-size: 24px;
-      line-height: 24px;
-      /* identical to box height, or 100% */
-
-      display: flex;
-      align-items: center;
-      text-align: center;
-
-      /* Green */
-      cursor: pointer;
-      color: #7BC950;
+      --color: #7BC950;
     }
 
     .pais {
-      font-family: Amatic SC;
-      font-style: normal;
-      font-weight: bold;
-      font-size: 24px;
-      line-height: 24px;
-      /* identical to box height, or 100% */
-
-      display: flex;
-      align-items: center;
-      text-align: center;
-
-      /* Blue */
-      cursor: pointer;
-      color: #3772FF;
+      --color: #3772FF;
     }
 
     .help {
-      font-family: Amatic SC;
-      font-style: normal;
-      font-weight: bold;
-      font-size: 24px;
-      line-height: 24px;
-      /* identical to box height, or 100% */
-
-      display: flex;
-      align-items: center;
-      text-align: center;
-
-      /* Yellow */
-      cursor: pointer;
-      color: #EAC116;
+      --color: #EAC116;
     }
 
     .about {
-      font-family: Amatic SC;
-      font-style: normal;
-      font-weight: bold;
-      font-size: 24px;
-      line-height: 24px;
-      /* identical to box height, or 100% */
-
-      display: flex;
-      align-items: center;
-      text-align: center;
-
-      /* Pink */
-      cursor: pointer;
-      color: #D90368;
+      --color: #D90368;
     }
+  }
+}
+
+@keyframes grow {
+  0% {
+    width: 0;
+  }
+  100% {
+    width: 70%;
   }
 }
