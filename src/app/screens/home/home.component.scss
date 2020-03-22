@@ -2,14 +2,13 @@
   display: flex;
   flex-direction: column;
   min-height: 776px;
-  background: linear-gradient(180deg, #FFFFFF 16.72%, rgba(240, 246, 251, 0.5) 59.46%, rgba(90, 152, 208, 0.9) 86.72%, rgba(31, 63, 104, 0.893552) 112.19%), url(./../../../assets/home_header.png);
+  background:  url(./../../../assets/home_header.png);
   margin: 0;
 
   .row {
     display: flex;
     flex-direction: row;
     justify-content: space-around;
-    align-items: center;
     margin-top: 12.5rem;
     margin-right: 6rem;
     margin-left: 6rem;
@@ -23,7 +22,7 @@
       line-height: 74px;
       letter-spacing: 0.04em;
       color: #1F3F68;
-
+       margin-top: 47px; 
       p {
         font-family: Barlow;
         font-style: normal;
@@ -35,13 +34,16 @@
       }
     }
   }
+  .header_image {
+      margin-bottom: 172px;
+  }
 }
 .buttons {
   display: flex;
   flex-direction: row;
-  justify-content: space-around;
-  margin-left: 96px;
-  margin-right: 96px;
+  justify-content: space-evenly;
+  margin-left: 6rem;
+  margin-right: 6rem;
   transform: translate(10px, -120px);
 
   .professor {
@@ -64,7 +66,8 @@
     border-radius: 40px; 
     height: 280px; 
     align-items: flex-start;
-    flex-direction: column;        
+    flex-direction: column;
+    margin-left: 59px;        
   }
 
   .pai {
@@ -75,7 +78,8 @@
     border-radius: 40px; 
     height: 280px; 
     align-items: flex-start;
-    flex-direction: column;           
+    flex-direction: column; 
+    margin-left: 59px;              
   }
 
   .title {
@@ -91,18 +95,21 @@
     margin-left: 24px;
   }
 
-  .saber {
-    font-family: Barlow;
-    font-style: normal;
-    font-weight: bold;
-    font-size: 14px;
-    line-height: 160%;
+  .saber  {
     display: flex;
     align-items: center;
+    margin-bottom: 24px;
+    p {
+    font-family: Barlow;
+    font-style: normal;
+    font-size: 14px;
+    line-height: 160%;
+ 
     letter-spacing: 0.005em;
     color: #FFFFFF;
     margin-left: 24px;
     cursor: pointer;
+    }
   }
 }
 
@@ -136,6 +143,19 @@
     line-height: 74px;
     letter-spacing: 0.04em;
     color: #1F3F68;
+    p {
+        font-family: Barlow;
+        font-style: normal;
+        font-weight: 300;
+        font-size: 20px;
+        line-height: 130%;
+        /* or 26px */
+
+
+        /* text/Dark Blue */
+
+        color: #1F3F68;
+    }
   }
 }
 
