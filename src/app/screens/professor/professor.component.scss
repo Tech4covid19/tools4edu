@@ -90,4 +90,18 @@ section {
       }
     }
   }
+
+  @media (max-width: 1720px) {
+    padding: 0 12.5rem 7.5rem 12.5rem;
+  }
+
+  @media (max-width: 1440px) {
+    padding: 0 12rem 7.5rem 12rem;
+
+    .row {
+      .image img {
+        width: 30rem;
+      }
+    }
+  }
 }
