@@ -1,0 +1,15 @@
+{
+  "serverless": {
+    "provider": "aws",
+    "project": "tools4edu",
+    "skipInstall": false,
+    "directory": ".",
+    "lambdaTS": false,
+    "offline": false,
+    "clientProject": "tools4edu",
+    "serverless": {
+      "aws": {},
+      "gcloud": {}
+    }
+  }
+}
