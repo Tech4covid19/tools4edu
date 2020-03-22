@@ -1,0 +1,123 @@
+.header {
+    min-height: 31.625rem;
+    display: flex;
+    flex-direction: column;
+    background: linear-gradient(180deg, #FFFFFF 16.72%, rgba(217, 3, 104, 0.5) 54.51%, rgba(217, 3, 104, 0.9) 98.49%), url(./../../../assets/sobre/header_background.png);
+    margin: 0;
+  
+    .row {
+      height: 21.125rem;
+      display: flex;
+      flex-direction: row;
+      justify-content: flex-start;
+      align-items: center;
+      padding: 8rem 12rem 2.5rem 12rem;
+  
+      .title {
+        font-family: Amatic SC;
+        font-style: normal;
+        font-weight: bold;
+        font-size: 4rem;
+        line-height: 74px;
+        letter-spacing: 0.04em;
+        color: #fff;
+  
+        p {
+          font-family: Barlow;
+          font-style: normal;
+          font-weight: 300;
+          font-size: 1.25rem;
+          line-height: 130%;
+          max-width: 55%;
+          color: #fff;
+        }
+      }
+    }
+  }
+
+  .presentation {
+    padding: 10rem 16rem 7.5rem 16rem;
+      columns: 2;
+      column-gap: 88px;
+      p {
+        font-family: Barlow;
+        font-style: normal;
+        font-weight: 300;
+        font-size: 20px;
+        line-height: 130%;
+        /* or 26px */
+        margin: 0 0 25px;
+        letter-spacing: -0.01em;
+        
+        /* text/Dark Blue */
+        
+        color: #1F3F68;
+      }
+      
+      h1 {
+        font-family: Amatic SC;
+        font-style: normal;
+        font-weight: bold;
+        font-size: 36px;
+        line-height: 133.5%;
+        /* or 48px */
+        
+        letter-spacing: 0.02em;
+        
+        /* text/Dark Blue */
+        
+        color: #1F3F68;
+      }
+  }
+
+  p strong{
+    font-weight: 900;  
+  }
+  .wrapper {
+      display: flex;
+      justify-content: center;
+      flex-direction: row;
+      margin-bottom: 60px;
+      padding: 8rem 12rem 2.5rem 12rem;
+  .video {
+      display: flex;
+      justify-content: center;
+      align-self: center;
+      height: 594px;
+      width: 1056px;
+    background: linear-gradient(0deg, rgba(217, 3, 104, 0.7) 0%, rgba(217, 3, 104, 0) 23.58%), url(./../../../assets/sobre/video.png);
+    background-size: cover;
+    border-radius: 40px;
+  }
+}
+.card-wrapper {
+    margin-left: 193px;
+.card {
+   
+    display: flex;
+    flex-direction: column;
+    margin: 20px;
+    align-items: center;
+    background: #FFFFFF;
+    box-shadow: 0px 1px 32px rgba(90, 152, 208, 0.2);
+    border-radius: 20px;
+    padding: 40px;
+    max-width: 527px;
+    min-height: 392px;
+
+    p{
+        font-family: Barlow;
+        font-style: normal;
+        font-weight: 300;
+        font-size: 16px;
+        line-height: 130%;
+        /* or 21px */
+        margin: 0 0 25px;
+
+        /* text/Dark Blue */
+
+        color: #1F3F68;
+        opacity: 0.6;
+    }
+}
+}
