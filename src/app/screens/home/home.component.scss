@@ -1,174 +1,154 @@
 .header {
-    display: flex;
-    flex-direction: column;
-    min-height: 776px;
-    background: linear-gradient(180deg, #FFFFFF 16.72%, rgba(240, 246, 251, 0.5) 59.46%, rgba(90, 152, 208, 0.9) 86.72%, rgba(31, 63, 104, 0.893552) 112.19%), url(./../../../assets/home_header.png);
-    margin: 0;
+  display: flex;
+  flex-direction: column;
+  min-height: 776px;
+  background: linear-gradient(180deg, #FFFFFF 16.72%, rgba(240, 246, 251, 0.5) 59.46%, rgba(90, 152, 208, 0.9) 86.72%, rgba(31, 63, 104, 0.893552) 112.19%), url(./../../../assets/home_header.png);
+  margin: 0;
 
-    .row {
-        display: flex;
-        flex-direction: row;
-        justify-content: space-around;
-        align-items: center;
-        margin-left: 96px;
-        margin-right: 96px;
-        margin-top: 127px;
-        .title {
-        max-width: 650px;
-        font-family: Amatic SC;
-        font-style: normal;
-        font-weight: bold;
-        font-size: 64px;
-        line-height: 74px;
-        /* identical to box height, or 116% */
-
-        letter-spacing: 0.04em;
-
-        /* text/Dark Blue */
-
-        color: #1F3F68;
-        p {
-            font-family: Barlow;
-            font-style: normal;
-            font-weight: 300;
-            font-size: 20px;
-            line-height: 130%;
-            /* or 26px */
-
-
-            /* text/Dark Blue */
-
-            color: #1F3F68;
-        }
-        }
-    }
-}
-.buttons {
+  .row {
     display: flex;
     flex-direction: row;
     justify-content: space-around;
+    align-items: center;
     margin-left: 96px;
     margin-right: 96px;
-    transform: translate(10px, -120px);
-    .professor {
-        display: flex;
-        width: 312px;
-        background:  url(./../../../assets/professor.png);
-        background-size: cover;
-        border-radius: 40px; 
-        height: 280px;
-        align-items: flex-start;
-        margin-bottom: 30px;
-        flex-direction: column;        
-    }
-    .aluno {
-        display: flex;
-        width: 312px;
-        background:  url(./../../../assets/aluno.png);
-        background-size: cover;
-        border-radius: 40px; 
-        height: 280px; 
-        align-items: flex-start;
-        margin-bottom: 30px;
-        flex-direction: column;        
-    }
-    .pai {
-        display: flex;
-        width: 312px;
-        background:  url(./../../../assets/pai.png);
-        background-size: cover;
-        border-radius: 40px; 
-        height: 280px; 
-        align-items: flex-start;
-        margin-bottom: 30px;
-        flex-direction: column;           
-    }
+    margin-top: 127px;
 
     .title {
-        font-family: Amatic SC;
-        font-style: normal;
-        font-weight: bold;
-        font-size: 40px;
-        line-height: 130%;
-        /* or 52px */
+      max-width: 650px;
+      font-family: Amatic SC;
+      font-style: normal;
+      font-weight: bold;
+      font-size: 64px;
+      line-height: 74px;
+      letter-spacing: 0.04em;
+      color: #1F3F68;
 
-        display: flex;
-        align-items: center;
-
-        color: #FFFFFF;  
-        margin-top: auto; 
-        margin-left: 24px;
-    }
-    .saber {
+      p {
         font-family: Barlow;
         font-style: normal;
-        font-weight: bold;
-        font-size: 14px;
-        line-height: 160%;
-        /* or 22px */
-
-        display: flex;
-        align-items: center;
-        letter-spacing: 0.005em;
-
-        color: #FFFFFF;
-        margin-left: 24px;
-        cursor: pointer;
+        font-weight: 300;
+        font-size: 20px;
+        line-height: 130%;
+        color: #1F3F68;
+      }
     }
+  }
+}
+.buttons {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  margin-left: 96px;
+  margin-right: 96px;
+  transform: translate(10px, -120px);
+
+  .professor {
+    display: flex;
+    width: 312px;
+    background:  url(./../../../assets/professor.png);
+    background-size: cover;
+    border-radius: 40px; 
+    height: 280px;
+    align-items: flex-start;
+    margin-bottom: 30px;
+    flex-direction: column;        
+  }
+
+  .aluno {
+    display: flex;
+    width: 312px;
+    background:  url(./../../../assets/aluno.png);
+    background-size: cover;
+    border-radius: 40px; 
+    height: 280px; 
+    align-items: flex-start;
+    margin-bottom: 30px;
+    flex-direction: column;        
+  }
+
+  .pai {
+    display: flex;
+    width: 312px;
+    background:  url(./../../../assets/pai.png);
+    background-size: cover;
+    border-radius: 40px; 
+    height: 280px; 
+    align-items: flex-start;
+    margin-bottom: 30px;
+    flex-direction: column;           
+  }
+
+  .title {
+    font-family: Amatic SC;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 40px;
+    line-height: 130%;
+    display: flex;
+    align-items: center;
+    color: #FFFFFF;  
+    margin-top: auto; 
+    margin-left: 24px;
+  }
+
+  .saber {
+    font-family: Barlow;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 14px;
+    line-height: 160%;
+    display: flex;
+    align-items: center;
+    letter-spacing: 0.005em;
+    color: #FFFFFF;
+    margin-left: 24px;
+    cursor: pointer;
+  }
 }
 
-.testemunhos {
-          
-        margin-top: 5px;
-    .title {
-        margin-left: 196px;
-        margin-right: 96px;
-        font-family: Amatic SC;
-        font-style: normal;
-        font-weight: bold;
-        font-size: 64px;
-        line-height: 74px;
-        /* identical to box height, or 116% */
-
-        letter-spacing: 0.04em;
-
-        /* text/Dark Blue */
-
-        color: #1F3F68;
-    }
+.testemunhos {      
+  margin-top: 5px;
+  .title {
+    margin-left: 196px;
+    margin-right: 96px;
+    font-family: Amatic SC;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 64px;
+    line-height: 74px;
+    letter-spacing: 0.04em;
+    color: #1F3F68;
+  }
 }
 .plataformas {
-    display: flex;
-    flex-direction: row;
-    margin-bottom: 40px;
-    .title {
-        margin-left: 196px;
-        margin-right: 96px;
-        font-family: Amatic SC;
-        font-style: normal;
-        font-weight: bold;
-        font-size: 64px;
-        line-height: 74px;
-        /* identical to box height, or 116% */
+  display: flex;
+  flex-direction: row;
+  margin-bottom: 40px;
 
-        letter-spacing: 0.04em;
-
-        /* text/Dark Blue */
-
-        color: #1F3F68;
-    }
-
+  .title {
+    margin-left: 196px;
+    margin-right: 96px;
+    font-family: Amatic SC;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 64px;
+    line-height: 74px;
+    letter-spacing: 0.04em;
+    color: #1F3F68;
+  }
 }
 
 .cards{
-    margin-left: 192px;
-    margin-right: 192px;
+  margin-left: 192px;
+  margin-right: 192px;
+  display: flex;
+  justify-content: space-evenly;
+  margin-bottom: 40px;
+
+  ::ng-deep app-card-partners .card {
     display: flex;
-    justify-content: space-evenly;
-    margin-bottom: 40px;
-    ::ng-deep app-card-partners .card {
-        display: flex;
-        width: 190px;
-        height: 190px;
-    }
+    width: 190px;
+    height: 190px;
+  }
 }
