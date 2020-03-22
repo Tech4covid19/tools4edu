@@ -4,11 +4,11 @@
   </div>
     
     <div class="menu">
-      <div class="home" [routerLink]="['/']">Início</div>
-      <div class="professores" [routerLink]="['/professor']">Professor</div>
-      <div class="aluno" [routerLink]="['/aluno']">Aluno</div>
-      <div class="pais">Pais/ EE</div>
-      <div class="help">Ajuda</div>
-      <div class="about">Sobre Nós</div>
+      <div [ngClass]="url == '' ? 'active' : ''" class="home" [routerLink]="['/']">Início</div>
+      <div [ngClass]="url == 'professor' ? 'active' : ''" class="professores" [routerLink]="['/professor']">Professor</div>
+      <div [ngClass]="url == 'aluno' ? 'active' : ''" class="aluno" [routerLink]="['/aluno']">Aluno</div>
+      <div [ngClass]="url == 'pai' ? 'active' : ''" class="pais">Pais/ EE</div>
+      <div [ngClass]="url == 'help' ? 'active' : ''" class="help">Ajuda</div>
+      <div [ngClass]="url == 'about' ? 'active' : ''" class="about">Sobre Nós</div>
     </div>
 </div>
