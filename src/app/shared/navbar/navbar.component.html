@@ -7,7 +7,7 @@
       <div [ngClass]="url == '' ? 'active' : ''" class="home" [routerLink]="['/']">Início</div>
       <div [ngClass]="url == 'professor' ? 'active' : ''" class="professores" [routerLink]="['/professor']">Professor</div>
       <div [ngClass]="url == 'aluno' ? 'active' : ''" class="aluno" [routerLink]="['/aluno']">Aluno</div>
-      <div [ngClass]="url == 'pai' ? 'active' : ''" class="pais">Pais/ EE</div>
+      <div [ngClass]="url == 'pai' ? 'active' : ''" class="pais" [routerLink]="['/pai']">Pais/ EE</div>
       <div [ngClass]="url == 'help' ? 'active' : ''" class="help">Ajuda</div>
       <div [ngClass]="url == 'about' ? 'active' : ''" class="about" [routerLink]="['/sobre']">Sobre Nós</div>
     </div>
