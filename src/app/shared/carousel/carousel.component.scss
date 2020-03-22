@@ -2,4 +2,29 @@
     background: #FFFFFF;
 box-shadow: 5px 20px 50px rgba(90, 152, 208, 0.2);
 border-radius: 20px;
+
+
+
+
+::ng-deep owl-carousel-o .owl-theme .owl-dots .owl-dot span {
+    width: 5px;
+    height: 5px;
+    margin: 4px 7px;
+    background: #5A98D0;
+    opacity: 0.4;
+    display: block;
+    -webkit-backface-visibility: visible;
+    transition: opacity .2s ease;
+    border-radius: 30px;
+}
+::ng-deep owl-carousel-o .owl-theme .owl-dots .owl-dot.active span, .owl-theme .owl-dots .owl-dot:hover span {
+    width: 10px;
+    height: 10px;
+    margin: 4px 7px;
+    background: #5A98D0 !important;
+    opacity: 1;
+}
+::ng-deep .owl-theme .owl-nav.disabled+.owl-dots {
+    margin-top: 30px;
+}
 }

@@ -5,15 +5,17 @@ import { RouterModule } from '@angular/router';
 import { CarouselModule } from 'ngx-owl-carousel-o';
 import { CarouselComponent } from './carousel/carousel.component';
 import { CardComponent } from './card/card.component';
+import { CardPartnersComponent } from './card-partners/card-partners.component';
+import { FooterComponent } from './footer/footer.component';
 
 
 @NgModule({
-  declarations: [NavbarComponent, CarouselComponent, CardComponent],
+  declarations: [NavbarComponent, CarouselComponent, CardComponent, CardPartnersComponent, FooterComponent],
   imports: [
     CommonModule,
     RouterModule,
     CarouselModule
   ],
-  exports: [NavbarComponent, CarouselComponent]
+  exports: [NavbarComponent, CarouselComponent, CardComponent, CardPartnersComponent, FooterComponent]
 })
 export class SharedModule { }
