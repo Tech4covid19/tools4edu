@@ -10,9 +10,9 @@
     flex-direction: row;
     justify-content: space-around;
     align-items: center;
-    margin-left: 96px;
-    margin-right: 96px;
-    margin-top: 127px;
+    margin-top: 12.5rem;
+    margin-right: 6rem;
+    margin-left: 6rem;
 
     .title {
       max-width: 650px;
@@ -31,6 +31,7 @@
         font-size: 20px;
         line-height: 130%;
         color: #1F3F68;
+        margin-top: 2.5rem;
       }
     }
   }
