@@ -1,0 +1,112 @@
+.header{
+    justify-content: space-between;
+    display: flex;
+    align-items: center;
+    margin-left: 104px;
+    margin-right: 104px;
+    .logo {
+        align-self: start;
+    }
+    .menu {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-around;
+        width: 70%;
+        .home {
+            font-family: Amatic SC;
+            font-style: normal;
+            font-weight: bold;
+            font-size: 24px;
+            line-height: 24px;
+            /* identical to box height, or 100% */
+
+            display: flex;
+            align-items: center;
+            text-align: center;
+
+            /* Red */
+
+            color: #E03616;
+        }
+        .professores{
+            font-family: Amatic SC;
+            font-style: normal;
+            font-weight: bold;
+            font-size: 24px;
+            line-height: 24px;
+            /* identical to box height, or 100% */
+
+            display: flex;
+            align-items: center;
+            text-align: center;
+
+            /* Orange */
+
+            color: #FF8811;
+        }
+        .aluno {
+            font-family: Amatic SC;
+            font-style: normal;
+            font-weight: bold;
+            font-size: 24px;
+            line-height: 24px;
+            /* identical to box height, or 100% */
+
+            display: flex;
+            align-items: center;
+            text-align: center;
+
+            /* Green */
+
+            color: #7BC950;
+        }
+        .pais {
+            font-family: Amatic SC;
+            font-style: normal;
+            font-weight: bold;
+            font-size: 24px;
+            line-height: 24px;
+            /* identical to box height, or 100% */
+
+            display: flex;
+            align-items: center;
+            text-align: center;
+
+            /* Blue */
+
+            color: #3772FF;
+        }
+        .help {
+            font-family: Amatic SC;
+            font-style: normal;
+            font-weight: bold;
+            font-size: 24px;
+            line-height: 24px;
+            /* identical to box height, or 100% */
+
+            display: flex;
+            align-items: center;
+            text-align: center;
+
+            /* Yellow */
+
+            color: #EAC116;
+        }
+        .about {
+            font-family: Amatic SC;
+            font-style: normal;
+            font-weight: bold;
+            font-size: 24px;
+            line-height: 24px;
+            /* identical to box height, or 100% */
+
+            display: flex;
+            align-items: center;
+            text-align: center;
+
+            /* Pink */
+
+            color: #D90368;
+        }
+    }
+}

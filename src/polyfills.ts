@@ -51,7 +51,10 @@
  *  (window as any).__Zone_enable_cross_context_check = true;
  *
  */
-
+declare global {
+    interface Window { global: any; }
+  }
+  window.global = window;
 /***************************************************************************************************
  * Zone JS is required by default for Angular itself.
  */

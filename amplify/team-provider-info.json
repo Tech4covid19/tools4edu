@@ -1,0 +1,23 @@
+{
+    "dev": {
+        "awscloudformation": {
+            "AuthRoleName": "amplify-tools4edu-dev-121943-authRole",
+            "UnauthRoleArn": "arn:aws:iam::518832209112:role/amplify-tools4edu-dev-121943-unauthRole",
+            "AuthRoleArn": "arn:aws:iam::518832209112:role/amplify-tools4edu-dev-121943-authRole",
+            "Region": "eu-central-1",
+            "DeploymentBucketName": "amplify-tools4edu-dev-121943-deployment",
+            "UnauthRoleName": "amplify-tools4edu-dev-121943-unauthRole",
+            "StackName": "amplify-tools4edu-dev-121943",
+            "StackId": "arn:aws:cloudformation:eu-central-1:518832209112:stack/amplify-tools4edu-dev-121943/6a919bb0-6c37-11ea-ac7a-023cc2de05b4",
+            "AmplifyAppId": "di5dw2epamih3"
+        },
+        "categories": {
+            "hosting": {
+                "amplifyhosting": {
+                    "appId": "di5dw2epamih3",
+                    "type": "cicd"
+                }
+            }
+        }
+    }
+}
