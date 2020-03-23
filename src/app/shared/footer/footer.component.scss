@@ -97,6 +97,18 @@
   display: none;
 }
 
+@media(max-width: 3440px) {
+  .dark {
+    max-width: 35%;
+  }
+}
+
+@media(max-width: 2580px) {
+  .dark {
+    max-width: 47.5%;
+  }
+}
+
 @media(max-width: 1920px) {
   .dark {
     max-width: 55%;
