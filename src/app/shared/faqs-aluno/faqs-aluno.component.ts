@@ -20,12 +20,12 @@ export class FaqsAlunoComponent implements OnInit {
     {
       id: 3,
       question: "E se eu nao conseguir sozinho? Quem me ajuda?",
-      answer: "Vais pedir aos teus pais para estarem ao teu lado para te ajudarem a fazer tudo certo se for possível na primeira vez que tenhas uma aula marcada, está bem? Se tiveres algum problema a entrar na aula, os teus pais podem ajudar a seguir as instruções do programa Zoom. Vais ver que depois de teres a primeira aula tudo fica mais fácil e, com o tempo, vais ser um craque que consegue fazer isto sem ajuda!"
+      answer: `<p><span style="font-weight: 400;">Vais pedir aos teus pais para estarem ao teu lado para te ajudarem a fazer tudo certo se for poss&iacute;vel na primeira vez que tenhas uma aula marcada, est&aacute; bem?&nbsp;</span></p><p><span style="font-weight: 400;">Se tiveres algum problema a entrar na aula, os teus pais podem ajudar a seguir as instru&ccedil;&otilde;es do programa Zoom. Vais ver que depois de teres a primeira aula tudo fica mais f&aacute;cil e, com o tempo, vais ser um craque que consegue fazer isto sem ajuda!</span></p>`
     },
     {
       id: 4,
       question: "O que é isso do Zoom Meeting?",
-      answer: "Zoom é como se chama o programa informático que o professor vai usar para dar a aula caso estejas a perguntar e o meeting é reunião em português, mas como o programa foi criado por pessoas americanas está escrito em inglês.)"
+      answer: "Zoom é como se chama o programa informático que o professor vai usar para dar a aula. Caso estejas a perguntar, meeting é reunião em português, mas como o programa foi criado por pessoas americanas está escrito em inglês."
     },
     {
       id: 5,
@@ -35,27 +35,27 @@ export class FaqsAlunoComponent implements OnInit {
     {
       id: 6,
       question: "Posso falar? Mas se falarmos todos ao mesmo tempo, não vai ser uma confusão?",
-      answer: "Podes falar, sim se tiveres microfone no teu computador. Mas lembra-te que na sala de aula quem dita as regras é o teu Professor, por isso na aula online vai ser igual. O Professor é que vai dizer quando começa a aula e quando devem estao todos em silêncio. O Professor tem um botão no computador dele que desliga e liga o teu microfone (sim, é verdade!) e ele vai avisar quando cada um pode falar e quando se deve estar em silêncio."
+      answer: "Podes falar, sim se tiveres microfone no teu computador. Mas lembra-te que na sala de aula quem dita as regras é o teu Professor, por isso na aula online vai ser igual. O Professor é que vai dizer quando começa a aula e então devem estar todos em silêncio. O Professor tem um botão no computador dele que desliga e liga o teu microfone (sim, é verdade!) e ele vai avisar quando cada um pode falar e quando se deve estar em silêncio."
     },
     {
       id: 7,
       question: "Se o Professor desligar o meu microfone e eu quiser falar, o que faço?",
-      answer: `É fácil. Na escola, quando queres falar levantas a mao e esperas que o Professor te dê autorizaçao para participares. No Zoom é igual. Poderás "levantar a mão" para falar (tem lá um botao com este nome) ou também podes escrever no Chat (uma caixinha onde se podem escrever mensagens que o Professor lê). Lembra-te que o Professor é que dita as regras. Podes pedir para falar mas tens que esperar pela tua vez.`
+      answer: `<p><span style="font-weight: 400;">&Eacute; f&aacute;cil. Na escola, quando queres falar levantas a m&atilde;o e esperas que o Professor te d&ecirc; autoriza&ccedil;&atilde;o para participares. No Zoom &eacute; igual. Poder&aacute;s "levantar a m&atilde;o" para falar (tem l&aacute; um bot&atilde;o com este nome) ou tamb&eacute;m podes escrever no Chat (uma caixinha onde se podem escrever mensagens que o Professor l&ecirc;).&nbsp;</span></p><p><span style="font-weight: 400;">Lembra-te que o Professor &eacute; que dita as regras. Podes pedir para falar mas tens que esperar pela tua vez.</span></p>`
     },
     {
       id: 8,
       question: "Como é que vou aprender a matéria da aula e estudar se não tenho os materiais?",
-      answer: "O professor dirá quando é o intervalo, para que possas descansar e falar com os teus amigos. No email que o professor te mandar a dizer quando vais ter a tua aula, vai-te explicar tudo. Não te esqueças de pedir ajuda aos teus pais quando tiveres a tua primeira aula no Zoom."
+      answer: `<p><span style="font-weight: 400;">O Zoom &eacute; super fixe. Deixa que o Professor partilhe contigo todos os materiais que precisas. Isto quer dizer que no teu computador tu vais poder ver os seus slides, fichas, exerc&iacute;cios, como se estivesse a ser uma aula na tua escola.&nbsp;</span></p><p><span style="font-weight: 400;">Vais ver que o Professor at&eacute; pode escrever num quadro branco que vai aparecer no teu computador e&nbsp; tu tamb&eacute;m vais poder escrever e assim mostrar a mat&eacute;ria que te vai ensinar a cada aula.</span></p>`
     },
     {
       id: 9,
       question: "Na escola eu tenho intervalos para brincar no recreio. Aqui também vou ter?",
-      answer: "O professor dirá quando é o intervalo, para que possas descansar e falar com os teus amigos. No email que o professor te mandar a dizer quando vais ter a tua aula, vai-te explicar tudo. Não te esqueças de pedir ajuda aos teus pais quando tiveres a tua primeira aula no Zoom."
+      answer: "O Professor dirá quando é o intervalo, para que possas descansar e falar com os teus amigos. No email que o professor te mandar a dizer quando vais ter a tua aula, vai-te explicar tudo. Não te esqueças de pedir ajuda aos teus pais quando tiveres a tua primeira aula no Zoom."
     },
     {
       id: 10,
       question: "Posso sair da aula quando eu quiser? Como sei que a aula acabou?",
-      answer: "Não deverás deixar a aula até ao professor dizer que a aula está terminada (como habitualmente!). Quando a aula acabar, o professor terminará a aula online e poderás sair do programa.  Mas, lembra-te! Se na escola não sais da aula a meio e esperas pelo final, aqui deves fazer igual. Se no meio da aula, tiveres algum problemas com a internet, vais sair da aula sem querer. Se isso acontecer, só tens de voltar a clicar no link que o professor enviou para entrares novamente na aula. Não vale sair a meio sem querer e não voltar a entrar!"
+      answer: "Não deverás deixar a aula até ao Professor dizer que a aula está terminada (como habitualmente!). Quando a aula acabar, o Professor terminará a aula online e poderás sair do programa.  Mas, lembra-te! Se na escola não sais da aula a meio e esperas pelo final, aqui deves fazer igual. Se no meio da aula, tiveres algum problemas com a internet, vais sair da aula sem querer. Se isso acontecer, só tens de voltar a clicar no link que o Professor enviou para entrares novamente na aula. Não vale sair a meio sem querer e não voltar a entrar!"
     },
   ];
   // first group of questions
