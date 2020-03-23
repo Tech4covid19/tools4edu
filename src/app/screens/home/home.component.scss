@@ -63,7 +63,12 @@
     border-radius: 40px;
     padding: 1.5rem; 
     margin-bottom: 2rem;
-    transition: 0.3s ease box-shadow;
+    transition: 0.3s ease box-shadow, 0.3s ease transform;
+    cursor: pointer;
+
+    &:hover {
+      transform: scale(1.0525);
+    }
     
     &.professor {
       background:  url(./../../../assets/professor.png) no-repeat;
@@ -112,7 +117,7 @@
   }
 }
 
-.testemunhos {      
+.testemunhos {
   margin-top: 5px;
 
   .title {
@@ -166,5 +171,63 @@
     display: flex;
     width: 190px;
     height: 190px;
+  }
+}
+
+// MOBILE VERSION
+@media (max-width: 640px) {
+  .header .row {
+    flex-direction: column;
+    margin-top: 6.25rem;
+    margin-right: 1.5rem;
+    margin-left: 1.5rem;
+    padding-bottom: 3rem;
+    
+    .title {
+      margin-bottom: 2rem;
+
+      p {
+        font-size: 0.875rem;
+        line-height: 130%;
+        margin-top: 0.5rem;
+      }
+
+      + div {
+        img {
+          display: block;
+          margin: 0 auto;
+        }
+      }
+    }
+  }
+
+  .buttons {
+    flex-direction: column;
+    margin: 0;
+    transform: translate(10px, -3rem);
+
+    > div {
+      margin: 0 auto 1.5rem auto;
+
+      &:last-of-type {
+        margin-bottom: 0;
+      }
+    }
+  }
+
+  .testemunhos,
+  .plataformas {
+    .title {
+      width: 100%;
+      font-size: 2rem;
+      font-size: 130%;
+      letter-spacing: 0.04em;
+      text-align: center;
+      margin: 0 1.5rem;
+    }
+  }
+
+  .plataformas {
+    margin-bottom: 1.5rem;
   }
 }
