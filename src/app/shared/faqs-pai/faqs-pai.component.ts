@@ -6,8 +6,6 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./faqs-pai.component.scss']
 })
 export class FaqsPaiComponent implements OnInit {
-  whatsShowing = 3;
-  showMore = false;
   allQuestions = [
     {
       id: 1,
@@ -50,9 +48,10 @@ export class FaqsPaiComponent implements OnInit {
       answer: "A aula online funcionará num registo similar a uma presencial. O Professor ditará as regras, será quem decide quando a aula começa e acaba. Conseguirá controlar através do Programa Zoom que os alunos façam silêncio ou possam participar. Poderá partilhar o seu ecrã para que os Alunos vejam todos os materiais necessários para a aprendizagem da matéria. Tem ainda à disposição a opção de escrever no ecrã. Nesse caso, os alunos verão uma quadro branco onde o professor escreverá como se fosse o quadro da sala de aula. O Professor fará esforços para promover a participação de todos durante a aula e deixará um espaço para intervalo para que as crianças possam também interagir em modo recreio. Para mais informações sobre como o professor poderá dar a aula no Zoom, clique aqui (linkpara passos do professor)."
     }
   ];
-
   // first group of questions
   shownQuestions = this.allQuestions.slice(0, 3);
+  showMore = false;
+  whatsShowing = 3;
 
   constructor() { }
 
@@ -62,8 +61,10 @@ export class FaqsPaiComponent implements OnInit {
   toggleShowMore() {
     if (this.showMore === true) {
       this.shownQuestions = this.allQuestions.slice(0, 3);
+      this.whatsShowing = 3;
     } else {
       this.shownQuestions = this.allQuestions;
+      this.whatsShowing = this.allQuestions.length;
     }
 
     this.showMore = !this.showMore;

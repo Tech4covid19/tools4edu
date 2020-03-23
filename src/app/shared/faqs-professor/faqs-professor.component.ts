@@ -132,8 +132,10 @@ export class FaqsProfessorComponent implements OnInit {
   toggleShowMore() {
     if (this.showMore === true) {
       this.shownQuestions = this.allQuestions.slice(0, 3);
+      this.whatsShowing = 3;
     } else {
       this.shownQuestions = this.allQuestions;
+      this.whatsShowing = this.allQuestions.length;
     }
 
     this.showMore = !this.showMore;
