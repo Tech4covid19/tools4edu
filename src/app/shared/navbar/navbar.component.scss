@@ -81,6 +81,14 @@
       --color: #D90368;
     }
   }
+
+  @media (max-width: 640px) {
+    padding: 0 1rem;
+
+    .menu {
+      display: none;
+    }
+  }
 }
 
 @keyframes grow {
