@@ -183,7 +183,7 @@
 
 .plataformas {
   display: flex;
-  flex-direction: row;
+  flex-direction: column;
   margin-bottom: 40px;
 
   .title {
@@ -206,22 +206,21 @@
       color: #1F3F68;
     }
   }
-}
 
-.cards{
-  margin-left: 192px;
-  margin-right: 192px;
-  display: flex;
-  justify-content: space-evenly;
-  margin-bottom: 7.5rem;
-
-  ::ng-deep app-card-partners .card {
+  .cards{
+    margin-left: 192px;
+    margin-right: 192px;
     display: flex;
-    width: 190px;
-    height: 190px;
-  }
+    justify-content: space-evenly;
+    margin-bottom: 7.5rem;
+  
+    ::ng-deep app-card-partners .card {
+      display: flex;
+      width: 12.5rem;
+      height: 12.5rem;
+    }
+  }  
 }
-
 // MOBILE VERSION
 @media (max-width: 640px) {
   .header .row {
@@ -264,9 +263,14 @@
 
   .plataformas {
     margin-bottom: 1.5rem;
-  }
+    
+    .cards {
+      margin: 0 1rem;
 
-  .cards {
-    margin: 0 1rem
+      ::ng-deep app-card-partners .card {
+        width: calc(100% - 7rem);
+        height: 12.5rem;
+      }
+    }
   }
 }
