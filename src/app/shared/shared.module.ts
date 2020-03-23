@@ -3,6 +3,7 @@ import { CommonModule } from '@angular/common';
 import { NavbarComponent } from './navbar/navbar.component';
 import { RouterModule } from '@angular/router';
 import { CarouselModule } from 'ngx-owl-carousel-o';
+import { NgxYoutubePlayerModule } from 'ngx-youtube-player';
 import { CarouselComponent } from './carousel/carousel.component';
 import { CardComponent } from './card/card.component';
 import { CardPartnersComponent } from './card-partners/card-partners.component';
@@ -11,15 +12,17 @@ import { FaqsQuestionComponent } from './faqs-question/faqs-question.component';
 import { FaqsProfessorComponent } from './faqs-professor/faqs-professor.component';
 import { FaqsAlunoComponent } from './faqs-aluno/faqs-aluno.component';
 import { FaqsPaiComponent } from './faqs-pai/faqs-pai.component';
+import { YtCardComponent } from './yt-card/yt-card.component';
 
 
 @NgModule({
-  declarations: [NavbarComponent, CarouselComponent, CardComponent, CardPartnersComponent, FooterComponent, FaqsQuestionComponent, FaqsProfessorComponent, FaqsAlunoComponent, FaqsPaiComponent],
+  declarations: [NavbarComponent, CarouselComponent, CardComponent, CardPartnersComponent, FooterComponent, FaqsQuestionComponent, FaqsProfessorComponent, FaqsAlunoComponent, FaqsPaiComponent, YtCardComponent],
   imports: [
     CommonModule,
     RouterModule,
-    CarouselModule
+    CarouselModule,
+    NgxYoutubePlayerModule.forRoot(),
   ],
-  exports: [NavbarComponent, CarouselComponent, CardComponent, CardPartnersComponent, FaqsQuestionComponent, FaqsProfessorComponent, FaqsAlunoComponent, FaqsPaiComponent, FooterComponent]
+  exports: [NavbarComponent, CarouselComponent, CardComponent, CardPartnersComponent, FaqsQuestionComponent, FaqsProfessorComponent, FaqsAlunoComponent, FaqsPaiComponent, FooterComponent, YtCardComponent]
 })
 export class SharedModule { }
