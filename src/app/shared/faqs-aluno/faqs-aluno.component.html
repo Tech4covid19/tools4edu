@@ -1,9 +1,9 @@
 <div class="questions">
-  <!-- <app-faqs-question *ngFor="let item of shownQuestions;"
+  <app-faqs-question *ngFor="let item of shownQuestions;"
     [number]="item.id"
     [question]="item.question"
     [answer]="item.answer"
-  ></app-faqs-question> -->
+  ></app-faqs-question>
 
   <div class="showMore">
     <button [ngClass]="showMore ? 'active' : ''" (click)="toggleShowMore()" class="btn orange">
