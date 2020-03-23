@@ -13,7 +13,6 @@
     display: flex;
     flex-direction: row;
     justify-content: space-around;
-    align-items: center;
     margin-top: 12.5rem;
     margin-right: 6rem;
     margin-left: 6rem;
@@ -27,6 +26,7 @@
       line-height: 74px;
       letter-spacing: 0.04em;
       color: #1F3F68;
+      margin-top: 47px;
 
       p {
         font-family: Barlow;
@@ -38,6 +38,10 @@
         margin-top: 2.5rem;
       }
     }
+  }
+
+  .header_image {
+      margin-bottom: 172px;
   }
 }
 
@@ -55,7 +59,8 @@
     display: flex;
     align-items: flex-start;
     flex-direction: column;
-    background-size: cover;
+    background-size: contain;
+    background-repeat: no-repeat;
     border-radius: 40px;
     padding: 1.5rem; 
     margin-bottom: 30px;
@@ -67,15 +72,18 @@
     }
     
     &.professor {
-      background:  url(./../../../assets/professor.png);
+      background:  url(./../../../assets/professor.png) no-repeat;
+      background-size: contain;
     }
   
     &.aluno {
-      background:  url(./../../../assets/aluno.png);
+      background:  url(./../../../assets/aluno.png) no-repeat;
+      background-size: contain;
     }
   
     &.pai {
-      background:  url(./../../../assets/pai.png);
+      background:  url(./../../../assets/pai.png) no-repeat;
+      background-size: contain;
     }
 
     .title {
@@ -125,6 +133,7 @@
     color: #1F3F68;
   }
 }
+
 .plataformas {
   display: flex;
   flex-direction: row;
@@ -140,6 +149,15 @@
     line-height: 74px;
     letter-spacing: 0.04em;
     color: #1F3F68;
+    
+    p {
+      font-family: Barlow;
+      font-style: normal;
+      font-weight: 300;
+      font-size: 20px;
+      line-height: 130%;
+      color: #1F3F68;
+    }
   }
 }
 
