@@ -20,6 +20,6 @@ import { FaqsPaiComponent } from './faqs-pai/faqs-pai.component';
     RouterModule,
     CarouselModule
   ],
-  exports: [NavbarComponent, CarouselComponent, CardComponent, CardPartnersComponent, FaqsQuestionComponent, FaqsProfessorComponent, FooterComponent]
+  exports: [NavbarComponent, CarouselComponent, CardComponent, CardPartnersComponent, FaqsQuestionComponent, FaqsProfessorComponent, FaqsAlunoComponent, FaqsPaiComponent, FooterComponent]
 })
 export class SharedModule { }
