@@ -42,10 +42,10 @@
 }
 
 section {
-  padding: 0 12rem 7.5rem 12rem;
+  padding: 7.5rem 12rem 0 12rem;
 
-  &:not(:last-of-type) {
-    padding-top: 7.5rem;
+  &:last-of-type {
+    padding-bottom: 7.5rem;
   }
 
   .row {
@@ -75,14 +75,12 @@ section {
       }
     }
 
-    app-faqs-professor {
+    app-faqs-professor,
+    app-faqs-aluno,
+    app-faqs-pai {
       flex-basis: 70%;
       flex-grow: 0;
       flex-shrink: 1;
-    }
-
-    .questions {
-      flex-basis: 70%;
     }
   }
 
@@ -105,6 +103,22 @@ section {
   .row .image {
     width: 100%;
     background: url(../../../assets/faqs/professor.png) no-repeat;
+    background-size: contain;
+  }
+}
+
+#faqs-student {
+  .row .image {
+    width: 100%;
+    background: url(../../../assets/faqs/aluno.png) no-repeat;
+    background-size: contain;
+  }
+}
+
+#faqs-parent {
+  .row .image {
+    width: 100%;
+    background: url(../../../assets/faqs/pai.png) no-repeat;
     background-size: contain;
   }
 }
