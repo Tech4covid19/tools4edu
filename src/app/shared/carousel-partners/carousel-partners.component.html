@@ -1,19 +1,17 @@
-<owl-carousel-o [options]="customOptions">
-  <ng-container *ngFor="let slide of [1,2,3,4,5,6,7,8,9]">
-    <ng-template carouselSlide>
-      <app-card-partners [logo]="'assets/zoom.svg'"></app-card-partners>
-    </ng-template>
+<owl-carousel-o [options]="carouselOptions">
+  <ng-template carouselSlide>
+    <app-card-partners [logo]="'assets/zoom.svg'"></app-card-partners>
+  </ng-template>
 
-    <ng-template>
-      <app-card-partners [logo]="'assets/brevemente.svg'"></app-card-partners>
-    </ng-template>
+  <ng-template carouselSlide>
+    <app-card-partners [logo]="'assets/brevemente.svg'"></app-card-partners>
+  </ng-template>
 
-    <ng-template>
-      <app-card-partners [logo]="'assets/brevemente.svg'"></app-card-partners>
-    </ng-template>
+  <ng-template carouselSlide>
+    <app-card-partners [logo]="'assets/brevemente.svg'"></app-card-partners>
+  </ng-template>
 
-    <ng-template>
-      <app-card-partners [logo]="'assets/brevemente.svg'"></app-card-partners>
-    </ng-template>
-  </ng-container>
+  <ng-template carouselSlide>
+    <app-card-partners [logo]="'assets/brevemente.svg'"></app-card-partners>
+  </ng-template>
 </owl-carousel-o>
