@@ -39,7 +39,7 @@
 section {
   padding: 0 16rem 7.5rem 16rem;
 
-  &:not(:last-of-type) {
+  &.first {
     padding-top: 7.5rem;
   }
 
