@@ -7,7 +7,13 @@
 
   <div class="showMore">
     <button [ngClass]="showMore ? 'active' : ''" (click)="toggleShowMore()" class="btn orange">
-      Mostrar mais <span class="caret-down"></span>
+      Mostrar
+      
+      <div *ngIf="showMore; then thenBlock else elseBlock"></div>
+      <ng-template #thenBlock>menos</ng-template>
+      <ng-template #elseBlock>mais</ng-template>
+
+      <span class="caret-down"></span>
     </button>
 
     <div class="showing">

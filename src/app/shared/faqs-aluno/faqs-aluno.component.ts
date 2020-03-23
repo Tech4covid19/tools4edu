@@ -6,8 +6,6 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./faqs-aluno.component.scss']
 })
 export class FaqsAlunoComponent implements OnInit {
-  whatsShowing = 3;
-  showMore = false;
   allQuestions = [
     {
       id: 1,
@@ -60,9 +58,10 @@ export class FaqsAlunoComponent implements OnInit {
       answer: "Não deverás deixar a aula até ao professor dizer que a aula está terminada (como habitualmente!). Quando a aula acabar, o professor terminará a aula online e poderás sair do programa.  Mas, lembra-te! Se na escola não sais da aula a meio e esperas pelo final, aqui deves fazer igual. Se no meio da aula, tiveres algum problemas com a internet, vais sair da aula sem querer. Se isso acontecer, só tens de voltar a clicar no link que o professor enviou para entrares novamente na aula. Não vale sair a meio sem querer e não voltar a entrar!"
     },
   ];
-
   // first group of questions
   shownQuestions = this.allQuestions.slice(0, 3);
+  showMore = false;
+  whatsShowing = 3;
 
   constructor() { }
 

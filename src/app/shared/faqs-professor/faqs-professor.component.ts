@@ -6,13 +6,11 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./faqs-professor.component.scss']
 })
 export class FaqsProfessorComponent implements OnInit {
-  whatsShowing = 3;
-  showMore = false;
   allQuestions = [
     {
       id: 1,
       question: "Em que consiste a Plataforma Tools4Edu?",
-      answer: "<strong>O Tools4Edu é uma plataforma de apoio à Comunidade Educativa (Professores, Alunos e Pais/Encarregados de Educação) que pretende facilitar a compreensão e utilização de ferramentas digitais no processo de ensino, dado o enquadramento que se vive em Portugal derivado do contágio do novo coronavírus Covid 19.</strong>"
+      answer: "O Tools4Edu é uma plataforma de apoio à Comunidade Educativa (Professores, Alunos e Pais/Encarregados de Educação) que pretende facilitar a compreensão e utilização de ferramentas digitais no processo de ensino, dado o enquadramento que se vive em Portugal derivado do contágio do novo coronavírus Covid 19."
     },
     {
       id: 2,
@@ -120,9 +118,10 @@ export class FaqsProfessorComponent implements OnInit {
       answer: "Deve seguir exactamente os mesmo passos recomendados para criar uma Aula online. Deve remeter o link da reuniao em Zoom por email ao Encarregado de Educaçao, identificando data e hora da mesma. Recorde habilitar video e audio para ambos para que possa estabelecer uma video chamada e assim replicar o mais possivel o que seria uma reuniao presencial."
     },
   ];
-
   // first group of questions
   shownQuestions = this.allQuestions.slice(0, 3);
+  showMore = false;
+  whatsShowing = 3;
 
   constructor() { }
 
