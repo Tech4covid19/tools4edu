@@ -1,0 +1,86 @@
+.header {
+    min-height: 31.625rem;
+    display: flex;
+    flex-direction: column;
+    background-image:url(./../../../assets/privacidade/privacy.png);
+    background-size: cover;
+    margin: 0;
+  
+    .row {
+      height: 21.125rem;
+      display: flex;
+      flex-direction: row;
+      justify-content: flex-start;
+      align-items: center;
+      padding: 8rem 12rem 2.5rem 12rem;
+  
+      .title {
+        display: flex;
+        justify-self: flex-start;
+        font-family: Amatic SC;
+        font-style: normal;
+        font-weight: bold;
+        font-size: 4rem;
+        line-height: 74px;
+        letter-spacing: 0.04em;
+        color: #fff;
+  
+        p {
+          font-family: Barlow;
+          font-style: normal;
+          font-weight: 300;
+          font-size: 1.25rem;
+          line-height: 130%;
+          max-width: 55%;
+          color: #fff;
+          margin-top: 2.5rem;
+        }
+      }
+    }
+  }
+.presentation {
+    padding: 8rem 12rem 2.5rem 12rem;
+    display: flex;
+      p {
+        font-family: Barlow;
+        font-style: normal;
+        font-weight: 300;
+        font-size: 20px;
+        line-height: 130%;
+        /* or 26px */
+        margin: 0 0 25px;
+        letter-spacing: -0.01em;
+        
+        /* text/Dark Blue */
+        
+        color: #1F3F68;
+      }
+      
+      h1 {
+        font-family: Amatic SC;
+        font-style: normal;
+        font-weight: bold;
+        font-size: 36px;
+        line-height: 133.5%;
+        /* or 48px */
+        
+        letter-spacing: 0.02em;
+        
+        /* text/Dark Blue */
+        
+        color: #1F3F68;
+      }
+.first{
+    display: flex;
+    flex-direction: column;
+  
+    margin-right: 44px;
+}
+.second{
+    display: flex;
+    flex-direction: column;
+
+    padding-top: 25px;
+    margin-left: 44px;
+}
+}

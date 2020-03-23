@@ -6,6 +6,7 @@ import { AlunoComponent } from './screens/aluno/aluno.component';
 import { PaiComponent } from './screens/pai/pai.component';
 import { FAQsComponent } from './screens/faqs/faqs.component';
 import { AboutComponent } from './screens/about/about.component';
+import { PrivacyComponent } from './screens/privacy/privacy.component';
 
 
 const routes: Routes = [
@@ -15,6 +16,7 @@ const routes: Routes = [
   {path: 'pai',component: PaiComponent},
   {path: 'faqs',component: FAQsComponent},
   {path: 'sobre',component: AboutComponent},
+  {path: 'privacidade', component: PrivacyComponent}
 ];
 
 @NgModule({
