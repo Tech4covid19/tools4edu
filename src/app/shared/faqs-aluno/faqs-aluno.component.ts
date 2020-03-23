@@ -10,16 +10,16 @@ export class FaqsAlunoComponent implements OnInit {
     {
       id: 1,
       question: "O que é o Tools4Edu?",
-      answer: "O Tools4Edu é o sítio onde vais aprender como ter aulas com o teu professor e ver os teus colegas a partir da tua própria casa. Podes (e deves) pedir a ajuda dos teus Pais / Encarregados de Educaçao. Vais poder continuar a aprender, mesmo que não vás à escola e vais poder falar com os teus amigos através de um programa da internet que se chama Zoom."
+      answer: "O Tools4Edu é o sítio onde vais aprender como ter aulas com o teu professor e ver os teus colegas a partir da tua própria casa. Podes (e deves) pedir a ajuda dos teus Pais / Encarregados de Educação. Vais poder continuar a aprender, mesmo que não vás à escola e vais poder falar com os teus amigos através de um programa da internet que se chama Zoom."
     },
     {
       id: 2,
-      question: "As aulas sao todos os dias? Como é que vou saber quando tenho aulas?",
+      question: "As aulas são todos os dias? Como é que vou saber quando tenho aulas?",
       answer: "Vais receber um email do teu Professor a dizer-te quando é a aula e esse email vai ter um link. Vais clicar nesse link e assim aceder via web browser (aquilo que chamamos internet) a uma aula que se chama Zoom Meeting."
     },
     {
       id: 3,
-      question: "E se eu nao conseguir sozinho? Quem me ajuda?",
+      question: "E se eu não conseguir sozinho? Quem me ajuda?",
       answer: `<p><span style="font-weight: 400;">Vais pedir aos teus pais para estarem ao teu lado para te ajudarem a fazer tudo certo se for poss&iacute;vel na primeira vez que tenhas uma aula marcada, est&aacute; bem?&nbsp;</span></p><p><span style="font-weight: 400;">Se tiveres algum problema a entrar na aula, os teus pais podem ajudar a seguir as instru&ccedil;&otilde;es do programa Zoom. Vais ver que depois de teres a primeira aula tudo fica mais f&aacute;cil e, com o tempo, vais ser um craque que consegue fazer isto sem ajuda!</span></p>`
     },
     {
@@ -30,7 +30,7 @@ export class FaqsAlunoComponent implements OnInit {
     {
       id: 5,
       question: "Como é que vou ter uma aula se estamos todos em casas diferentes?",
-      answer: "Vais ter uma aula online. Isto quer dizer que tu e os teus amigos vão poder ver e ouvir o Professor, vais poder falar com os teus colegas e ouvir o que eles dizem, como se estivessem na vossa sala de aula. Para isto o teu computador precisa de ter camara (web cam) e microfone (não te esqueças pede ajuda aos teus pais na primeira aula)."
+      answer: "Vais ter uma aula online. Isto quer dizer que tu e os teus amigos vão poder ver e ouvir o Professor, vais poder falar com os teus colegas e ouvir o que eles dizem, como se estivessem na vossa sala de aula. Para isto o teu computador precisa de ter câmera (web cam) e microfone (não te esqueças pede ajuda aos teus pais na primeira aula)."
     },
     {
       id: 6,

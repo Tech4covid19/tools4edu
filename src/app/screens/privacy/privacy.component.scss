@@ -41,7 +41,7 @@
 .presentation {
     padding: 8rem 12rem 2.5rem 12rem;
     display: flex;
-      p {
+      p, li {
         font-family: Barlow;
         font-style: normal;
         font-weight: 300;
@@ -80,7 +80,10 @@
     display: flex;
     flex-direction: column;
 
-    padding-top: 25px;
     margin-left: 44px;
 }
+}
+ul {
+    list-style: none;
+
 }
