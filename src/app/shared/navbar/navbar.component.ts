@@ -14,7 +14,6 @@ export class NavbarComponent implements OnInit {
       if(route instanceof NavigationEnd) {
         if (route.url && route.url.length > 0) {
           this.url = route.url.slice(1);
-          console.log(this.url)
         }
       }
     });

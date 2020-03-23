@@ -7,15 +7,19 @@ import { CarouselComponent } from './carousel/carousel.component';
 import { CardComponent } from './card/card.component';
 import { CardPartnersComponent } from './card-partners/card-partners.component';
 import { FooterComponent } from './footer/footer.component';
+import { FaqsQuestionComponent } from './faqs-question/faqs-question.component';
+import { FaqsProfessorComponent } from './faqs-professor/faqs-professor.component';
+import { FaqsAlunoComponent } from './faqs-aluno/faqs-aluno.component';
+import { FaqsPaiComponent } from './faqs-pai/faqs-pai.component';
 
 
 @NgModule({
-  declarations: [NavbarComponent, CarouselComponent, CardComponent, CardPartnersComponent, FooterComponent],
+  declarations: [NavbarComponent, CarouselComponent, CardComponent, CardPartnersComponent, FooterComponent, FaqsQuestionComponent, FaqsProfessorComponent, FaqsAlunoComponent, FaqsPaiComponent],
   imports: [
     CommonModule,
     RouterModule,
     CarouselModule
   ],
-  exports: [NavbarComponent, CarouselComponent, CardComponent, CardPartnersComponent, FooterComponent]
+  exports: [NavbarComponent, CarouselComponent, CardComponent, CardPartnersComponent, FaqsQuestionComponent, FaqsProfessorComponent, FooterComponent]
 })
 export class SharedModule { }
