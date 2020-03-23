@@ -1,0 +1,124 @@
+.header {
+  min-height: 31.625rem;
+  display: flex;
+  flex-direction: column;
+  background: linear-gradient(180deg, #FFFFFF 16.72%, 
+            rgba(234, 193, 22, 0.5) 54.51%, 
+            rgba(234, 193, 22, 0.7) 79.9%, 
+            rgba(234, 193, 22, 0.893552) 118.93%),
+              url(./../../../assets/faqs/header-background.jpg);
+  background-size: cover;
+  margin: 0;
+
+  .row {
+    height: 21.125rem;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+    padding: 8rem 12rem 2.5rem 12rem;
+
+    .title {
+      font-family: Amatic SC;
+      font-style: normal;
+      font-weight: bold;
+      font-size: 4rem;
+      line-height: 74px;
+      letter-spacing: 0.04em;
+      color: #fff;
+
+      p {
+        font-family: Barlow;
+        font-style: normal;
+        font-weight: 300;
+        font-size: 1.25rem;
+        line-height: 130%;
+        max-width: 55%;
+        color: #fff;
+        margin-top: 2.5rem;
+      }
+    }
+  }
+}
+
+section {
+  padding: 7.5rem 12rem 0 12rem;
+
+  &:last-of-type {
+    padding-bottom: 7.5rem;
+  }
+
+  .row {
+    display: flex;
+    justify-content: space-between;
+    
+    .image {
+      flex-basis: 27.5%;
+      flex-grow: 0;
+      flex-shrink: 1;
+      height: 20rem;
+      display: flex;
+      flex-direction: column;
+
+      .title {
+        line-height: 130%;
+        display: flex;
+        align-items: center;
+        font-family: Amatic SC;
+        font-style: normal;
+        font-weight: bold;
+        font-size: 2.5rem;
+        color: #fff;
+        margin-bottom: 1.5rem;
+        margin-left: 1.5rem;
+        margin-top: auto;
+      }
+    }
+
+    app-faqs-professor,
+    app-faqs-aluno,
+    app-faqs-pai {
+      flex-basis: 70%;
+      flex-grow: 0;
+      flex-shrink: 1;
+    }
+  }
+
+  @media (max-width: 1720px) {
+    padding: 0 12.5rem 7.5rem 12.5rem;
+  }
+
+  @media (max-width: 1440px) {
+    padding: 0 12rem 7.5rem 12rem;
+
+    .row {
+      .image img {
+        width: 30rem;
+      }
+    }
+  }
+}
+
+#faqs-teacher {
+  .row .image {
+    width: 100%;
+    background: url(../../../assets/faqs/professor.png) no-repeat;
+    background-size: contain;
+  }
+}
+
+#faqs-student {
+  .row .image {
+    width: 100%;
+    background: url(../../../assets/faqs/aluno.png) no-repeat;
+    background-size: contain;
+  }
+}
+
+#faqs-parent {
+  .row .image {
+    width: 100%;
+    background: url(../../../assets/faqs/pai.png) no-repeat;
+    background-size: contain;
+  }
+}

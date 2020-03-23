@@ -1,0 +1,17 @@
+<div class="questions">
+  <app-faqs-question *ngFor="let item of shownQuestions;"
+    [number]="item.id"
+    [question]="item.question"
+    [answer]="item.answer"
+  ></app-faqs-question>
+
+  <div class="showMore">
+    <button [ngClass]="showMore ? 'active' : ''" (click)="toggleShowMore()" class="btn orange">
+      Mostrar mais <span class="caret-down"></span>
+    </button>
+
+    <div class="showing">
+      A mostrar <span class="bold">{{ whatsShowing }}</span> de <span class="bold">{{ allQuestions.length }}</span> perguntas.
+    </div>
+  </div>
+</div>

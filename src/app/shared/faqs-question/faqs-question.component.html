@@ -1,0 +1,16 @@
+<div [ngClass]="open ? 'open' : ''" (click)="toggle()" class="question" >
+  <div class="title">
+    <div class="number">
+      {{ number }}.
+    </div>
+
+    <div class="question-content">
+      {{ question }}
+    </div>
+
+    <span class="caret"></span>
+  </div>
+
+  <div class="body" [innerHTML]="answer">
+  </div>
+</div>

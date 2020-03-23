@@ -11,6 +11,7 @@ import { AlunoComponent } from './screens/aluno/aluno.component';
 import { PaiComponent } from './screens/pai/pai.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { AboutComponent } from './screens/about/about.component';
+import { FAQsComponent } from './screens/faqs/faqs.component';
 
 @NgModule({
   declarations: [
@@ -19,6 +20,7 @@ import { AboutComponent } from './screens/about/about.component';
     ProfessorComponent,
     AlunoComponent,
     PaiComponent,
+    FAQsComponent,
     AboutComponent,
   ],
   imports: [

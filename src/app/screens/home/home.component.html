@@ -1,50 +1,67 @@
 <div class="header">
-    <div class="row">
-        <div class="title">
-            Tools4edu
-            <p>
-                É uma plataforma de apoio à Comunidade Educativa (Professores, Alunos e Pais/EE)
-                 que pretende facilitar a compreensão e utilização de ferramentas digitais no processo de ensino,
-                  no enquadramento do Covid19. Temos como missão ajudar a assegurar as interações
-                   e relações entre professores e alunos que contribuem para o seu desenvolvimento e bem-estar.
-                </p>
-        </div>
-        <div class="header_image"><img src="assets/mak.svg"></div>
+  <div class="row">
+    <div class="title">
+      Tools4edu
+      <p>
+        É uma plataforma de apoio à Comunidade Educativa (Professores, Alunos e Pais/EE)
+        que pretende facilitar a compreensão e utilização de ferramentas digitais no processo de ensino,
+        no enquadramento do Covid19. Temos como missão ajudar a assegurar as interações
+        e relações entre professores e alunos que contribuem para o seu desenvolvimento e bem-estar.
+      </p>
     </div>
+    <div><img src="assets/mak.svg"></div>
+  </div>
 </div>
-<div class="buttons">
-    <div class="professor">
-        <div class="title">Sou Professor</div>
-        <div class="saber" [routerLink]="['/professor']"><p>Saber Mais</p> <img src="assets/arrow.svg"></div>
-    </div>
-    <div class="aluno">
-        <div class="title">Sou Aluno</div>
-        <div class="saber" [routerLink]="['/aluno']"><p>Saber Mais</p> <img src="assets/arrow.svg"></div>
-    </div>
-    <div class="pai">
-        <div class="title">Sou Pai / EE</div>
-        <div class="saber"><p>Saber Mais</p> <img src="assets/arrow.svg"></div>
-    </div>
 
+<div class="buttons">
+  <div class="professor" [routerLink]="['/professor']">
+    <div class="title">Sou Professor</div>
+    <div class="saber">
+      Saber Mais
+      <svg width="21" height="16" viewBox="0 0 21 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <path d="M14.3 15L20 8L14.3 1" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+        <path d="M20 8H1" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+      </svg>
+    </div>
+  </div>
+  <div class="aluno" [routerLink]="['/aluno']">
+    <div class="title">Sou Aluno</div>
+    <div class="saber">
+      Saber Mais
+      <svg width="21" height="16" viewBox="0 0 21 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <path d="M14.3 15L20 8L14.3 1" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+        <path d="M20 8H1" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+      </svg>
+    </div>
+  </div>
+  <div class="pai" [routerLink]="['/pai']">
+    <div class="title">Sou Pai / EE</div>
+    <div class="saber">
+      Saber Mais
+      <svg width="21" height="16" viewBox="0 0 21 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <path d="M14.3 15L20 8L14.3 1" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+        <path d="M20 8H1" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+      </svg>
+    </div>
+  </div>
 </div>
 
 <div class="testemunhos">
-    <div class="title">
-        testemunhos
-    </div>
-    <app-carousel></app-carousel>
+  <div class="title">
+    testemunhos
+  </div>
+  <app-carousel></app-carousel>
 </div>
 
 <div class="plataformas">
-    <div class="title">
-       Plataformas Suportadas
-    </div>
-   
+  <div class="title">
+    Plataformas Suportadas
+  </div>
 </div>
 
 <div class="cards">
-    <app-card-partners [logos]="'assets/zoom.svg'"></app-card-partners>
-    <app-card-partners [logos]="'assets/brevemente.svg'"></app-card-partners>
-    <app-card-partners [logos]="'assets/brevemente.svg'"></app-card-partners>
-    <app-card-partners [logos]="'assets/brevemente.svg'"></app-card-partners>
+  <app-card-partners [logos]="'assets/zoom.svg'"></app-card-partners>
+  <app-card-partners [logos]="'assets/brevemente.svg'"></app-card-partners>
+  <app-card-partners [logos]="'assets/brevemente.svg'"></app-card-partners>
+  <app-card-partners [logos]="'assets/brevemente.svg'"></app-card-partners>
 </div>
