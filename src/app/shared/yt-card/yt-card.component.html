@@ -1,0 +1,9 @@
+
+  <youtube-player
+  [videoId]="videoIdOut"
+  (ready)="savePlayer($event)"
+  (change)="onStateChange($event)"
+></youtube-player>
+
+    
+    <div id="overlay" (click)="play()"><img *ngIf="!playing" src="assets/playicon.png"></div>

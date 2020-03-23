@@ -3,6 +3,7 @@ import { CommonModule } from '@angular/common';
 import { NavbarComponent } from './navbar/navbar.component';
 import { RouterModule } from '@angular/router';
 import { CarouselModule } from 'ngx-owl-carousel-o';
+import { NgxYoutubePlayerModule } from 'ngx-youtube-player';
 import { CarouselComponent } from './carousel/carousel.component';
 import { CardComponent } from './card/card.component';
 import { CardPartnersComponent } from './card-partners/card-partners.component';
@@ -18,7 +19,8 @@ import { FaqsPaiComponent } from './faqs-pai/faqs-pai.component';
   imports: [
     CommonModule,
     RouterModule,
-    CarouselModule
+    CarouselModule,
+    NgxYoutubePlayerModule.forRoot(),
   ],
   exports: [NavbarComponent, CarouselComponent, CardComponent, CardPartnersComponent, FaqsQuestionComponent, FaqsProfessorComponent, FaqsAlunoComponent, FaqsPaiComponent, FooterComponent]
 })

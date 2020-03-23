@@ -11,6 +11,7 @@ import { AlunoComponent } from './screens/aluno/aluno.component';
 import { PaiComponent } from './screens/pai/pai.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { AboutComponent } from './screens/about/about.component';
+import { NgxYoutubePlayerModule } from 'ngx-youtube-player';
 import { FAQsComponent } from './screens/faqs/faqs.component';
 
 @NgModule({
@@ -28,7 +29,8 @@ import { FAQsComponent } from './screens/faqs/faqs.component';
     AppRoutingModule,
     FlexLayoutModule,
     SharedModule,
-    BrowserAnimationsModule
+    BrowserAnimationsModule,
+    NgxYoutubePlayerModule.forRoot(),
   ],
   providers: [],
   bootstrap: [AppComponent]

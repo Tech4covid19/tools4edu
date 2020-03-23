@@ -37,8 +37,7 @@
 
   .presentation {
     padding: 10rem 16rem 7.5rem 16rem;
-      columns: 2;
-      column-gap: 88px;
+    display: flex;
       p {
         font-family: Barlow;
         font-style: normal;
@@ -79,16 +78,42 @@
       flex-direction: row;
       margin-bottom: 60px;
       padding: 8rem 12rem 2.5rem 12rem;
+  
   .video {
       display: flex;
       justify-content: center;
       align-self: center;
       height: 594px;
       width: 1056px;
-    background: linear-gradient(0deg, rgba(217, 3, 104, 0.7) 0%, rgba(217, 3, 104, 0) 23.58%), url(./../../../assets/sobre/video.png);
+    background: linear-gradient(0deg, rgba(217, 3, 104, 0.7) 0%, rgba(217, 3, 104, 0) 23.58%);
     background-size: cover;
     border-radius: 40px;
   }
+}
+
+::ng-deep app-yt-card {
+    width: 1056px;
+    height: 594px;         
+}
+app-yt-card {
+    &:hover {
+        color: linear-gradient(0deg, rgba(255, 136, 17, 0.7) 0%, rgba(255, 136, 17, 0) 23.58%)
+    }
+}
+.first{
+    display: flex;
+    flex-direction: column;
+    width: 700px;
+    height: 699px;
+    margin-right: 44px;
+}
+.second{
+    display: flex;
+    flex-direction: column;
+    width: 447px;
+    height: 699px;
+    padding-top: 25px;
+    margin-left: 44px;
 }
 .card-wrapper {
     margin-left: 193px;
