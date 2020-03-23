@@ -12,26 +12,26 @@
   background: linear-gradient(79.27deg, #1F3F68 46.53%, #5A98D0 115.77%);
   border-top-right-radius: 100px;
   padding-left: 12.5rem;
+}
 
-  .section {
-    display: flex;
-    width: 100%;
-    flex-direction: column;
-    justify-content: center;
-    align-items: flex-start;
-    padding-top: 4rem;
-    height: calc(100% - 5rem);
+.section {
+  display: flex;
+  width: 100%;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+  padding-top: 4rem;
+  height: calc(100% - 5rem);
 
-    .title {
-      font-family: Barlow;
-      font-style: normal;
-      font-weight: bold;
-      font-size: 0.875rem;
-      line-height: 130%;
-      text-transform: uppercase;
-      color: #5A98D0;
-      margin-bottom: 1rem;
-    }
+  .title {
+    font-family: Barlow;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 0.875rem;
+    line-height: 130%;
+    text-transform: uppercase;
+    color: #5A98D0;
+    margin-bottom: 1rem;
   }
 }
 
@@ -97,6 +97,77 @@
   display: none;
 }
 
+@media(max-width: 1920px) {
+  .dark {
+    max-width: 55%;
+  }
+}
+
+@media(max-width: 1680px) {
+  .dark {
+    max-width: 65%;
+  }
+}
+
+@media(max-width: 1400px) {
+  .dark {
+    max-width: 100%;
+    padding-left: 10%;
+  }
+}
+
+@media(max-width: 1220px) {
+  .dark {
+    padding-left: 3rem;
+  }
+}
+
+@media(max-width:  980px) {
+  .dark {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-gap: 1.5rem;
+    padding: 1.5rem 1.5rem 1rem 1.5rem;
+  }
+
+  .section {
+    height: 100%;
+    padding-top: 0;
+
+    &#social {
+      .social-networks .links {
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        grid-gap: 1rem 1.5rem;
+
+        .link {
+          margin-left: 0;
+        }
+      }
+    }
+  }
+}
+
+@media(max-width: 860px) {
+  .section {
+    &#social {
+      .social-networks .links {
+        grid-template-columns: repeat(3, 1fr);
+      }
+    }
+  }
+}
+
+@media(max-width: 720px) {
+  .section {
+    &#social {
+      .social-networks .links {
+        grid-template-columns: repeat(2, 1fr);
+      }
+    }
+  }
+}
+
 @media (max-width: 640px) {
   .footer {
     display: block;
@@ -127,13 +198,7 @@
         grid-column: 1 / 4;
   
         .social-networks .links {
-          display: grid;
           grid-template-columns: repeat(2, 1fr);
-          grid-gap: 1rem 1.5rem;
-  
-          .link {
-            margin-left: 0;
-          }
         }
   
         .policy {
