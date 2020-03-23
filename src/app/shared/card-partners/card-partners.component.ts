@@ -6,7 +6,8 @@ import { Component, OnInit, Input } from '@angular/core';
   styleUrls: ['./card-partners.component.scss']
 })
 export class CardPartnersComponent implements OnInit {
-  @Input() logos
+  @Input() logo
+
   constructor() { }
 
   ngOnInit() {
