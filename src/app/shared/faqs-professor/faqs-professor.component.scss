@@ -9,7 +9,7 @@
       height: 0.75rem;
       border-right: 0.125rem solid #fff;
       border-bottom: 0.125rem solid #fff;
-      margin-left: 1.5rem;
+      margin-left: 1rem;
       margin-bottom: 0.25rem;
       transform: rotate(45deg);
       transition: 0.3s ease transform;
@@ -37,6 +37,27 @@
     span.bold {
       font-weight: 700;
       margin: 0 0.25rem;
+    }
+  }
+}
+
+@media (max-width: 640px) {
+  .showMore {
+    justify-content: space-between;
+
+    button {
+      width: fit-content;
+    }
+
+    .showing {
+      flex-basis: 40%;
+      justify-content: right;
+      align-items: flex-start;
+      flex-wrap: wrap;
+
+      span:nth-of-type(1) {
+        display: block;
+      }
     }
   }
 }
