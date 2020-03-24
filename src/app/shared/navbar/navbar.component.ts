@@ -26,7 +26,7 @@ export class NavbarComponent implements OnInit {
 
   public toggleDrawer() {
     this.drawer = !this.drawer;
-
+    this.renderer.removeClass(document.body, 'scroll-lock')
     if (this.drawer) {
       this.renderer.addClass(document.body, 'scroll-lock')
     } else {
