@@ -24,24 +24,24 @@
     </div>
 
     <ul class="menu menu-mobile">
-      <li [ngClass]="url == '' ? 'active' : ''" class="home" [routerLink]="['/']">
+      <li [ngClass]="url == '' ? 'active' : ''" class="home" (click)="goTo('/')">
         Início
       </li>
 
-      <li [ngClass]="url == 'professor' ? 'active' : ''" class="professores" [routerLink]="['/professor']">
+      <li [ngClass]="url == 'professor' ? 'active' : ''" class="professores" (click)="goTo('/professor')">
         Professor
       </li>
-      <li [ngClass]="url == 'aluno' ? 'active' : ''" class="aluno" [routerLink]="['/aluno']">
+      <li [ngClass]="url == 'aluno' ? 'active' : ''" class="aluno" (click)="goTo('/aluno')">
         Aluno
       </li>
-      <li [ngClass]="url == 'pai' ? 'active' : ''" class="pais" [routerLink]="['/pai']">
+      <li [ngClass]="url == 'pai' ? 'active' : ''" class="pais" (click)="goTo('/pai')">
         Pai
       </li>
-      <li [ngClass]="url == 'faqs' ? 'active' : ''" class="help" [routerLink]="['/faqs']">
+      <li [ngClass]="url == 'faqs' ? 'active' : ''" class="help" (click)="goTo('/faqs')">
         Ajuda
       </li>
 
-      <li [ngClass]="url == 'sobre' ? 'active' : ''" class="about" [routerLink]="['/sobre']">
+      <li [ngClass]="url == 'sobre' ? 'active' : ''" class="about" (click)="goTo('/sobre')">
         Sobre nós
       </li>
     </ul>

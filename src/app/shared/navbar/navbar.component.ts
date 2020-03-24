@@ -33,4 +33,8 @@ export class NavbarComponent implements OnInit {
       this.renderer.removeClass(document.body, 'scroll-lock')
     }
   }
+  goTo(url) {
+    this.drawer = false;
+    this.router.navigate([url])
+  }
 }
