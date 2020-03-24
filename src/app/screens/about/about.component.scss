@@ -137,6 +137,26 @@ section {
   }
 }
 
+// LARGER SCREENS
+@media (max-width: 1440px) {
+  section {
+    padding: 0rem 3.75rem 8rem 3.75rem;
+  }
+}
+
+@media (max-width: 1220px) {
+  ::ng-deep app-yt-card {
+    position: relative;
+    width: 45rem;
+    height: 15rem;
+
+    iframe {
+      max-width: 45rem;
+      max-height: 15rem;
+    }
+  }
+}
+
 // MOBILE VERSION
 @media (max-width: 860px) {
   .header .row {

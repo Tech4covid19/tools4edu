@@ -10,7 +10,7 @@ export class CarouselPartnersComponent implements OnInit {
   carouselOptions: OwlOptions = {
     items: 4,
     loop: true,
-    mouseDrag: false,
+    mouseDrag: true,
     touchDrag: true,
     pullDrag: true,
     // dots: true,
@@ -25,10 +25,13 @@ export class CarouselPartnersComponent implements OnInit {
         items: 1
       },
       740: {
-        items: 3
+        items: 2
       },
       940: {
-        items: 4
+        items: 2
+      },
+      1220: {
+        items: 3
       }
     },
   }

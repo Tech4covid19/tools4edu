@@ -222,6 +222,46 @@
   }  
 }
 
+@media (max-width: 1220px) {
+  .header .row {
+    margin-right: 3rem;
+    margin-left: 3rem;
+  }
+
+  .plataformas {
+    margin-right: 3rem;
+    margin-left: 3rem;
+
+    .title {
+      margin-left: 0;
+    }
+
+    .cards {
+      margin: 0;
+    }
+  }
+}
+
+@media (max-width: 860px) {
+  .header .row {
+    margin-right: 1rem;
+    margin-left: 1rem;
+  }
+
+  .plataformas {
+    margin-right: 1rem;
+    margin-left: 1rem;
+
+    .title {
+      margin-left: 0;
+    }
+
+    .cards {
+      margin: 0;
+    }
+  }
+}
+
 // MOBILE VERSION
 @media (max-width: 640px) {
   .header .row {
