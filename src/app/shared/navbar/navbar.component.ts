@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Renderer2 } from '@angular/core';
 import { Router, NavigationEnd } from '@angular/router';
 
 @Component({
@@ -8,8 +8,10 @@ import { Router, NavigationEnd } from '@angular/router';
 })
 export class NavbarComponent implements OnInit {
   url = '';
+  drawer = false;
 
-  constructor(private router: Router) {
+  constructor(private router: Router,
+    private renderer: Renderer2) {
     router.events.subscribe((route) => {
       if(route instanceof NavigationEnd) {
         if (route.url && route.url.length > 0) {
@@ -22,4 +24,11 @@ export class NavbarComponent implements OnInit {
   ngOnInit() {
   }
 
+  public toggleDrawer() {
+    this.drawer = !this.drawer;
+
+    if (this.drawer) {
+      this.renderer.addClass(document.body, 'scroll-lock')
+    }
+  }
 }

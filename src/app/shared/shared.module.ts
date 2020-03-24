@@ -13,16 +13,17 @@ import { FaqsProfessorComponent } from './faqs-professor/faqs-professor.componen
 import { FaqsAlunoComponent } from './faqs-aluno/faqs-aluno.component';
 import { FaqsPaiComponent } from './faqs-pai/faqs-pai.component';
 import { YtCardComponent } from './yt-card/yt-card.component';
+import { CarouselPartnersComponent } from './carousel-partners/carousel-partners.component';
 
 
 @NgModule({
-  declarations: [NavbarComponent, CarouselComponent, CardComponent, CardPartnersComponent, FooterComponent, FaqsQuestionComponent, FaqsProfessorComponent, FaqsAlunoComponent, FaqsPaiComponent, YtCardComponent],
+  declarations: [NavbarComponent, CarouselComponent, CardComponent, CardPartnersComponent, FooterComponent, FaqsQuestionComponent, FaqsProfessorComponent, FaqsAlunoComponent, FaqsPaiComponent, YtCardComponent, CarouselPartnersComponent],
   imports: [
     CommonModule,
     RouterModule,
     CarouselModule,
     NgxYoutubePlayerModule.forRoot(),
   ],
-  exports: [NavbarComponent, CarouselComponent, CardComponent, CardPartnersComponent, FaqsQuestionComponent, FaqsProfessorComponent, FaqsAlunoComponent, FaqsPaiComponent, FooterComponent, YtCardComponent]
+  exports: [NavbarComponent, CarouselComponent, CardComponent, CardPartnersComponent, FaqsQuestionComponent, FaqsProfessorComponent, FaqsAlunoComponent, FaqsPaiComponent, FooterComponent, YtCardComponent, CarouselPartnersComponent]
 })
 export class SharedModule { }

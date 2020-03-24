@@ -47,7 +47,7 @@
   flex-direction: row;
   justify-content: space-evenly;
   margin: 0 6rem 2rem 6rem;
-  transform: translate(10px, -120px);
+  transform: translate(0px, -120px);
 
   > div {
     width: 312px;
@@ -60,21 +60,26 @@
     border-radius: 40px;
     padding: 1.5rem; 
     margin-bottom: 2rem;
-    transition: 0.3s ease box-shadow;
+    transition: 0.3s ease box-shadow, 0.3s ease transform;
+    cursor: pointer;
+
+    &:hover {
+      transform: scale(1.0525);
+    }
     
     &.professor {
       background:  url(./../../../assets/professor.png) no-repeat;
-      background-size: contain;
+      background-size: cover;
     }
   
     &.aluno {
       background:  url(./../../../assets/aluno.png) no-repeat;
-      background-size: contain;
+      background-size: cover;
     }
   
     &.pai {
       background:  url(./../../../assets/pai.png) no-repeat;
-      background-size: contain;
+      background-size: cover;
     }
 
     .title {
@@ -107,9 +112,60 @@
       }
     }
   }
+
+  // WIDER SCREENS
+  @media (max-width: 3440px) {
+    margin: 0 40rem 2rem 40rem;
+  }
+
+  @media (max-width: 2580px) {
+    margin: 0 23rem 2rem 23rem;
+  }
+
+  @media (max-width: 1920px) {
+    margin: 0 12.5rem 2rem 12.5rem;
+  }
+
+  @media (max-width: 1680px) {
+    margin: 0 7.5rem 2rem 7.5rem;
+  }
+
+  @media (max-width: 1400px) {
+    margin: 0 3rem 2rem 3rem;
+  }
+
+  @media (max-width: 1280px) {
+    flex-wrap: wrap;
+
+    > div:not(:last-of-type) {
+      margin-right: 1.5rem;
+    }
+  }
+
+  @media (max-width: 640px) {
+    flex-direction: column;
+    align-items: center;
+    margin: 0;
+    transform: translate(0px, -3rem);
+
+    > div {
+      width: 245px;
+      height: 220px;
+      margin-bottom: 1.5rem;
+      // margin: 0 auto 1.5rem auto;
+
+      &:not(:last-of-type) {
+        margin-right: 0;
+      }
+
+      &:last-of-type {
+        margin-bottom: 0;
+      }
+    }
+  }
 }
 
-.testemunhos {      
+.testemunhos {
   margin-top: 5px;
 
   .title {
@@ -127,7 +183,7 @@
 
 .plataformas {
   display: flex;
-  flex-direction: row;
+  flex-direction: column;
   margin-bottom: 40px;
 
   .title {
@@ -150,18 +206,76 @@
       color: #1F3F68;
     }
   }
+
+  .cards{
+    margin-left: 192px;
+    margin-right: 192px;
+    display: flex;
+    justify-content: space-evenly;
+    margin-bottom: 7.5rem;
+  
+    ::ng-deep app-card-partners .card {
+      display: flex;
+      width: 12.5rem;
+      height: 12.5rem;
+    }
+  }  
 }
 
-.cards{
-  margin-left: 192px;
-  margin-right: 192px;
-  display: flex;
-  justify-content: space-evenly;
-  margin-bottom: 7.5rem;
+// MOBILE VERSION
+@media (max-width: 640px) {
+  .header .row {
+    flex-direction: column;
+    margin-top: 6.25rem;
+    margin-right: 1.5rem;
+    margin-left: 1.5rem;
+    padding-bottom: 3rem;
+    
+    .title {
+      margin-bottom: 2rem;
 
-  ::ng-deep app-card-partners .card {
-    display: flex;
-    width: 190px;
-    height: 190px;
+      p {
+        font-size: 0.875rem;
+        line-height: 130%;
+        margin-top: 0.5rem;
+      }
+
+      + div {
+        img {
+          max-width: 75%;
+          display: block;
+          margin: 0 auto;
+        }
+      }
+    }
+  }
+
+  .testemunhos,
+  .plataformas {
+    .title {
+      width: 100%;
+      font-size: 2.5rem;
+      font-size: 130%;
+      letter-spacing: 0.04em;
+      text-align: center;
+      margin: 0 1.5rem;
+    }
+  }
+
+  .plataformas {
+    margin-bottom: 3.75rem;
+
+    .title {
+      width: unset;
+    }
+    
+    .cards {
+      margin: 0 1rem;
+
+      ::ng-deep app-card-partners .card {
+        width: calc(100% - 7rem);
+        height: 12.5rem;
+      }
+    }
   }
 }

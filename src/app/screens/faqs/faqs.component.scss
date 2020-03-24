@@ -32,6 +32,11 @@
         max-width: 55%;
         color: #fff;
         margin-top: 2.5rem;
+
+        span.bold {
+          font-weight: bold;
+          color: #fff;
+        }
       }
     }
   }
@@ -95,7 +100,7 @@ section {
   }
 }
 
-#faqs-teacher {
+#faqs-professor {
   .row .image {
     width: 100%;
     background: url(../../../assets/faqs/professor.png) no-repeat;
@@ -104,7 +109,7 @@ section {
   padding-top: 6rem;
 }
 
-#faqs-student {
+#faqs-aluno {
   .row .image {
     width: 100%;
     background: url(../../../assets/faqs/aluno.png) no-repeat;
@@ -112,10 +117,136 @@ section {
   }
 }
 
-#faqs-parent {
+#faqs-pai {
   .row .image {
     width: 100%;
     background: url(../../../assets/faqs/pai.png) no-repeat;
     background-size: contain;
+  }
+}
+
+// WIDER SCREENS
+@media (max-width: 1720px) {
+  section {
+    padding: 0 12.5rem 7.5rem 12.5rem;
+  }
+}
+
+@media (max-width: 1440px) {
+  section {
+    padding: 0 12rem 7.5rem 12rem;
+
+    .row {
+      .image img {
+        width: 30rem;
+      }
+    }
+  }
+}
+
+// TABLET
+@media (max-width: 860px) {
+  .header {
+    min-height: unset;
+
+    .row {
+      margin-top: 7rem;
+      margin-right: 1.5rem;
+      margin-bottom: 1rem;
+      margin-left: 1.5rem;
+      padding: 0;
+  
+      .title {
+        width: 100%;
+        font-size: 3rem;
+        line-height: 130%;
+  
+        p {
+          max-width: 100%;
+          width: 100%;
+          font-size: 0.875rem;
+          margin-top: 0.5rem;
+        }
+      }
+    }
+  }
+
+  section {
+    padding: 0 1.5rem 3.75rem 1.5rem;
+
+    &:nth-of-type(1) {
+      padding-top: 3.75rem;
+    }
+
+    ::ng-deep app-yt-card {
+      position: relative;
+      width: 100%;
+      max-height: 13rem;
+
+      iframe {
+        width: 100%;
+        max-height: 100%;
+      }
+
+      #overlay {
+        width: 100%;
+        max-height: 100%;
+      }
+
+      #overlay {
+        position: absolute;
+        top: 0;
+
+
+        img {
+          width: 4rem;
+          height: 4rem;
+        }
+      }
+    }
+
+    .description {
+      display: flex;
+      flex-direction: column;
+
+      .description-title {
+        align-items: center;
+        font-size: 2rem;
+        line-height: 100%;
+        margin-top: 1rem;
+        margin-bottom: 0.5rem;
+
+        p {
+          align-self: flex-end;
+          font-size: 1.25rem;
+          line-height: 100%;
+          color: rgb(82, 139, 190);
+        }
+      }
+
+      .description-body {
+        font-size: 0.875rem;
+      }
+    }
+  }
+}
+
+@media (max-width: 640px) {
+  #faqs-professor,
+  #faqs-estudante,
+  #faqs-pai {
+    .row {
+      flex-direction: column;
+
+      .image {
+        height: unset;
+        background: transparent;
+  
+        .title {
+          color: #FF8811;
+          margin-left: 0;
+        }
+      }
+    }
   }
 }

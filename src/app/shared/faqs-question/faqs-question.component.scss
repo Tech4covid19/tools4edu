@@ -30,8 +30,11 @@
 
     .number {
       font-weight: bold;
-
       margin-right: 0.5rem;
+    }
+
+    .question-content {
+      margin-right: 2rem;
     }
 
     .caret {
@@ -59,6 +62,18 @@
     a:focus,
     a:visited {
       color: #FF8811;
+    }
+  }
+}
+
+@media (max-width: 640px) {
+  .title {
+    position: relative;
+
+    .caret {
+      position: absolute;
+      top: 0.375rem;
+      right: 0;
     }
   }
 }

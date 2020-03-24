@@ -1,146 +1,257 @@
 .header {
-    min-height: 31.625rem;
+  min-height: 31.625rem;
+  display: flex;
+  flex-direction: column;
+  background:  url(./../../../assets/sobre/header_background.png);
+  margin: 0;
+
+  .row {
+    height: 21.125rem;
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: center;
+    padding: 8rem 12rem 2.5rem 12rem;
+
+    .title {
+      font-family: Amatic SC;
+      font-style: normal;
+      font-weight: bold;
+      font-size: 4rem;
+      line-height: 74px;
+      letter-spacing: 0.04em;
+      color: #fff;
+
+      p {
+        font-family: Barlow;
+        font-style: normal;
+        font-weight: 300;
+        font-size: 1.25rem;
+        line-height: 130%;
+        max-width: 55%;
+        color: #fff;
+      }
+    }
+  }
+}
+
+section {
+  padding: 0rem 12rem 8rem 12rem;
+
+  &:nth-of-type(1) {
+    padding-top: 8rem;
+  }
+}
+
+.presentation {
+  display: flex;
+  justify-content: space-between;
+
+  > div {
+    flex-basis: 47.5%;
     display: flex;
     flex-direction: column;
-    background:  url(./../../../assets/sobre/header_background.png);
-    margin: 0;
-  
-    .row {
-      height: 21.125rem;
-      display: flex;
-      flex-direction: row;
-      justify-content: flex-start;
-      align-items: center;
-      padding: 8rem 12rem 2.5rem 12rem;
-  
-      .title {
-        font-family: Amatic SC;
-        font-style: normal;
-        font-weight: bold;
-        font-size: 4rem;
-        line-height: 74px;
-        letter-spacing: 0.04em;
-        color: #fff;
-  
-        p {
-          font-family: Barlow;
-          font-style: normal;
-          font-weight: 300;
-          font-size: 1.25rem;
-          line-height: 130%;
-          max-width: 55%;
-          color: #fff;
+    
+    p {
+      font-family: Barlow;
+      font-style: normal;
+      font-weight: 300;
+      font-size: 1.25rem;
+      line-height: 130%;
+      margin: 0;
+      letter-spacing: -0.01em;
+      color: #1F3F68;
+
+      &:not(:last-of-type) {
+        margin: 0 0 1.5rem;
+      }
+
+      &.strong {
+        font-weight: 900;  
+      }
+    }
+    
+    h1 {
+      font-family: Amatic SC;
+      font-style: normal;
+      font-weight: bold;
+      font-size: 2.25rem;
+      line-height: 133.5%;
+      letter-spacing: 0.02em;
+      margin: 0;
+      color: #1F3F68;
+    }
+  }
+}
+
+.video-wrapper {
+  display: flex;
+  justify-content: center;
+  flex-direction: row;
+  padding-bottom: 3.75rem;
+
+  .video {
+    display: flex;
+    justify-content: center;
+    align-self: center;
+    height: 594px;
+    width: 1056px;
+    background: linear-gradient(0deg, rgba(217, 3, 104, 0.7) 0%, rgba(217, 3, 104, 0) 23.58%);
+    background-size: cover;
+    border-radius: 40px;
+  }
+
+  ::ng-deep app-yt-card {
+    width: 1056px;
+    height: 594px;  
+    
+    &:hover {
+      color: linear-gradient(0deg, rgba(255, 136, 17, 0.7) 0%, rgba(255, 136, 17, 0) 23.58%)
+    }
+  }
+}
+
+.tech4covidcard-wrapper {
+  .card {
+    max-width: 527px;
+    min-height: 392px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background: #FFFFFF;
+    padding: 2.5rem;
+    border-radius: 1.25rem;
+    margin: 0 auto;
+    box-shadow: 0px 1px 32px rgba(90, 152, 208, 0.2);
+
+    p {
+      font-family: Barlow;
+      font-style: normal;
+      font-weight: 300;
+      font-size: 1rem;
+      line-height: 130%;
+      color: #1F3F68;
+      margin: 0 0 1.5rem;
+      opacity: 0.6;
+    }
+  }
+}
+
+// MOBILE VERSION
+@media (max-width: 860px) {
+  .header .row {
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 0;
+    margin-top: 10rem;
+    margin-right: 1.5rem;
+    margin-bottom: 1rem;
+    margin-left: 1.5rem;
+    
+    .title {
+      max-width: 50%;
+      margin-bottom: 2rem;
+
+      p {
+        font-size: 0.875rem;
+        line-height: 130%;
+        margin-top: 0.5rem;
+      }
+
+      + div {
+        img {
+          max-width: 75%;
+          display: block;
+          margin: 0 auto;
         }
       }
     }
   }
 
+  section {
+    padding: 1.875rem 1.5rem 1.875rem 1.5rem;
+
+    &:nth-of-type(1) {
+      padding-top: 3.75rem;
+    }
+
+    &:last-of-type {
+      padding-bottom: 3.75rem;
+    }
+  }
+
   .presentation {
-    padding: 10rem 16rem 7.5rem 16rem;
-    display: flex;
-      p {
-        font-family: Barlow;
-        font-style: normal;
-        font-weight: 300;
-        font-size: 20px;
-        line-height: 130%;
-        /* or 26px */
-        margin: 0 0 25px;
-        letter-spacing: -0.01em;
-        
-        /* text/Dark Blue */
-        
-        color: #1F3F68;
-      }
-      
+    flex-direction: column;
+
+    .left {
+      width: unset;
+      margin: 0;
+
       h1 {
-        font-family: Amatic SC;
-        font-style: normal;
-        font-weight: bold;
-        font-size: 36px;
-        line-height: 133.5%;
-        /* or 48px */
-        
-        letter-spacing: 0.02em;
-        
-        /* text/Dark Blue */
-        
-        color: #1F3F68;
+        font-size: 2rem;
+        margin: 0 0 1rem 0;
       }
-  }
 
-  p strong{
-    font-weight: 900;  
-  }
-  .wrapper {
-      display: flex;
-      justify-content: center;
-      flex-direction: row;
-      margin-bottom: 60px;
-      padding: 8rem 12rem 2.5rem 12rem;
-  
-  .video {
-      display: flex;
-      justify-content: center;
-      align-self: center;
-      height: 594px;
-      width: 1056px;
-    background: linear-gradient(0deg, rgba(217, 3, 104, 0.7) 0%, rgba(217, 3, 104, 0) 23.58%);
-    background-size: cover;
-    border-radius: 40px;
-  }
-}
-
-::ng-deep app-yt-card {
-    width: 1056px;
-    height: 594px;         
-}
-app-yt-card {
-    &:hover {
-        color: linear-gradient(0deg, rgba(255, 136, 17, 0.7) 0%, rgba(255, 136, 17, 0) 23.58%)
+      p {
+        font-size: 1.25rem;
+      }
     }
-}
-.first{
-    display: flex;
-    flex-direction: column;
-    width: 700px;
-    margin-right: 44px;
-}
-.second{
-    display: flex;
-    flex-direction: column;
-    width: 447px;
-    padding-top: 25px;
-    margin-left: 44px;
-}
-.card-wrapper {
-    margin-left: 193px;
-.card {
-   
-    display: flex;
-    flex-direction: column;
-    margin: 20px;
-    align-items: center;
-    background: #FFFFFF;
-    box-shadow: 0px 1px 32px rgba(90, 152, 208, 0.2);
-    border-radius: 20px;
-    padding: 40px;
-    max-width: 527px;
-    min-height: 392px;
+  }
 
-    p{
-        font-family: Barlow;
-        font-style: normal;
-        font-weight: 300;
-        font-size: 16px;
-        line-height: 130%;
-        /* or 21px */
-        margin: 0 0 25px;
+  ::ng-deep app-yt-card {
+    position: relative;
+    width: 100%;
+    max-height: 13rem;
 
-        /* text/Dark Blue */
-
-        color: #1F3F68;
-        opacity: 0.6;
+    iframe {
+      width: 100%;
+      max-height: 100%;
     }
+
+    #overlay {
+      width: 100%;
+      max-height: 100%;
+    }
+
+    #overlay {
+      position: absolute;
+      top: 0;
+
+
+      img {
+        width: 4rem;
+        height: 4rem;
+      }
+    }
+  }
+
+  .tech4covidcard-wrapper {
+    margin: 0;
+
+    .card {
+      margin: 0;
+    }
+  }
 }
+
+@media (max-width: 570px) {
+  section ::ng-deep app-yt-card {
+    max-width: 408.75px;
+    max-height: 230px;
+  }
+}
+
+@media (max-width: 570px) {
+  section ::ng-deep app-yt-card {
+    max-width: 408.75px;
+    max-height: 230px;
+  }
+}
+
+
+@media (max-width: 440px) {
+  section ::ng-deep app-yt-card {
+    max-width: 327px;
+    max-height: 184px;
+  }
 }
