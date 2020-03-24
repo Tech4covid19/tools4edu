@@ -29,6 +29,8 @@ export class NavbarComponent implements OnInit {
 
     if (this.drawer) {
       this.renderer.addClass(document.body, 'scroll-lock')
+    } else {
+      this.renderer.removeClass(document.body, 'scroll-lock')
     }
   }
 }
