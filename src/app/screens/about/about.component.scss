@@ -145,14 +145,27 @@ section {
 }
 
 @media (max-width: 1220px) {
-  ::ng-deep app-yt-card {
-    position: relative;
-    width: 45rem;
-    height: 15rem;
+  .video-wrapper {
+    .video {
+      width: 696.96px;
+      height: 392.04px;
+    }
 
-    iframe {
-      max-width: 45rem;
-      max-height: 15rem;
+    ::ng-deep app-yt-card {
+      position: relative;
+      width: 696.96px;
+      height: 392.04px;
+  
+      iframe {
+        width: 696.96px;
+        height: 392.04px;
+      }
+  
+      #overlay {
+        top: -396px;
+        width: 696.96px;
+        height: 392.04px;
+      }
     }
   }
 }
@@ -218,33 +231,31 @@ section {
     }
   }
 
-  ::ng-deep app-yt-card {
-    position: relative;
-    width: 100%;
-    max-height: 13rem;
-
-    iframe {
-      width: 100%;
-      max-height: 100%;
+  .video-wrapper {
+    .video {
+      width: 528px;
+      height: 297px;
     }
 
-    #overlay {
-      width: 100%;
-      max-height: 100%;
-    }
-
-    #overlay {
-      position: absolute;
-      top: 0;
-
-
-      img {
-        width: 4rem;
-        height: 4rem;
+    ::ng-deep app-yt-card {
+      position: relative;
+      width: 528px;
+      height: 297px;
+  
+      iframe {
+        width: 528px;
+        height: 297px;
+      }
+  
+      #overlay {
+        top: -300px;
+        width: 528px;
+        height: 297px;
       }
     }
   }
 
+  
   .tech4covidcard-wrapper {
     margin: 0;
 
@@ -255,23 +266,53 @@ section {
 }
 
 @media (max-width: 570px) {
-  section ::ng-deep app-yt-card {
-    max-width: 408.75px;
-    max-height: 230px;
+  .video-wrapper {
+    .video {
+      width: 348.48px;
+      height: 196.02px;
+    }
+
+    ::ng-deep app-yt-card {
+      position: relative;
+      width: 348.48px;
+      height: 196.02px;
+  
+      iframe {
+        width: 348.48px;
+        height: 196.02px;
+      }
+  
+      #overlay {
+        top: -200px;
+        width: 348.48px;
+        height: 196.02px;
+      }
+    }
   }
 }
-
-@media (max-width: 570px) {
-  section ::ng-deep app-yt-card {
-    max-width: 408.75px;
-    max-height: 230px;
-  }
-}
-
 
 @media (max-width: 440px) {
-  section ::ng-deep app-yt-card {
-    max-width: 327px;
-    max-height: 184px;
+  .video-wrapper {
+    .video {
+      width: 264px;
+      height: 148.5px;
+    }
+
+    ::ng-deep app-yt-card {
+      position: relative;
+      width: 264px;
+      height: 148.5px;
+  
+      iframe {
+        width: 264px;
+        height: 148.5px;
+      }
+  
+      #overlay {
+        top: -152.5px;
+        width: 264px;
+        height: 148.5px;
+      }
+    }
   }
 }
