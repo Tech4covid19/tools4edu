@@ -58,8 +58,13 @@
   <div class="title">
     Plataformas Suportadas
   </div>
-
-  <div class="cards">
+  <div class="cards" [fxHide.xs]="true">
+    <app-card-partners [logo]="'assets/zoom.svg'"></app-card-partners>
+    <app-card-partners [logo]="'assets/brevemente.svg'"></app-card-partners>
+    <app-card-partners [logo]="'assets/brevemente.svg'"></app-card-partners>
+    <app-card-partners [logo]="'assets/brevemente.svg'"></app-card-partners>
+  </div>
+  <div class="cards" [fxHide.gt-xs]="true">
     <app-carousel-partners></app-carousel-partners>
   </div>
 </div>
