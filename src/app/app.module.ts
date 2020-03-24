@@ -13,6 +13,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { AboutComponent } from './screens/about/about.component';
 import { NgxYoutubePlayerModule } from 'ngx-youtube-player';
 import { FAQsComponent } from './screens/faqs/faqs.component';
+import { PrivacyComponent } from './screens/privacy/privacy.component';
 
 @NgModule({
   declarations: [
@@ -23,6 +24,7 @@ import { FAQsComponent } from './screens/faqs/faqs.component';
     PaiComponent,
     FAQsComponent,
     AboutComponent,
+    PrivacyComponent,
   ],
   imports: [
     BrowserModule,
