@@ -47,7 +47,7 @@
   flex-direction: row;
   justify-content: space-evenly;
   margin: 0 6rem 2rem 6rem;
-  transform: translate(10px, -120px);
+  transform: translate(0px, -120px);
 
   > div {
     width: 312px;
@@ -69,17 +69,17 @@
     
     &.professor {
       background:  url(./../../../assets/professor.png) no-repeat;
-      background-size: contain;
+      background-size: cover;
     }
   
     &.aluno {
       background:  url(./../../../assets/aluno.png) no-repeat;
-      background-size: contain;
+      background-size: cover;
     }
   
     &.pai {
       background:  url(./../../../assets/pai.png) no-repeat;
-      background-size: contain;
+      background-size: cover;
     }
 
     .title {
@@ -146,7 +146,7 @@
     flex-direction: column;
     align-items: center;
     margin: 0;
-    transform: translate(10px, -3rem);
+    transform: translate(0px, -3rem);
 
     > div {
       width: 245px;

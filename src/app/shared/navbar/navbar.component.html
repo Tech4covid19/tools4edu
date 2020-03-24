@@ -1,14 +1,49 @@
 <div  class="header" fxLayout="row" fxFlex="100">
   <div class="logo">
-    <img src="assets/Logo.svg" [routerLink]="['/']" />
+    <img src="assets/logo/logo-dark.png" [routerLink]="['/']" />
   </div>
     
-  <div class="menu">
+  <div class="menu menu-desktop">
     <div [ngClass]="url == '' ? 'active' : ''" class="home" [routerLink]="['/']">Início</div>
     <div [ngClass]="url == 'professor' ? 'active' : ''" class="professores" [routerLink]="['/professor']">Professor</div>
     <div [ngClass]="url == 'aluno' ? 'active' : ''" class="aluno" [routerLink]="['/aluno']">Aluno</div>
     <div [ngClass]="url == 'pai' ? 'active' : ''" class="pais" [routerLink]="['/pai']">Pais/ EE</div>
     <div [ngClass]="url == 'faqs' ? 'active' : ''" class="help" [routerLink]="['/faqs']">Ajuda</div>
-    <div [ngClass]="url == 'about' ? 'active' : ''" class="about" [routerLink]="['/sobre']">Sobre Nós</div>
+    <div [ngClass]="url == 'sobre' ? 'active' : ''" class="about" [routerLink]="['/sobre']">Sobre Nós</div>
+  </div>
+
+  <div [ngClass]="drawer ? 'open' : ''" class="drawer-opener" (click)="toggleDrawer()">
+    <span class="hamburger"></span>  
+  </div>
+
+  <div [ngClass]="drawer ? 'open' : ''" class="drawer">
+    <div class="top">
+      <div class="logo">
+        <img src="assets/logo/logo-light.svg" [routerLink]="['/']" />
+      </div>
+    </div>
+
+    <ul class="menu menu-mobile">
+      <li [ngClass]="url == '' ? 'active' : ''" class="home" [routerLink]="['/']">
+        Início
+      </li>
+
+      <li [ngClass]="url == 'professor' ? 'active' : ''" class="professores" [routerLink]="['/professor']">
+        Professor
+      </li>
+      <li [ngClass]="url == 'aluno' ? 'active' : ''" class="aluno" [routerLink]="['/aluno']">
+        Aluno
+      </li>
+      <li [ngClass]="url == 'pai' ? 'active' : ''" class="pais" [routerLink]="['/pai']">
+        Pai
+      </li>
+      <li [ngClass]="url == 'faqs' ? 'active' : ''" class="help" [routerLink]="['/faqs']">
+        Ajuda
+      </li>
+
+      <li [ngClass]="url == 'sobre' ? 'active' : ''" class="about" [routerLink]="['/sobre']">
+        Sobre nós
+      </li>
+    </ul>
   </div>
 </div>
