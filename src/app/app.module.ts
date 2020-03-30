@@ -1,9 +1,9 @@
-import { BrowserModule } from '@angular/platform-browser';
-import { NgModule } from '@angular/core';
-import { FlexLayoutModule } from '@angular/flex-layout';
-import { AppRoutingModule } from './app-routing.module';
-import { AppComponent } from './app.component';
-import { HomeComponent } from './screens/home/home.component';
+import { BrowserModule } from "@angular/platform-browser";
+import { NgModule } from "@angular/core";
+import { FlexLayoutModule } from "@angular/flex-layout";
+import { AppRoutingModule } from "./app-routing.module";
+import { AppComponent } from "./app.component";
+import { HomeComponent } from "./screens/home/home.component";
 
 import { SharedModule } from './shared/shared.module';
 import { ProfessorComponent } from './screens/professor/professor.component';
@@ -39,7 +39,7 @@ export function createApollo(httpLink: HttpLink) {
     PaiComponent,
     FAQsComponent,
     AboutComponent,
-    PrivacyComponent,
+    PrivacyComponent
   ],
   imports: [
     BrowserModule,
@@ -57,7 +57,6 @@ export function createApollo(httpLink: HttpLink) {
     SharedModule,
     BrowserAnimationsModule,
     NgxYoutubePlayerModule.forRoot(),
-    
   ],
   providers: [
     {
@@ -68,4 +67,4 @@ export function createApollo(httpLink: HttpLink) {
   ],
   bootstrap: [AppComponent]
 })
-export class AppModule { }
+export class AppModule {}
