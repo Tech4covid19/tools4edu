@@ -52,9 +52,9 @@ export class YtCardComponent implements OnInit, AfterViewInit {
     this.mediaPlayer = new  
             MediaElementPlayer(this.mediaPlayerElement.nativeElement);
             this.mediaPlayer.setSrc(this.videoIdOut.videoUrl);
-            this.mediaPlayer.height = '100%'
-            this.mediaPlayer.width = "100%"
-            this.mediaPlayer.enableAutosize = true
+            this.mediaPlayer.height = 594
+            this.mediaPlayer.width = 1056
+            this.mediaPlayer.enableAutosize = false
             this.mediaPlayer.load();
             const video = this.mediaPlayerElement.nativeElement
             setTimeout( () => {

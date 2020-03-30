@@ -18,6 +18,37 @@
 video {
   width: 100%;
   height: 100%;
+
+}
+
+// ::ng-deep .mejs__overlay-button {
+//   background: url(./../../../assets/playicon.png) no-repeat;
+//   background-position: 0 -0px;
+//   height: 140px;
+//   width: 140px;
+// }
+
+
+::ng-deep .mejs__mediaelement {
+  
+  mask-image: url(./../../../assets/maske.svg);
+  mask-position: center;
+  mask-repeat: no-repeat;
+  mask-border-slice: 20px;
+
+  
+}
+::ng-deep .mejs__controls:not([style*="display: none"]) {
+  
+  background: transparent;
+}
+::ng-deep .mejs__container {
+  background: #FFF;
+  font-family: Helvetica,Arial,serif;
+  position: relative;
+  text-align: left;
+  text-indent: 0;
+  vertical-align: top;
 }
   .wrapper{
     display: flex;
@@ -76,5 +107,7 @@ video {
   display: flex;
   flex-direction: column;
   justify-content: center;
-  align-items: center;
+  align-items: flex-start;
+ 
 }
+
