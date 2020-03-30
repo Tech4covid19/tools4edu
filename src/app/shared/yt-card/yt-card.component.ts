@@ -1,5 +1,8 @@
 import { Component, OnInit, Input, Output, EventEmitter, AfterViewInit, ViewChild, ElementRef } from '@angular/core';
 import browser from 'detect-browser';
+import { MediaObserver } from '@angular/flex-layout';
+import { Observable, fromEvent } from 'rxjs';
+import { debounceTime } from 'rxjs/operators';
 declare const MediaElementPlayer: any;
 @Component({
   selector: 'app-yt-card',
@@ -17,13 +20,22 @@ export class YtCardComponent implements OnInit, AfterViewInit {
   videoDescription: any;
   videoTitle:any;
   song: string;
-
+  width = 1054
+  height = 596
   @ViewChild('mediaPlayerElement') mediaPlayerElement: ElementRef;
 
   private player;
   mediaPlayer: any;
 
-  constructor() {}
+  constructor(public mediaObserver: MediaObserver ) { 
+    mediaObserver.media$.subscribe(el => console.log(el.property));
+    fromEvent(window, 'resize').pipe(
+    debounceTime(1500) )
+    .subscribe((event:any) => {
+      this.width = event.target.innerWidth;
+      this.height = event.target.innerHeight
+    });
+  }
 
   ngOnInit() {
 
@@ -52,9 +64,9 @@ export class YtCardComponent implements OnInit, AfterViewInit {
     this.mediaPlayer = new  
             MediaElementPlayer(this.mediaPlayerElement.nativeElement);
             this.mediaPlayer.setSrc(this.videoIdOut.videoUrl);
-            this.mediaPlayer.height = 594
-            this.mediaPlayer.width = 1056
-            this.mediaPlayer.enableAutosize = false
+            this.mediaPlayer.video.height = '100%';
+            this.mediaPlayer.video.width = '100%';
+            this.mediaPlayer.enableAutosize = true
             this.mediaPlayer.load();
             const video = this.mediaPlayerElement.nativeElement
             setTimeout( () => {

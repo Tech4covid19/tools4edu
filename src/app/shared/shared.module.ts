@@ -15,6 +15,7 @@ import { FaqsPaiComponent } from './faqs-pai/faqs-pai.component';
 import { YtCardComponent } from './yt-card/yt-card.component';
 import { CarouselPartnersComponent } from './carousel-partners/carousel-partners.component';
 import { VideoPlayerModule } from './video-player/video-player.module';
+import { FlexLayoutModule } from '@angular/flex-layout';
 
 
 @NgModule({
@@ -23,6 +24,7 @@ import { VideoPlayerModule } from './video-player/video-player.module';
     CommonModule,
     RouterModule,
     CarouselModule,
+    FlexLayoutModule,
     VideoPlayerModule,
     NgxYoutubePlayerModule.forRoot(),
   ],

@@ -15,10 +15,10 @@
    
 }
 
-video {
-  width: 100%;
-  height: 100%;
-
+:host video {
+  /* override other styles to make responsive */
+  width: 100%    !important;
+  height: auto   !important;
 }
 
 // ::ng-deep .mejs__overlay-button {
@@ -27,10 +27,13 @@ video {
 //   height: 140px;
 //   width: 140px;
 // }
+// ::ng-deep mediaelementwrapper .mejs__overlay {
+//   max-width: 1056px !important;
+//   max-height: 594px !important;
+// }
 
+::ng-deep .mejs__mediaelement, .mejs__poster  {
 
-::ng-deep .mejs__mediaelement {
-  
   mask-image: url(./../../../assets/maske.svg);
   mask-position: center;
   mask-repeat: no-repeat;
@@ -40,7 +43,9 @@ video {
 }
 ::ng-deep .mejs__controls:not([style*="display: none"]) {
   
-  background: transparent;
+    background: transparent;
+
+   
 }
 ::ng-deep .mejs__container {
   background: #FFF;
