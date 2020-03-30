@@ -1,9 +1,22 @@
-
-  <youtube-player
-  [videoId]="videoIdOut"
-  (ready)="savePlayer($event)"
-  (change)="onStateChange($event)"
-></youtube-player>
+<div class="videocontent">
+    <video #mediaPlayerElement preload="auto" controls></video>
 
     
-    <div id="overlay" (click)="play()"><img *ngIf="!playing" src="assets/playicon.png"></div>
+    <!-- <div id="overlay" (click)="play()"><img *ngIf="!playing" src="assets/playicon.png"></div> -->
+
+    <div class="description">
+      <div class="description-title">
+        {{ videoIdOut?.title }} 
+      </div>
+      <p class="time">{{ videoIdOut?.time }} Min</p>
+    </div>
+    <div class="description">
+      <div class="description-body">
+        {{ videoIdOut?.description }}
+      </div>
+    </div>
+ 
+
+
+  
+</div>

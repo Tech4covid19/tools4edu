@@ -102,34 +102,10 @@
     </div>
   </div>  
 </section> -->
-<section>
-  <div class="row">
-    <app-yt-card [videoIdOut]="'Y15ZpHC4XaA'"></app-yt-card>
-    <div class="description">
-      <h2 class="description-title">
-        Entrar na aula  <p class="time">1.10 Min</p>
-      </h2>
-
-      <p class="description-body">
-        Neste vídeo aprenda o que o seu educando precisa fazer para estar<br>
-        informado das aulas, entrar e participar.
-      </p>
-
-    </div>
+<section class="first">
+  <div class="row" *ngFor="let video of videos$ | async">
+    <app-yt-card [videoIdOut]="video" [ngStyle]="{'order': video.order }"></app-yt-card>
+    
   </div>
 </section>
 
-<section>
-  <div class="row">
-    <app-yt-card [videoIdOut]="'E0WV4gzjc8s'"></app-yt-card>
-    <div class="description">
-      <h2 class="description-title">
-        Contactar o professor  <p class="time">0.50 Min</p>
-      </h2>
-
-      <p class="description-body">
-        Saiba como contatar o professor e reunir com ele quando for preciso.
-      </p>
-    </div>
-  </div>
-</section>

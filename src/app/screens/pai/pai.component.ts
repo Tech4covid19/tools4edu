@@ -1,4 +1,10 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Query } from '@angular/core';
+import { Apollo, QueryRef } from 'apollo-angular';
+import gql from 'graphql-tag';
+import { map } from 'rxjs/operators';
+import { Observable } from 'apollo-link';
+import { Subscription } from 'apollo-client/util/Observable';
+
 
 @Component({
   selector: 'app-pai',
@@ -7,9 +13,33 @@ import { Component, OnInit } from '@angular/core';
 })
 export class PaiComponent implements OnInit {
 
-  constructor() { }
+  videos$: any;
+
+  constructor(private apollo: Apollo) { }
 
   ngOnInit() {
+    this.videos$ = this.apollo
+    .watchQuery<any>({
+      query: gql`
+      {
+        provider(code: "ZOOM") {
+          videos(stakeholder:"PAIS") {
+            title,
+            description
+            videoUrl,
+            time,
+            stakeholder {
+              title
+            }
+          }
+        }
+      }
+      `,
+    })
+    .valueChanges.pipe(map((result:any) => 
+        result.data.provider.videos
+    )
+    )
+   
   }
-
 }

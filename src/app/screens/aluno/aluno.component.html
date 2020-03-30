@@ -9,19 +9,10 @@
   </div>
 </div>
 
-<section>
-  <div class="row">
-    <app-yt-card [videoIdOut]="'a-2cRIrXesk'"></app-yt-card>
-    <div class="description" style="display: contents;">
-      <h2 class="description-title">
-        Participar na aula  <p class="time">1.20 Min</p>
-      </h2>
+<section class="first">
+  <div class="row" *ngFor="let video of videos$ | async">
 
-      <p class="description-body">
-        Neste vídeo, descobre passo a passo como vais saber das aulas<br>
-        marcadas pelo teu professor, como entrar, participar e reencontrar os<br>
-          teus professores e colegas.
-      </p>
-    </div>
+    <app-yt-card [videoIdOut]="video"></app-yt-card>
+    
   </div>
 </section>

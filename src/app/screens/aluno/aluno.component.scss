@@ -38,7 +38,7 @@
 }
 
 section {
-  padding: 0 16rem 7.5rem 16rem;
+  // padding: 0 16rem 7.5rem 16rem;
 
   &:nth-of-type(1) {
     padding-top: 7.5rem;
@@ -95,10 +95,6 @@ section {
   }
 }
 
-::ng-deep app-yt-card {
-  width: 1056px;
-  height: 594px;         
-}
 
 .time {
   display: flex;
@@ -121,7 +117,7 @@ section {
 // WIDER SCREENS
 @media (max-width: 1720px) {
   section {
-    padding: 0 12.5rem 7.5rem 12.5rem;
+    // padding: 0 12.5rem 7.5rem 12.5rem;
   }
 }
 

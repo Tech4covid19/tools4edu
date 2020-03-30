@@ -14,6 +14,7 @@ import { FaqsAlunoComponent } from './faqs-aluno/faqs-aluno.component';
 import { FaqsPaiComponent } from './faqs-pai/faqs-pai.component';
 import { YtCardComponent } from './yt-card/yt-card.component';
 import { CarouselPartnersComponent } from './carousel-partners/carousel-partners.component';
+import { VideoPlayerModule } from './video-player/video-player.module';
 
 
 @NgModule({
@@ -22,8 +23,9 @@ import { CarouselPartnersComponent } from './carousel-partners/carousel-partners
     CommonModule,
     RouterModule,
     CarouselModule,
+    VideoPlayerModule,
     NgxYoutubePlayerModule.forRoot(),
   ],
-  exports: [NavbarComponent, CarouselComponent, CardComponent, CardPartnersComponent, FaqsQuestionComponent, FaqsProfessorComponent, FaqsAlunoComponent, FaqsPaiComponent, FooterComponent, YtCardComponent, CarouselPartnersComponent]
+  exports: [NavbarComponent,VideoPlayerModule, CarouselComponent, CardComponent, CardPartnersComponent, FaqsQuestionComponent, FaqsProfessorComponent, FaqsAlunoComponent, FaqsPaiComponent, FooterComponent, YtCardComponent, CarouselPartnersComponent]
 })
 export class SharedModule { }
