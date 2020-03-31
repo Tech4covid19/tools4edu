@@ -34,7 +34,9 @@
               "node_modules/mediaelement/build/mediaelementplayer.min.css"
             ],
             "scripts": [
-              "node_modules/mediaelement/build/mediaelement-and-player.min.js",   
+              "node_modules/mediaelement/build/mediaelement-and-player.min.js",
+              "node_modules/mediaelement-plugins/dist/airplay/airplay.min.js",
+              "node_modules/mediaelement-plugins/dist/chromecast/chromecast.min.js",
               "node_modules/hls.js/dist/hls.js"
             ]
           },

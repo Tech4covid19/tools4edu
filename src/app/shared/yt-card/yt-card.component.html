@@ -1,12 +1,12 @@
 <div class="videocontent">
-    <video #mediaPlayerElement  preload="auto" controls></video>
+    <video #mediaPlayerElement width="{{width}}" height="{{height}}"  preload="auto" controls></video>
 
-    
+
     <!-- <div id="overlay" (click)="play()"><img *ngIf="!playing" src="assets/playicon.png"></div> -->
 
     <div class="description">
       <div class="description-title">
-        {{ videoIdOut?.title }} 
+        {{ videoIdOut?.title }}
       </div>
       <p class="time">{{ videoIdOut?.time }} Min</p>
     </div>
@@ -15,8 +15,8 @@
         {{ videoIdOut?.description }}
       </div>
     </div>
- 
 
 
-  
+
+
 </div>
