@@ -2,7 +2,6 @@ import { Component, OnInit } from '@angular/core';
 import {Apollo} from 'apollo-angular';
 import gql from 'graphql-tag';
 import { map } from 'rxjs/operators';
-import { ActivatedRoute } from '@angular/router';
 @Component({
   selector: 'app-aluno',
   templateUrl: './aluno.component.html',
@@ -12,7 +11,7 @@ export class AlunoComponent implements OnInit {
   videos: any;
   videos$: any;
 
-  constructor(private apollo: Apollo, private activatedRoute: ActivatedRoute) { }
+  constructor(private apollo: Apollo) { }
 
   ngOnInit() {
 
@@ -21,10 +20,11 @@ export class AlunoComponent implements OnInit {
         query: gql`
         {
           provider(code: "ZOOM") {
-            videos {
+            videos(stakeholder:"ALUNO") {
               title,
               description
               videoUrl,
+              time,
               stakeholder {
                 title
               }
@@ -34,7 +34,7 @@ export class AlunoComponent implements OnInit {
         `,
       })
       .valueChanges.pipe(map((result:any) => 
-          result.data.provider.videos.filter( video => video.stakeholder.title === "Aluno")
+          result.data.provider.videos
       )
       )
   }

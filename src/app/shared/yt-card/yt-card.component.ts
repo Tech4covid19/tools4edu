@@ -6,12 +6,13 @@ import {
   EventEmitter,
   AfterViewInit,
   ViewChild,
-  ElementRef
+  ElementRef,
+  Renderer2
 } from "@angular/core";
 import browser from "detect-browser";
 import { MediaObserver } from "@angular/flex-layout";
 import { Observable, fromEvent } from "rxjs";
-import { debounceTime } from "rxjs/operators";
+import { debounceTime, auditTime } from "rxjs/operators";
 declare const MediaElementPlayer: any;
 @Component({
   selector: "app-yt-card",
@@ -28,36 +29,47 @@ export class YtCardComponent implements OnInit, AfterViewInit {
   videoTitle: any;
   song: string;
   width = 1054;
-  height = 596;
+  height = this.width / 1.77;
   @ViewChild("mediaPlayerElement") mediaPlayerElement: ElementRef;
 
   private player;
   mediaPlayer: any;
 
-  constructor(public mediaObserver: MediaObserver) {
-    mediaObserver.media$.subscribe(el => console.log(el.property));
-    fromEvent(window, "resize")
-      .pipe(debounceTime(1500))
-      .subscribe((event: any) => {
-        this.width = event.target.innerWidth;
-        this.height = event.target.innerHeight;
-      });
+  constructor(public mediaObserver: MediaObserver, private renderer: Renderer2) {
+    mediaObserver.media$.subscribe(el => {
+      console.log(el.property)
+      this.width = Number(el.mediaQuery.split('max-width:')[1].split('px)')[0])
+      
+      console.log(this.width)
+    } );
+    
   }
 
   ngOnInit() {
     // HLS
-    this.song =
-      "https://d3ijatdo5d89ru.cloudfront.net/out/v1/40b710c6d0324034837c72b018bde9ce/f5470f1729594857ad487383445925b9/ab0e16fc3d1147d6aab9aa9590503e76/index.m3u8";
 
-    console.log("Edge and Safari - Player");
+  
   }
 
   ngAfterViewInit() {
     this.loadMediaPlayer();
+    fromEvent(window, "resize")
+    .pipe(auditTime(100))
+    .subscribe((event: any) => {
+      this.width = event['target'].innerWidth
+      this.height = event['target'].innerHeight;
+      this.renderer.setAttribute(this.mediaPlayerElement.nativeElement,'width', this.width.toString())
+      this.renderer.setAttribute(this.mediaPlayerElement.nativeElement,'height', (this.width / 1.77 ).toString())
+      console.log(this.width)
+    });
+    
   }
   loadMediaPlayer() {
     this.mediaPlayer = new MediaElementPlayer(
       this.mediaPlayerElement.nativeElement, {
+            videoWidth: this.width,
+            videoHeight: this.width / 1.77,
+            autoSize: true,
             features: ['playpause', 'current', 'progress', 'duration', 'volume', 'fullscreen', 'airplay']
         }
     );
@@ -68,6 +80,7 @@ export class YtCardComponent implements OnInit, AfterViewInit {
     video.addEventListener("loadedmetadata", event => {
       console.log(event);
     });
+    
     video.onloadedmetadata = event => {
       console.log(video.duration);
       this.time = parseFloat((video.duration / 60).toFixed(2));
