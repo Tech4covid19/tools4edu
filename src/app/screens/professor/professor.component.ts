@@ -14,29 +14,30 @@ export class ProfessorComponent implements OnInit {
 
   constructor(private apollo: Apollo) { }
 
+  
   ngOnInit() {
+
     this.videos$ =  this.apollo
-    .watchQuery({
-      query: gql`
-      {
-        provider(code: "ZOOM") {
-          videos(stakeholder:"PROFESSOR") {
-            title,
-            description
-            videoUrl,
-            time,
-            stakeholder {
-              title
-            }
-          }
-        }
-      }
-      `,
-    })
-    .valueChanges.pipe(map((result:any) => 
-        result.data.provider.videos
-    )
-    )
-  }
+       .watchQuery({
+         query: gql`
+         {
+           provider(code: "ZOOM") {
+             videos {
+               title,
+               description
+               videoUrl,
+               stakeholder {
+                 title
+               }
+             }
+           }
+         }
+         `,
+       })
+       .valueChanges.pipe(map((result:any) => 
+           result.data.provider.videos.filter( video => video.stakeholder.title === "Professor")
+       )
+       )
+   }
 
 }

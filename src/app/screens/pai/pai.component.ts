@@ -17,29 +17,31 @@ export class PaiComponent implements OnInit {
 
   constructor(private apollo: Apollo) { }
 
+  
   ngOnInit() {
-    this.videos$ = this.apollo
-    .watchQuery<any>({
-      query: gql`
-      {
-        provider(code: "ZOOM") {
-          videos(stakeholder:"PAIS") {
-            title,
-            description
-            videoUrl,
-            time,
-            stakeholder {
-              title
-            }
-          }
-        }
-      }
-      `,
-    })
-    .valueChanges.pipe(map((result:any) => 
-        result.data.provider.videos
-    )
-    )
+
+    this.videos$ =  this.apollo
+       .watchQuery({
+         query: gql`
+         {
+           provider(code: "ZOOM") {
+             videos {
+               title,
+               description
+               videoUrl,
+               stakeholder {
+                 title
+               }
+             }
+           }
+         }
+         `,
+       })
+       .valueChanges.pipe(map((result:any) => 
+           result.data.provider.videos.filter( video => video.stakeholder.title === "Pais")
+       )
+       )
+   }
    
-  }
+  
 }
