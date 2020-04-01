@@ -11,7 +11,7 @@
     flex-direction: row;
     justify-content: flex-start;
     align-items: center;
-    padding: 8rem 12rem 2.5rem 12rem;
+    padding: 120px 12rem 2.5rem;
 
     .title {
       font-family: Amatic SC;
@@ -51,7 +51,7 @@ section {
     flex-basis: 47.5%;
     display: flex;
     flex-direction: column;
-    
+
     p {
       font-family: Barlow;
       font-style: normal;
@@ -67,10 +67,10 @@ section {
       }
 
       &.strong {
-        font-weight: 900;  
+        font-weight: 900;
       }
     }
-    
+
     h1 {
       font-family: Amatic SC;
       font-style: normal;
@@ -88,7 +88,7 @@ section {
   display: flex;
   justify-content: center;
   flex-direction: row;
-  padding-bottom: 3.75rem;
+  padding-bottom: 60px;
 
   .video {
     display: flex;
@@ -103,8 +103,8 @@ section {
 
   ::ng-deep app-yt-card {
     width: 1056px;
-    height: 594px;  
-    
+    height: 594px;
+
     &:hover {
       color: linear-gradient(0deg, rgba(255, 136, 17, 0.7) 0%, rgba(255, 136, 17, 0) 23.58%)
     }
@@ -112,9 +112,16 @@ section {
 }
 
 .tech4covidcard-wrapper {
+
+  padding: 0rem 12rem 8rem 120px;
+
+  .title{
+    margin-bottom: 10px;
+  };
+
   .card {
     max-width: 527px;
-    min-height: 392px;
+    min-height: 300px;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -155,12 +162,12 @@ section {
       position: relative;
       width: 696.96px;
       height: 392.04px;
-  
+
       iframe {
         width: 696.96px;
         height: 392.04px;
       }
-  
+
       #overlay {
         top: -396px;
         width: 696.96px;
@@ -180,7 +187,7 @@ section {
     margin-right: 1.5rem;
     margin-bottom: 1rem;
     margin-left: 1.5rem;
-    
+
     .title {
       max-width: 50%;
       margin-bottom: 2rem;
@@ -241,12 +248,12 @@ section {
       position: relative;
       width: 528px;
       height: 297px;
-  
+
       iframe {
         width: 528px;
         height: 297px;
       }
-  
+
       #overlay {
         top: -300px;
         width: 528px;
@@ -255,7 +262,7 @@ section {
     }
   }
 
-  
+
   .tech4covidcard-wrapper {
     margin: 0;
 
@@ -276,12 +283,12 @@ section {
       position: relative;
       width: 348.48px;
       height: 196.02px;
-  
+
       iframe {
         width: 348.48px;
         height: 196.02px;
       }
-  
+
       #overlay {
         top: -200px;
         width: 348.48px;
@@ -302,12 +309,12 @@ section {
       position: relative;
       width: 264px;
       height: 148.5px;
-  
+
       iframe {
         width: 264px;
         height: 148.5px;
       }
-  
+
       #overlay {
         top: -152.5px;
         width: 264px;
