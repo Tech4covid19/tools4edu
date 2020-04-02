@@ -18,6 +18,8 @@
   /* override other styles to make responsive */
   width: 100% !important;
   height: auto !important;
+  display: flex;
+  flex: 1 1 100%;
 }
 
 // ::ng-deep .mejs__overlay-button {
@@ -36,6 +38,7 @@
   mask-image: url(./../../../assets/maske.svg);
   mask-position: center;
   mask-repeat: no-repeat;
+  mask-size: cover;
   mask-border-slice: 20px;
 }
 
@@ -109,11 +112,17 @@
   }
 }
 .videocontent {
-  width: 80%;
+  width: 100%;
   /* max-width: 10px; */
   margin: 0 auto;
   display: flex;
+  flex-wrap: nowrap;
   flex-direction: column;
   justify-content: center;
   align-items: flex-start;
+ 
 }
+::ng-deep .mejs__overlay {
+  border-radius: 40px;
+  background: linear-gradient(0deg, rgba(123, 201, 80, 0.7) 0%, rgba(123, 201, 80, 0) 23.58%)
+ }

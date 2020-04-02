@@ -67,8 +67,7 @@ export class YtCardComponent implements OnInit, AfterViewInit {
   loadMediaPlayer() {
     this.mediaPlayer = new MediaElementPlayer(
       this.mediaPlayerElement.nativeElement, {
-            videoWidth: this.width,
-            videoHeight: this.width / 1.77,
+  
             autoSize: true,
             features: ['playpause', 'current', 'progress', 'duration', 'volume', 'fullscreen', 'airplay']
         }
