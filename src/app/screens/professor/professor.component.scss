@@ -3,6 +3,9 @@
   display: flex;
   flex-direction: column;
   background-image:url(./../../../assets/professor/header-prof.jpg);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
   margin: 0;
 
   .row {
@@ -21,6 +24,7 @@
       line-height: 74px;
       letter-spacing: 0.04em;
       color: #fff;
+      //margin-top : 257px;
 
       p {
         font-family: Barlow;
@@ -28,9 +32,9 @@
         font-weight: 300;
         font-size: 1.25rem;
         line-height: 130%;
-        max-width: 55%;
+        max-width: 80%;
         color: #fff;
-        margin-top: 2.5rem;
+        margin-top: 1.5rem;
       }
     }
   }
@@ -113,7 +117,7 @@ section {
 }
 
 .description-title {
-  margin-top: 40px;
+  margin-bottom: 16px;
   display: flex;
   align-items: flex-end;
 }

@@ -4,6 +4,8 @@
   flex-direction: column;
   background: url(./../../../assets/aluno/header-aluno.jpg);
   background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
   margin: 0;
 
   .row {
@@ -22,6 +24,7 @@
       line-height: 74px;
       letter-spacing: 0.04em;
       color: #fff;
+      //margin-top : 257px;
 
       p {
         font-family: Barlow;
@@ -29,9 +32,9 @@
         font-weight: 300;
         font-size: 1.25rem;
         line-height: 130%;
-        max-width: 55%;
+        max-width: 80%;
         color: #fff;
-        margin-top: 2.5rem;
+        margin-top: 1.5rem;
       }
     }
   }
@@ -95,7 +98,6 @@ section {
   }
 }
 
-
 .time {
   display: flex;
   align-self: flex-end;
@@ -110,6 +112,7 @@ section {
 
 .description-title {
   margin-top: 40px;
+  margin-bottom : 16px;
   display: flex;
   align-items: flex-end;
 }
