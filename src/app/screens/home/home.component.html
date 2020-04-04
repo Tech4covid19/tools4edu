@@ -14,7 +14,7 @@
 </div>
 
 <div class="buttons">
-  <div class="professor" [routerLink]="['/professor']">
+  <div class="professor" (click)="goTo('Professor')">
     <div class="title">Sou Professor</div>
     <div class="saber">
       Saber mais
@@ -24,7 +24,7 @@
       </svg>
     </div>
   </div>
-  <div class="aluno" [routerLink]="['/aluno']">
+  <div class="aluno" (click)="goTo('Aluno')">
     <div class="title">Sou Aluno</div>
     <div class="saber">
       Saber mais
@@ -34,7 +34,7 @@
       </svg>
     </div>
   </div>
-  <div class="pai" [routerLink]="['/pai']">
+  <div class="pai" (click)="goTo('Pais')">
     <div class="title">Sou Pai / EE</div>
     <div class="saber">
       Saber mais

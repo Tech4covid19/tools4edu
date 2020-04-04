@@ -12,32 +12,32 @@ export class AlunoComponent implements OnInit {
   videos: any;
   videos$: any;
 
-  constructor(private apollo: Apollo, private activatedRoute: ActivatedRoute) { }
+  constructor(private apollo: Apollo, private route: ActivatedRoute) { }
 
   ngOnInit() {
 
-   this.videos$ =  this.apollo
-      .watchQuery({
-        query: gql`
-        {
-          provider(code: "ZOOM") {
-            videos {
-              title,
-              description,
-              time,
-              videoUrl,
-              stakeholder {
-                title
-              }
+    this.videos$ =  this.apollo
+    .watchQuery({
+      query: gql`
+      {
+       
+          video(id: "${this.route.snapshot.params.id}") {
+            title,
+            description,
+            videoUrl,
+            time,
+            stakeholder {
+              title
             }
           }
-        }
-        `,
-      })
-      .valueChanges.pipe(map((result:any) => 
-          result.data.provider.videos.filter( video => video.stakeholder.title === "Aluno")
-      )
-      )
+        
+      }
+      `,
+    })
+    .valueChanges.pipe(map((result:any) => 
+        result.data.video
+    )
+    )
   }
 
 

@@ -22,6 +22,7 @@ import { ApolloModule, APOLLO_OPTIONS } from 'apollo-angular';
 import { InMemoryCache } from 'apollo-cache-inmemory';
 import { HttpLink, HttpLinkModule } from 'apollo-angular-link-http';
 import { HttpClientModule } from '@angular/common/http';
+import { ContentComponent } from './screens/content/content.component';
 const uri = 'https://cnom3x70jk.execute-api.eu-central-1.amazonaws.com/dev/graphql'; // <-- add the URL of the GraphQL server here
 export function createApollo(httpLink: HttpLink) {
   return {
@@ -40,6 +41,7 @@ export function createApollo(httpLink: HttpLink) {
     FAQsComponent,
     AboutComponent,
     PrivacyComponent,
+    ContentComponent,
   ],
   imports: [
     BrowserModule,

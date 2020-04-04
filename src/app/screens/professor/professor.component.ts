@@ -3,6 +3,7 @@ import { Apollo } from 'apollo-angular';
 import { Observable } from 'apollo-link';
 import { map } from 'rxjs/operators';
 import gql from 'graphql-tag';
+import { ActivatedRoute } from '@angular/router';
 
 @Component({
   selector: 'app-professor',
@@ -12,7 +13,7 @@ import gql from 'graphql-tag';
 export class ProfessorComponent implements OnInit {
   videos$: any;
 
-  constructor(private apollo: Apollo) { }
+  constructor(private apollo: Apollo, private route: ActivatedRoute) { }
 
   
   ngOnInit() {
@@ -21,24 +22,27 @@ export class ProfessorComponent implements OnInit {
        .watchQuery({
          query: gql`
          {
-           provider(code: "ZOOM") {
-             videos {
+          
+             video(id: "${this.route.snapshot.params.id}") {
                title,
-               description
+               description,
                videoUrl,
-               time
+               time,
                stakeholder {
                  title
                }
              }
-           }
+           
          }
          `,
        })
        .valueChanges.pipe(map((result:any) => 
-           result.data.provider.videos.filter( video => video.stakeholder.title === "Professor")
+           result.data.video
        )
        )
+       this.videos$         
+       .subscribe(arg => console.log(arg));
+       
    }
-
+  
 }

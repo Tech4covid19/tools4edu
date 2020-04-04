@@ -7,7 +7,8 @@ import {
   AfterViewInit,
   ViewChild,
   ElementRef,
-  Renderer2
+  Renderer2,
+  OnChanges
 } from "@angular/core";
 import browser from "detect-browser";
 import { MediaObserver } from "@angular/flex-layout";
@@ -19,7 +20,7 @@ declare const MediaElementPlayer: any;
   templateUrl: "./yt-card.component.html",
   styleUrls: ["./yt-card.component.scss"]
 })
-export class YtCardComponent implements OnInit, AfterViewInit {
+export class YtCardComponent implements OnInit, OnChanges {
   @Input() videoIdOut: any;
   @Input() domId: string;
   @Input() parameters: string | YT.PlayerVars;
@@ -50,8 +51,13 @@ export class YtCardComponent implements OnInit, AfterViewInit {
 
   
   }
+  ngOnChanges() {
+    if(this.videoIdOut)
+      this.loader()
+  }
 
-  ngAfterViewInit() {
+  loader() {
+
     this.loadMediaPlayer();
     fromEvent(window, "resize")
     .pipe(auditTime(100))

@@ -1,0 +1,27 @@
+<div class="header">
+    <div class="row">
+      <div class="title">
+        Conteúdos
+        <p>
+            Descubra passo a passo como usar a ferramenta Zoom* para as suas aulas. Começamos por esta ferramenta porque foi a indicada como prioritária no inquérito que fizemos aos professores. Em breve publicaremos guias para outras plataformas, além de novos conteúdos que o ajudarão a usar a tecnologia para criar aulas à distância cada vez mais motivadoras para os alunos e para si.
+        </p>
+      </div>
+    </div>
+  </div>
+  
+  <section class="first">
+
+        <div class="aside">
+
+        </div>
+ 
+    <div class="row">
+        <ng-template ngFor let-video [ngForOf]="videos$ | async">
+            <app-content-card [data]="video"></app-content-card>
+        </ng-template> 
+    
+      
+      
+    </div>
+  </section>
+  

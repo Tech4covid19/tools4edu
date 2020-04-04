@@ -16,10 +16,11 @@ import { YtCardComponent } from './yt-card/yt-card.component';
 import { CarouselPartnersComponent } from './carousel-partners/carousel-partners.component';
 import { VideoPlayerModule } from './video-player/video-player.module';
 import { FlexLayoutModule } from '@angular/flex-layout';
+import { ContentCardComponent } from './content-card/content-card.component';
 
 
 @NgModule({
-  declarations: [NavbarComponent, CarouselComponent, CardComponent, CardPartnersComponent, FooterComponent, FaqsQuestionComponent, FaqsProfessorComponent, FaqsAlunoComponent, FaqsPaiComponent, YtCardComponent, CarouselPartnersComponent],
+  declarations: [NavbarComponent, CarouselComponent, CardComponent, CardPartnersComponent, FooterComponent, FaqsQuestionComponent, FaqsProfessorComponent, FaqsAlunoComponent, FaqsPaiComponent, YtCardComponent, CarouselPartnersComponent, ContentCardComponent],
   imports: [
     CommonModule,
     RouterModule,
@@ -28,6 +29,6 @@ import { FlexLayoutModule } from '@angular/flex-layout';
     VideoPlayerModule,
     NgxYoutubePlayerModule.forRoot(),
   ],
-  exports: [NavbarComponent,VideoPlayerModule, CarouselComponent, CardComponent, CardPartnersComponent, FaqsQuestionComponent, FaqsProfessorComponent, FaqsAlunoComponent, FaqsPaiComponent, FooterComponent, YtCardComponent, CarouselPartnersComponent]
+  exports: [NavbarComponent,VideoPlayerModule, CarouselComponent, CardComponent, CardPartnersComponent, FaqsQuestionComponent, FaqsProfessorComponent, FaqsAlunoComponent, FaqsPaiComponent, FooterComponent, YtCardComponent, CarouselPartnersComponent, ContentCardComponent]
 })
 export class SharedModule { }

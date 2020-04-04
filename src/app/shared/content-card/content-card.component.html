@@ -1,0 +1,11 @@
+<div class="content" [ngClass]="{'pai': data.stakeholder.title == 'Pais', 'professor': data.stakeholder.title == 'Professor', 'aluno': data.stakeholder.title == 'Aluno'}" (click)="navigateTo()">
+    <div class="provider"><img src="assets/content/zoom.png"></div>
+    <div class="title">{{ data?.title }} <div class="time">{{ data?.time}} min</div></div>
+    <div class="saber">
+      Saber mais
+      <svg width="21" height="16" viewBox="0 0 21 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <path d="M14.3 15L20 8L14.3 1" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+        <path d="M20 8H1" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+      </svg>
+    </div>
+  </div>

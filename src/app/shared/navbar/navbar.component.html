@@ -5,9 +5,7 @@
     
   <div class="menu menu-desktop">
     <div [ngClass]="url == '' ? 'active' : ''" class="home" [routerLink]="['/']">Início</div>
-    <div [ngClass]="url == 'professor' ? 'active' : ''" class="professores" [routerLink]="['/professor']">Professor</div>
-    <div [ngClass]="url == 'aluno' ? 'active' : ''" class="aluno" [routerLink]="['/aluno']">Aluno</div>
-    <div [ngClass]="url == 'pai' ? 'active' : ''" class="pais" [routerLink]="['/pai']">Pais/ EE</div>
+    <div [ngClass]="url == 'conteudo' ? 'active' : ''" class="content" [routerLink]="['/conteudo']" [queryParams]="{filter: 'all'}">Conteúdo</div>
     <div [ngClass]="url == 'faqs' ? 'active' : ''" class="help" [routerLink]="['/faqs']">Ajuda</div>
     <div [ngClass]="url == 'sobre' ? 'active' : ''" class="about" [routerLink]="['/sobre']">Sobre Nós</div>
   </div>

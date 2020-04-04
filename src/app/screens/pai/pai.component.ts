@@ -4,6 +4,7 @@ import gql from 'graphql-tag';
 import { map } from 'rxjs/operators';
 import { Observable } from 'apollo-link';
 import { Subscription } from 'apollo-client/util/Observable';
+import { ActivatedRoute } from '@angular/router';
 
 
 @Component({
@@ -15,33 +16,32 @@ export class PaiComponent implements OnInit {
 
   videos$: any;
 
-  constructor(private apollo: Apollo) { }
+  constructor(private apollo: Apollo, private route: ActivatedRoute) { }
 
   
   ngOnInit() {
-
     this.videos$ =  this.apollo
-       .watchQuery({
-         query: gql`
-         {
-           provider(code: "ZOOM") {
-             videos {
-               title,
-               description
-               videoUrl,
-               time
-               stakeholder {
-                 title
-               }
-             }
-           }
-         }
-         `,
-       })
-       .valueChanges.pipe(map((result:any) => 
-           result.data.provider.videos.filter( video => video.stakeholder.title === "Pais")
-       )
-       )
+    .watchQuery({
+      query: gql`
+      {
+       
+          video(id: "${this.route.snapshot.params.id}") {
+            title,
+            description,
+            videoUrl,
+            time,
+            stakeholder {
+              title
+            }
+          }
+        
+      }
+      `,
+    })
+    .valueChanges.pipe(map((result:any) => 
+        result.data.video
+    )
+    )
    }
    
   

@@ -7,7 +7,6 @@
   background-position: center;
   background-repeat: no-repeat;
   margin: 0;
-
   .row {
     height: 21.125rem;
     display: flex;
@@ -41,8 +40,19 @@
 }
 
 section {
-  // padding: 0 16rem 7.5rem 16rem;
-
+  padding: 0 16rem 7.5rem 16rem;
+  .conteudos {
+    padding-bottom: 3rem;
+    cursor: pointer;
+  p {
+    font-family: Barlow;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 24px;
+    line-height: 24px;
+    color: #1F3F68;
+  }
+}
   &:nth-of-type(1) {
     padding-top: 7.5rem;
   }

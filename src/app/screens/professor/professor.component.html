@@ -1,7 +1,7 @@
 <div class="header">
   <div class="row">
     <div class="title">
-      Área do Professor
+      Para Professores
       <p>
         Descubra passo a passo como usar a ferramenta Zoom para as suas aulas.
         Começamos por esta ferramenta porque foi a indicada como prioritária no inquérito que fizemos aos professores.
@@ -13,18 +13,11 @@
 </div>
 
 <section id="criar-conta" class="first">
-  <div class="row" *ngFor="let video of videos$ | async">
-    <app-yt-card [videoIdOut]="video"></app-yt-card>
-
-    <div class="description">
-      <h2 class="description-title">
-        Criar conta <p class="time">2.10 Min</p>
-      </h2>
-
-      <p class="description-body">
-        Neste vídeo, descubra passo a passo como criar a sua conta na<br> plataforma Zoom, de modo a poder utilizá-la
-        para as suas aulas.
-      </p>
-    </div>
+  <div class="conteudos" [routerLink]="['/conteudo']" [queryParams]="{filter: 'all'}" routerLinkActive="router-link-active" >
+    <p>< Voltar para Conteúdos</p>
+  </div>
+  <div class="row">
+  
+    <app-yt-card [videoIdOut]="videos$ | async"></app-yt-card>
   </div>
 </section>

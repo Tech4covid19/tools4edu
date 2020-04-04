@@ -103,8 +103,11 @@
   </div>  
 </section> -->
 <section class="first">
-  <div class="row" *ngFor="let video of videos$ | async">
-    <app-yt-card [videoIdOut]="video" [ngStyle]="{'order': video.order }"></app-yt-card>
+  <div class="conteudos" [routerLink]="['/conteudo']" [queryParams]="{filter: 'all'}" routerLinkActive="router-link-active" >
+    <p>< Voltar para Conteúdos</p>
+  </div>
+  <div class="row">
+    <app-yt-card [videoIdOut]="videos$ | async"></app-yt-card>
     
   </div>
 </section>
