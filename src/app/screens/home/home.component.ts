@@ -1,6 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 import { OwlOptions } from 'ngx-owl-carousel-o';
 import { Router } from '@angular/router';
+import { Apollo } from 'apollo-angular';
+import gql from 'graphql-tag';
+import { map } from 'rxjs/operators';
 
 @Component({
   selector: 'app-home',
@@ -8,10 +11,22 @@ import { Router } from '@angular/router';
   styleUrls: ['./home.component.scss']
 })
 export class HomeComponent implements OnInit {
-  constructor(private router: Router) { }
+  stakeholders$: any;
+  constructor(private router: Router, private apollo: Apollo) { }
 
   ngOnInit() {
-
+    this.stakeholders$ = this.apollo
+     .watchQuery({
+       query: gql`{
+        stakeholders{
+          id,
+          title,
+        }
+       }`,
+     }) .valueChanges.pipe(map((result:any) => 
+     result.data.stakeholders
+      )
+    )  
   }
   goTo(stakeholder) {
     this.router.navigate(['conteudo'], { queryParams: { filter: stakeholder } })

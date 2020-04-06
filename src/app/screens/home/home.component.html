@@ -14,8 +14,9 @@
 </div>
 
 <div class="buttons">
-  <div class="professor" (click)="goTo('Professor')">
-    <div class="title">Sou Professor</div>
+  <ng-template ngFor let-data [ngForOf]="stakeholders$ | async">
+  <div class="professor" [ngClass]="{'pai': data.id == '5e7cdd721c9d44000054f36a', 'professor': data.id == '5e7cdd531c9d44000054f369', 'aluno': data.id == '5e7cdd031c9d44000054f368'}" (click)="goTo(data.id)">
+    <div class="title">Sou {{ data.title }}</div>
     <div class="saber">
       Saber mais
       <svg width="21" height="16" viewBox="0 0 21 16" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -24,7 +25,8 @@
       </svg>
     </div>
   </div>
-  <div class="aluno" (click)="goTo('Aluno')">
+</ng-template>
+  <!-- <div class="aluno" (click)="goTo('Aluno')">
     <div class="title">Sou Aluno</div>
     <div class="saber">
       Saber mais
@@ -43,7 +45,7 @@
         <path d="M20 8H1" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
       </svg>
     </div>
-  </div>
+  </div> -->
 </div>
 
 <div class="testemunhos">

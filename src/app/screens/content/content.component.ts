@@ -14,81 +14,121 @@ export class ContentComponent implements OnInit {
   videos$: any;
   stakeholder: string = null;
   stakeholder$: any;
-  query: any = `{
-    provider(code:"ZOOM") {
+  stakeholderIds: any[] = []
+  query: any 
+  unique: any[];
+
+  constructor(private apollo: Apollo, private route: ActivatedRoute) { 
+    this.query = gql`
+    query getContent($stakeholdersIds: [String!]) {
+     contentItems(
+      stakeholderIds:$stakeholdersIds,
+      providerIds:[],
+      limit:8,
+      startAt:0
+    ) {
+      id,
       title,
-      description,
-      videos {
-        videoUrl,
+      text,
+      videoUrl,
+      videoTime,
+      stakeholder{
         title,
-        time,
-        description,
-        stakeholder {
-          title,
-          description
-        }
+        id
+      },
+      provider {
+        title,
+        id
+      },
+      tags {
+        title,
+        id
       }
     }
-   }`;
-
-  constructor(private apollo: Apollo, private route: ActivatedRoute) { }
+  
+  }`;
+  }
 
   
   ngOnInit() {
     this.route.queryParams
     .subscribe( params => { 
-        if(params.filter !== 'all') {
-          this.query = `{
-            provider(code:"ZOOM") {
-              title,
-              description,
-              videos(stakeholder:"${params.filter.toUpperCase()}") {
-                id,
-                videoUrl,
-                title,
-                time,
-                description,
-                stakeholder {
-                  title,
-                  description
-                }
-              }
-            }
-           }`
-        } else {
-          this.query = `{
-            provider(code:"ZOOM") {
-              title,
-              description,
-              videos {
-                id,
-                videoUrl,
-                title,
-                time,
-                description,
-                stakeholder {
-                  title,
-                  description
-                }
-              }
-            }
-           }`
-        }
+
         this.videos$ =  this.apollo
        .watchQuery({
-         query: gql`
-          ${this.query}
-         `,
+         query: this.query,
+         variables: {
+          stakeholdersIds: params.filter
+        }
        })
        .valueChanges.pipe(map((result:any) => 
-           result.data.provider.videos
+           result.data.contentItems
        )
        )
       })
     
-       
+     this.stakeholder$ = this.apollo
+     .watchQuery({
+       query: gql`{
+        stakeholders{
+          id,
+          title,
+        }
+       }`,
+     }) .valueChanges.pipe(map((result:any) => 
+     result.data.stakeholders
+      )
+    )  
        
    }
-
+   getSelected(event){
+     console.log(event)
+     if(event.add)
+      this.stakeholderIds.push(event.data.id)
+     if(!event.add) {
+      const index = this.stakeholderIds.indexOf(event.data.id) 
+      if (index !== -1) this.stakeholderIds.splice(index, 1);
+     }
+     this.unique = [...new Set(this.stakeholderIds)];
+     this.query = gql`
+     query getContent($stakeholdersIds: [String!]) {
+      contentItems(
+       stakeholderIds:$stakeholdersIds,
+       providerIds:[],
+       limit:8,
+       startAt:0
+     ) {
+       id,
+       title,
+       text,
+       videoUrl,
+       videoTime,
+       stakeholder{
+         title,
+         id
+       },
+       provider {
+         title,
+         id
+       },
+       tags {
+         title,
+         id
+       }
+     }
+   
+   }`;
+     this.videos$ =  this.apollo
+     .watchQuery({
+       query: this.query,
+       variables: {
+         stakeholdersIds: this.unique
+       }
+  
+     })
+     .valueChanges.pipe(map((result:any) => 
+        result.data.contentItems
+     ))
+   }
 
 }

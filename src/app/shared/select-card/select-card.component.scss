@@ -1,0 +1,103 @@
+:host {
+    display: flex;
+    flex-direction: column;
+    height: 56px;
+    max-width: 271px;
+    background: #FFFFFF;
+    box-shadow: 0px 5px 5px rgba(75, 93, 104, 0.1);
+    border-radius: 50px;
+    justify-content: center;
+    align-items: flex-start;
+    flex-wrap: wrap;
+    p {
+        font-family: Barlow;
+        font-style: normal;
+        font-weight: 300;
+        font-size: 16px;
+        line-height: 24px;
+        /* identical to box height, or 150% */
+
+        display: flex;
+        align-items: center;
+
+        /* text/Dark Blue */
+
+        color: #1F3F68;
+        opacity: 0.6;
+        margin-left: 24px;
+    }
+    margin-bottom: 1rem;
+    &.selected{
+       
+        background: #1F3F68;
+        box-shadow: 0px 5px 5px rgba(75, 93, 104, 0.1);
+        border-radius: 50px;
+        p {
+            color: white;
+        }
+    }
+    .button {
+        display: none;
+        width: 50px;
+        height: 50px;
+        background: #5A98D0;
+        box-shadow: 0px 5px 5px rgba(75, 93, 104, 0.1);
+        border-radius: 50%;
+        justify-content: center;
+        animation-duration: 0.7s;
+        // animation-name: rotate;
+        animation-iteration-count: 1;
+        animation-direction: alternate;
+     
+        &.selected {
+            display: flex;
+            align-self: flex-end;
+            position: relative;
+            animation-name: bounce-2;
+            animation-timing-function: ease;
+            
+            
+        }
+    }    
+  
+}
+@keyframes bounce-2 {
+    0%   { transform: translateX(-100px); }
+    100% { transform: translateX(0); }
+}
+
+@-webkit-keyframes rotating /* Safari and Chrome */ {
+    from {
+      -webkit-transform: rotate(0deg);
+      -o-transform: rotate(0deg);
+      transform: rotate(0deg);
+    }
+    to {
+      -webkit-transform: rotate(360deg);
+      -o-transform: rotate(360deg);
+      transform: rotate(360deg);
+    }
+  }
+  @keyframes rotating {
+    from {
+      -ms-transform: rotate(0deg);
+      -moz-transform: rotate(0deg);
+      -webkit-transform: rotate(0deg);
+      -o-transform: rotate(0deg);
+      transform: rotate(0deg);
+    }
+    to {
+      -ms-transform: rotate(360deg);
+      -moz-transform: rotate(360deg);
+      -webkit-transform: rotate(360deg);
+      -o-transform: rotate(360deg);
+      transform: rotate(360deg);
+    }
+  }
+  .rotating {
+    -webkit-animation: rotating 2s linear infinite;
+    -moz-animation: rotating 2s linear infinite;
+    -ms-animation: rotating 2s linear infinite;
+    -o-animation: rotating 2s linear infinite;
+    animation: rotating 2s linear infinite;
+  }

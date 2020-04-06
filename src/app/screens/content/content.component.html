@@ -12,7 +12,10 @@
   <section class="first">
 
         <div class="aside">
-
+            <h1>Conteúdos Para</h1>
+            <div *ngFor="let item of stakeholder$ | async">
+                <app-select-card (selectedEmitter)="getSelected($event)" [data]="item"></app-select-card>
+            </div>
         </div>
  
     <div class="row">

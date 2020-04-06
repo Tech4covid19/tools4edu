@@ -12,11 +12,12 @@ export class ContentCardComponent implements OnInit, OnChanges {
 
 
   ngOnChanges(changes: SimpleChanges): void {
-    if(this.data)
-      console.log(this.data)
+ 
+      
   }
 
   ngOnInit() {
+    console.log(this.data)
   }
   navigateTo() {
     this.router.navigate([this.data.stakeholder.title.toLowerCase(), this.data.id])

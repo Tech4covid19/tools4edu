@@ -14,21 +14,49 @@ import { FaqsAlunoComponent } from './faqs-aluno/faqs-aluno.component';
 import { FaqsPaiComponent } from './faqs-pai/faqs-pai.component';
 import { YtCardComponent } from './yt-card/yt-card.component';
 import { CarouselPartnersComponent } from './carousel-partners/carousel-partners.component';
-import { VideoPlayerModule } from './video-player/video-player.module';
+
 import { FlexLayoutModule } from '@angular/flex-layout';
 import { ContentCardComponent } from './content-card/content-card.component';
+import { SelectCardComponent } from './select-card/select-card.component';
 
 
 @NgModule({
-  declarations: [NavbarComponent, CarouselComponent, CardComponent, CardPartnersComponent, FooterComponent, FaqsQuestionComponent, FaqsProfessorComponent, FaqsAlunoComponent, FaqsPaiComponent, YtCardComponent, CarouselPartnersComponent, ContentCardComponent],
+  declarations: [
+    NavbarComponent,
+    CarouselComponent,
+    CardComponent,
+    CardPartnersComponent,
+    FooterComponent,
+    FaqsQuestionComponent,
+    FaqsProfessorComponent,
+    FaqsAlunoComponent,
+    FaqsPaiComponent,
+    YtCardComponent,
+    CarouselPartnersComponent,
+    ContentCardComponent,
+    SelectCardComponent
+  ],
   imports: [
     CommonModule,
     RouterModule,
     CarouselModule,
     FlexLayoutModule,
-    VideoPlayerModule,
     NgxYoutubePlayerModule.forRoot(),
   ],
-  exports: [NavbarComponent,VideoPlayerModule, CarouselComponent, CardComponent, CardPartnersComponent, FaqsQuestionComponent, FaqsProfessorComponent, FaqsAlunoComponent, FaqsPaiComponent, FooterComponent, YtCardComponent, CarouselPartnersComponent, ContentCardComponent]
+  exports: [
+    NavbarComponent,
+    CarouselComponent,
+    CardComponent, 
+    CardPartnersComponent, 
+    FaqsQuestionComponent, 
+    FaqsProfessorComponent, 
+    FaqsAlunoComponent, 
+    FaqsPaiComponent, 
+    FooterComponent, 
+    YtCardComponent, 
+    CarouselPartnersComponent, 
+    ContentCardComponent,
+    SelectCardComponent
+  ]
 })
 export class SharedModule { }

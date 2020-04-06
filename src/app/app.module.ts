@@ -14,10 +14,7 @@ import { AboutComponent } from './screens/about/about.component';
 import { NgxYoutubePlayerModule } from 'ngx-youtube-player';
 import { FAQsComponent } from './screens/faqs/faqs.component';
 import { PrivacyComponent } from './screens/privacy/privacy.component';
-import { EffectsModule } from '@ngrx/effects';
-import { StoreModule } from '@ngrx/store';
-import { VideoPlayerModule } from './shared/video-player/video-player.module';
-import { StoreDevtoolsModule } from '@ngrx/store-devtools';
+
 import { ApolloModule, APOLLO_OPTIONS } from 'apollo-angular';
 import { InMemoryCache } from 'apollo-cache-inmemory';
 import { HttpLink, HttpLinkModule } from 'apollo-angular-link-http';
@@ -50,12 +47,8 @@ export function createApollo(httpLink: HttpLink) {
     ApolloModule,
     AppRoutingModule,
     FlexLayoutModule,
-    VideoPlayerModule,
-    StoreModule.forRoot( {}),
-    EffectsModule.forRoot([]),
-    StoreDevtoolsModule.instrument({
-      maxAge: 10
-    }),
+
+  
     SharedModule,
     BrowserAnimationsModule,
     NgxYoutubePlayerModule.forRoot(),
