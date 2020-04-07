@@ -26,6 +26,8 @@ import { AkitaNgRouterStoreModule } from '@datorama/akita-ng-router-store';
 import { environment } from '../environments/environment';
 import { ContentItemResolver } from './resolvers/contentItem.resolver';
 import { BlogComponent } from './screens/blog/blog.component';
+import { BlogArticleResolver } from './resolvers/blog-article.resolver';
+import { BlogArticleComponent } from './screens/blog-article/blog-article.component';
 const uri = 'https://cnom3x70jk.execute-api.eu-central-1.amazonaws.com/dev/graphql'; // <-- add the URL of the GraphQL server here
 export function createApollo(httpLink: HttpLink) {
   return {
@@ -46,6 +48,7 @@ export function createApollo(httpLink: HttpLink) {
     PrivacyComponent,
     ContentComponent,
     BlogComponent,
+    BlogArticleComponent,
   ],
   imports: [
     BrowserModule,
@@ -55,15 +58,16 @@ export function createApollo(httpLink: HttpLink) {
     AppRoutingModule,
     FlexLayoutModule,
 
-  
+
     SharedModule,
     BrowserAnimationsModule,
     environment.production ? [] : AkitaNgDevtools.forRoot(),
     AkitaNgRouterStoreModule.forRoot(),
-    
+
   ],
   providers: [
     ContentItemResolver,
+    BlogArticleResolver,
     {
       provide: APOLLO_OPTIONS,
       useFactory: createApollo,

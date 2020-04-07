@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import gql from 'graphql-tag';
 import { map } from 'rxjs/operators';
 import { Apollo } from 'apollo-angular';
-import { ContentItemService } from 'src/app/store/content-item.service';
+import { ContentItemService } from 'src/app/store/content-item/content-item.service';
 
 @Component({
   selector: 'app-faqs',
@@ -28,7 +28,7 @@ export class FAQsComponent implements OnInit {
     this.faqs$ = this.service.getFaqs( professorId, providerId)
     this.faqs$
       .subscribe(arg => this.faqs = arg);
-    
+
     this.stakeholder$ = this.apollo
      .watchQuery({
        query: gql`{
@@ -39,10 +39,10 @@ export class FAQsComponent implements OnInit {
           order
         }
        }`,
-     }) .valueChanges.pipe(map((result:any) => 
+     }) .valueChanges.pipe(map((result:any) =>
      result.data.stakeholders
       )
-    )  
+    )
     this.providers$ = this.apollo
     .watchQuery({
       query: gql`{
@@ -53,10 +53,10 @@ export class FAQsComponent implements OnInit {
          order
        }
       }`,
-    }) .valueChanges.pipe(map((result:any) => 
+    }) .valueChanges.pipe(map((result:any) =>
     result.data.providers
      )
-   ) 
+   )
    this.tags$ = this.apollo
     .watchQuery({
       query: gql`{
@@ -68,10 +68,10 @@ export class FAQsComponent implements OnInit {
           order
         }
       }`
-    }).valueChanges.pipe(map((result:any) => 
+    }).valueChanges.pipe(map((result:any) =>
     result.data.contentTags
      )
-   )    
+   )
   }
   getSelected(event){
     console.log(event)
@@ -85,7 +85,7 @@ export class FAQsComponent implements OnInit {
      this.providerArray = event.data.id
      }
     if(!event.add && event.data.__typename.toLowerCase() === 'provider') {
-     
+
        this.providerArray = ''
     }
      this.uniqueProvider = [...new Set(this.providerArray)];

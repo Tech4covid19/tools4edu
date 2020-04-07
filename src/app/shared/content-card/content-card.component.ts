@@ -1,6 +1,6 @@
 import { Component, OnInit, Input, OnChanges, SimpleChanges } from '@angular/core';
 import { Router } from '@angular/router';
-import { ContentItemStore } from 'src/app/store/content-item.store';
+import { ContentItemStore } from 'src/app/store/content-item/content-item.store';
 
 @Component({
   selector: 'app-content-card',
@@ -16,7 +16,7 @@ export class ContentCardComponent implements OnInit, OnChanges {
   ngOnChanges(changes: SimpleChanges): void {
       if(this.data)
         this.item = this.data
-      
+
   }
 
   ngOnInit() {

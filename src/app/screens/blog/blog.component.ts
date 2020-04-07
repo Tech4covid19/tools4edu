@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { ContentItemService } from 'src/app/store/content-item.service';
+import { ContentItemService } from 'src/app/store/content-item/content-item.service';
+import { BlogArticleService } from '../../store/blog-article/blog-article.service';
 
 @Component({
   selector: 'app-blog',
@@ -7,13 +8,12 @@ import { ContentItemService } from 'src/app/store/content-item.service';
   styleUrls: ['./blog.component.scss']
 })
 export class BlogComponent implements OnInit {
-  videos$: any;
+  blogArticles$: any;
 
-  constructor(private service: ContentItemService) { }
+  constructor(private service: BlogArticleService) { }
 
   ngOnInit() {
-    const ids = []
-    this.videos$ =  this.service.getContentItems(ids, [ ])
+    this.blogArticles$ =  this.service.getBlogArticles()
   }
 
 }

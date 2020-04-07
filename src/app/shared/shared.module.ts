@@ -18,6 +18,7 @@ import { CarouselPartnersComponent } from './carousel-partners/carousel-partners
 import { FlexLayoutModule } from '@angular/flex-layout';
 import { ContentCardComponent } from './content-card/content-card.component';
 import { SelectCardComponent } from './select-card/select-card.component';
+import { BlogCardComponent } from './blog-card/blog-card.component';
 
 
 @NgModule({
@@ -34,7 +35,8 @@ import { SelectCardComponent } from './select-card/select-card.component';
     YtCardComponent,
     CarouselPartnersComponent,
     ContentCardComponent,
-    SelectCardComponent
+    SelectCardComponent,
+    BlogCardComponent
   ],
   imports: [
     CommonModule,
@@ -46,17 +48,18 @@ import { SelectCardComponent } from './select-card/select-card.component';
   exports: [
     NavbarComponent,
     CarouselComponent,
-    CardComponent, 
-    CardPartnersComponent, 
-    FaqsQuestionComponent, 
-    FaqsProfessorComponent, 
-    FaqsAlunoComponent, 
-    FaqsPaiComponent, 
-    FooterComponent, 
-    YtCardComponent, 
-    CarouselPartnersComponent, 
+    CardComponent,
+    CardPartnersComponent,
+    FaqsQuestionComponent,
+    FaqsProfessorComponent,
+    FaqsAlunoComponent,
+    FaqsPaiComponent,
+    FooterComponent,
+    YtCardComponent,
+    CarouselPartnersComponent,
     ContentCardComponent,
-    SelectCardComponent
+    SelectCardComponent,
+    BlogCardComponent
   ]
 })
 export class SharedModule { }

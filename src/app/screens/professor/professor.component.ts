@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { ContentItemQuery } from 'src/app/store/content-item.query';
+import { ContentItemQuery } from 'src/app/store/content-item/content-item.query';
 
 @Component({
   selector: 'app-professor',

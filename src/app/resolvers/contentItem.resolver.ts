@@ -2,18 +2,18 @@
 import { Resolve, ActivatedRouteSnapshot, RouterStateSnapshot } from '@angular/router';
 
 import { Observable } from 'rxjs/Observable';
-import { ContentItemQuery } from '../store/content-item.query';
+import { ContentItemQuery } from '../store/content-item/content-item.query';
 import { Injectable } from '@angular/core';
-import { ContentItemService } from '../store/content-item.service';
+import { ContentItemService } from '../store/content-item/content-item.service';
 import { take } from 'rxjs/operators';
 
- 
+
 @Injectable({ providedIn: 'root' })
 export class ContentItemResolver implements Resolve<any> {
 
- 
+
   constructor(private query: ContentItemQuery, private service: ContentItemService) { }
- 
+
   resolve(
     route: ActivatedRouteSnapshot,
     state: RouterStateSnapshot
@@ -25,5 +25,5 @@ export class ContentItemResolver implements Resolve<any> {
         return this.query.selectEntity(e => e.slug === route.params.slug).pipe(take(1))
     }
   }
- 
+
 }

@@ -10,20 +10,23 @@ import { AlunoComponent } from './screens/aluno/aluno.component';
 import { PaiComponent } from './screens/pai/pai.component';
 import { ContentItemResolver } from './resolvers/contentItem.resolver';
 import { BlogComponent } from './screens/blog/blog.component';
+import { BlogArticleResolver } from './resolvers/blog-article.resolver';
+import { BlogArticleComponent } from './screens/blog-article/blog-article.component';
 
 
 const routes: Routes = [
   {path: '',component: HomeComponent},
   {path: 'conteudo',component: ContentComponent, children:[
-   
+
   ]
   },
   {path: 'professor/:slug', component: ProfessorComponent, resolve:{ contentItem: ContentItemResolver}},
   {path: 'aluno/:slug', component: AlunoComponent, resolve:{ contentItem: ContentItemResolver}},
   {path: 'pais/:slug', component: PaiComponent, resolve:{ contentItem: ContentItemResolver}},
-  {path: 'blog',component: BlogComponent},
-  {path: 'faqs',component: FAQsComponent},
-  {path: 'sobre',component: AboutComponent},
+  {path: 'blog', component: BlogComponent},
+  {path: 'blog/:slug', component: BlogArticleComponent, resolve: { blogArticle: BlogArticleResolver }},
+  {path: 'faqs', component: FAQsComponent},
+  {path: 'sobre', component: AboutComponent},
   {path: 'privacidade', component: PrivacyComponent}
 ];
 

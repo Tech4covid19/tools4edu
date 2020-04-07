@@ -10,12 +10,9 @@
   </div>
   <section class="first">
     <div class="row">
-        <ng-template ngFor let-video [ngForOf]="videos$ | async">
-            <app-content-card [data]="video"></app-content-card>
-        </ng-template> 
-    
-      
-      
+        <ng-template ngFor let-blogArticle [ngForOf]="blogArticles$ | async">
+          <app-blog-card [data]="blogArticle"></app-blog-card>
+        </ng-template>
+<!--      <app-blog-card [data]="{title: 'cenas'}"></app-blog-card>-->
     </div>
   </section>
-  
