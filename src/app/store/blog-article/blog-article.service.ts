@@ -12,7 +12,8 @@ const GET_BLOG_ARTICLES = gql`
       images,
       text,
       slug,
-      published
+      published,
+     
     }
   }
 `;
@@ -25,7 +26,8 @@ const GET_BLOG_ARTICLE = gql`
       images,
       text,
       slug,
-      published
+      published,
+     
     }
   }
 `;

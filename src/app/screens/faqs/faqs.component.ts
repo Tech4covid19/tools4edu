@@ -10,9 +10,9 @@ import { ContentItemService } from 'src/app/store/content-item/content-item.serv
   styleUrls: ['./faqs.component.scss']
 })
 export class FAQsComponent implements OnInit {
-  stakeholderIds: any = ''
+  stakeholderIds: any = []
   unique: unknown[] = []
-  providerArray: any = ''
+  providerArray: any = []
   uniqueProvider: unknown[];
 
   stakeholder$: any;
@@ -25,7 +25,9 @@ export class FAQsComponent implements OnInit {
   ngOnInit() {
     const professorId = '5e7cdd531c9d44000054f369'
     const providerId = '5e7cdc4c1c9d44000054f367'
-    this.faqs$ = this.service.getFaqs( professorId, providerId)
+    this.stakeholderIds.push(professorId)
+    this.providerArray.push(providerId)
+    this.faqs$ = this.service.getFaqs( this.stakeholderIds, this.providerArray)
     this.faqs$
       .subscribe(arg => this.faqs = arg);
 
@@ -76,19 +78,20 @@ export class FAQsComponent implements OnInit {
   getSelected(event){
     console.log(event)
     if(event.add && event.data.__typename.toLowerCase() === 'stakeholder')
-     this.stakeholderIds = event.data.id
-    if(!event.add && event.data.__typename.toLowerCase() === 'stakeholder') {
-     this.stakeholderIds = ''
+    this.stakeholderIds.push(event.data.id)
+   if(!event.add && event.data.__typename.toLowerCase() === 'stakeholder') {
+    const index = this.stakeholderIds.indexOf(event.data.id)
+    if (index !== -1) this.stakeholderIds.splice(index, 1);
+   }
+    this.unique = [...new Set(this.stakeholderIds)];
+    if(event.add && event.data.__typename.toLowerCase() === 'provider') {
+    this.providerArray.push(event.data.id)
     }
-     this.unique = [...new Set(this.stakeholderIds)];
-     if(event.add && event.data.__typename.toLowerCase() === 'provider') {
-     this.providerArray = event.data.id
-     }
-    if(!event.add && event.data.__typename.toLowerCase() === 'provider') {
-
-       this.providerArray = ''
-    }
-     this.uniqueProvider = [...new Set(this.providerArray)];
+   if(!event.add && event.data.__typename.toLowerCase() === 'provider') {
+    const index = this.providerArray.indexOf(event.data.id)
+    if (index !== -1) this.providerArray.splice(index, 1);
+   }
+    this.uniqueProvider = [...new Set(this.providerArray)];
      this.faqs$ = this.service.getFaqs(  this.stakeholderIds, this.providerArray)
 
      this.faqs$.subscribe( res => this.faqs = res)

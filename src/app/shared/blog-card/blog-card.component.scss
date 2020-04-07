@@ -1,5 +1,6 @@
 :host {
   display: flex;
+  flex-direction: column;
 }
 
 .content {
@@ -53,16 +54,21 @@
     font-style: normal;
     font-weight: bold;
     font-size: 24px;
-    max-width: 234px;
     display: flex;
     align-items: baseline;
     color: #FFFFFF;
     margin-left: 16px;
+    width: 100%;
+    .text{
+      display: flex;
+      flex: 0 1 60%;
+    }
     .time{
       font-size: 16px;
       margin-left: 10px;
       align-self: flex-end;
       margin-bottom: 2px;
+      width: 30%;
     }
   }
 

@@ -1,6 +1,6 @@
 <div class="questions">
-  <app-faqs-question *ngFor="let item of shownQuestions;"
-    [number]="item.order"
+  <app-faqs-question *ngFor="let item of shownQuestions; let index = index"
+    [number]="index + 1"
     [question]="item.question"
     [answer]="item.answer"
   ></app-faqs-question>

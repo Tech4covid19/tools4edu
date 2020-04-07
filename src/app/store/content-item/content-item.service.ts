@@ -102,10 +102,10 @@ export class ContentItemService extends NgEntityService<ContentItemState> {
   ]), map((result:any) => result.data.contentItem ))
   }
 
-  getFaqs(stakeholderId, providerId) {
+  getFaqs(stakeholderIds, providerIds) {
     this.query = gql `
-  query getContent($providerId: String!, $stakeholderId: String!) {
-    faqs(providerId: $providerId, stakeholderId: $stakeholderId){
+  query getContent($providerIds: [String!], $stakeholderIds: [String!]) {
+    faqs(providerIds: $providerIds, stakeholderIds: $stakeholderIds){
       id,
       order,
       question,
@@ -122,8 +122,8 @@ export class ContentItemService extends NgEntityService<ContentItemState> {
   .watchQuery({
     query: this.query,
     variables: {
-      stakeholderId: stakeholderId,
-      providerId: providerId
+      stakeholderIds: stakeholderIds,
+      providerIds: providerIds
     }
 
   })
