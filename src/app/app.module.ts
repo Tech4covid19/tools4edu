@@ -20,6 +20,12 @@ import { InMemoryCache } from 'apollo-cache-inmemory';
 import { HttpLink, HttpLinkModule } from 'apollo-angular-link-http';
 import { HttpClientModule } from '@angular/common/http';
 import { ContentComponent } from './screens/content/content.component';
+import { NG_ENTITY_SERVICE_CONFIG } from '@datorama/akita-ng-entity-service';
+import { AkitaNgDevtools } from '@datorama/akita-ngdevtools';
+import { AkitaNgRouterStoreModule } from '@datorama/akita-ng-router-store';
+import { environment } from '../environments/environment';
+import { ContentItemResolver } from './resolvers/contentItem.resolver';
+import { BlogComponent } from './screens/blog/blog.component';
 const uri = 'https://cnom3x70jk.execute-api.eu-central-1.amazonaws.com/dev/graphql'; // <-- add the URL of the GraphQL server here
 export function createApollo(httpLink: HttpLink) {
   return {
@@ -39,6 +45,7 @@ export function createApollo(httpLink: HttpLink) {
     AboutComponent,
     PrivacyComponent,
     ContentComponent,
+    BlogComponent,
   ],
   imports: [
     BrowserModule,
@@ -51,15 +58,18 @@ export function createApollo(httpLink: HttpLink) {
   
     SharedModule,
     BrowserAnimationsModule,
-    NgxYoutubePlayerModule.forRoot(),
+    environment.production ? [] : AkitaNgDevtools.forRoot(),
+    AkitaNgRouterStoreModule.forRoot(),
     
   ],
   providers: [
+    ContentItemResolver,
     {
       provide: APOLLO_OPTIONS,
       useFactory: createApollo,
       deps: [HttpLink],
     },
+    { provide: NG_ENTITY_SERVICE_CONFIG, useValue: { baseUrl: 'https://cnom3x70jk.execute-api.eu-central-1.amazonaws.com/dev/graphql' }},
   ],
   bootstrap: [AppComponent]
 })

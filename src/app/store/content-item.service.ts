@@ -1,0 +1,132 @@
+import { Injectable } from '@angular/core';
+import { ContentItemStore, ContentItemState } from './content-item.store';
+import { NgEntityService } from '@datorama/akita-ng-entity-service';
+import gql from 'graphql-tag';
+import { Apollo } from 'apollo-angular';
+import { map, tap } from 'rxjs/operators';
+
+@Injectable({ providedIn: 'root' })
+export class ContentItemService extends NgEntityService<ContentItemState> {
+  query: any;
+
+  constructor(protected store: ContentItemStore, private apollo: Apollo) {
+    super(store);
+  }
+  getContentItems(ids, providersIds) {
+    this.query = gql`
+    query getContent($stakeholdersIds: [String!], $providersIds: [String!]) {
+     contentItems(
+      stakeholderIds:$stakeholdersIds,
+      providerIds:$providersIds,
+
+      startAt:0
+    ) {
+      id,
+      title,
+      text,
+      slug
+      videoUrl,
+      videoTime,
+      stakeholder{
+        title,
+        code,
+        id
+      },
+      provider {
+        title,
+        code,
+        id
+      },
+      tags {
+        title,
+        code,
+        id
+      }
+    }
+  
+  }`;
+    return  this.apollo
+    .watchQuery({
+      query: this.query,
+      variables: {
+        stakeholdersIds: ids,
+        providersIds: providersIds
+      }
+ 
+    })
+    .valueChanges.pipe(tap((result:any) => 
+       this.store.set(result.data.contentItems)
+    ), map((result:any) => result.data.contentItems ))
+  }
+  getContentItem(slug){
+    this.query = gql`
+    query getContent($slug: String!) {
+     contentItem(
+      slug:$slug
+    ) {
+      id,
+      title,
+      text,
+      slug
+      videoUrl,
+      videoTime,
+      stakeholder{
+        title,
+        code,
+        id
+      },
+      provider {
+        title,
+        code,
+        id
+      },
+      tags {
+        title,
+        id
+      }
+    }
+  
+  }`;
+
+  return  this.apollo
+  .watchQuery({
+    query: this.query,
+    variables: {
+      slug: slug
+    }
+
+  })
+  .valueChanges.pipe(tap((result:any) => [
+     this.store.add(result.data.contentItem),
+     this.store.setActive(result.data.contentItem.id)
+  ]), map((result:any) => result.data.contentItem ))
+  }
+
+  getFaqs(stakeholderId, providerId) {
+    this.query = gql `
+  query getContent($providerId: String!, $stakeholderId: String!) {
+    faqs(providerId: $providerId, stakeholderId: $stakeholderId){
+      id,
+      order,
+      question,
+      answer,
+      stakeholder {
+        id
+        code
+        title
+        description
+      }
+    }
+    }`;
+    return  this.apollo
+  .watchQuery({
+    query: this.query,
+    variables: {
+      stakeholderId: stakeholderId,
+      providerId: providerId
+    }
+
+  })
+  .valueChanges.pipe(map((result:any) => result.data.faqs ))
+  }
+}

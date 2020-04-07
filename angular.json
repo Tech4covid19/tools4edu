@@ -135,6 +135,7 @@
   },
   "defaultProject": "tools4edu",
   "cli": {
-    "analytics": "fac216f3-2da8-4947-83e3-65554362f4da"
+    "analytics": "fac216f3-2da8-4947-83e3-65554362f4da",
+    "defaultCollection": "@datorama/akita"
   }
 }

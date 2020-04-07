@@ -1,0 +1,276 @@
+.header {
+   
+    display: flex;
+    flex-direction: column;
+    background: url(./../../../assets/blog/blog.png);
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    align-items: center;
+    margin-top: 1%;
+    height: 503px;
+  
+    .row {
+        height: 21.125rem;
+        display: flex;
+        flex-direction: row;
+        justify-content: space-around;
+        align-items: center;
+        
+        padding: 8rem 12rem 2.5rem 12rem;
+    
+        .title {
+          font-family: Amatic SC;
+          font-style: normal;
+          font-weight: bold;
+          font-size: 4rem;
+          line-height: 74px;
+          letter-spacing: 0.04em;
+          color: #fff;
+          //margin-top : 257px;
+    
+          p {
+            font-family: Barlow;
+            font-style: normal;
+            font-weight: 300;
+            font-size: 1.25rem;
+            line-height: 130%;
+            max-width: 80%;
+            color: #fff;
+            margin-top: 1.5rem;
+          }
+        }
+      }
+    }
+
+
+section {
+    padding: 0 16rem 7.5rem 16rem;
+    .conteudos {
+      padding-bottom: 3rem;
+      cursor: pointer;
+    p {
+      font-family: Barlow;
+      font-style: normal;
+      font-weight: bold;
+      font-size: 24px;
+      line-height: 24px;
+      color: #1F3F68;
+    }
+  }
+    &:nth-of-type(1) {
+      padding-top: 7.5rem;
+    }
+  
+    .row {
+      display: flex;
+      flex-direction: row;
+      flex-wrap: wrap;
+      
+      .image {
+        flex-basis: 60%;
+  
+        img {
+          display: block;
+          width: 40rem;
+          margin: 0 3rem 0 auto;
+        }
+      }
+  
+      .description {
+        flex-basis: 40%;
+      
+        .description-title {
+          margin-top: 1rem;
+        }
+  
+        .description-subtitle {
+          margin: 1rem 0 1rem 0;
+        }
+  
+        .dsecription-body {
+          font-size: 1.25rem;
+        }
+  
+        .description-actions {
+          max-width: 20rem;
+          display: flex;
+          justify-content: space-between;
+          margin-top: 3rem;
+  
+          button.btn {
+            flex-basis: 47.5%;
+  
+            &#previous svg {
+              margin: 0 1rem 0 0;
+            }
+  
+            &#next svg {
+              margin: 0 0 0 1rem;
+            }
+          }
+        }
+      }
+    }
+  }
+  
+  .time {
+    display: flex;
+    align-self: flex-end;
+    font-family: Amatic SC;
+    font-style: normal;
+    font-size: 26px;
+    line-height: 47px;
+    margin-left: 10px;
+    letter-spacing: 0.04em;
+    color:  #5A98D0;
+  }
+  
+  .description-title {
+    margin-top: 40px;
+    margin-bottom : 16px;
+    display: flex;
+    align-items: flex-end;
+  }
+  app-content-card {
+    flex: 1 1 32%;
+  }
+  // WIDER SCREENS
+  @media (max-width: 1720px) {
+    section {
+      // padding: 0 12.5rem 7.5rem 12.5rem;
+    }
+  }
+  
+  @media (max-width: 1440px) {
+    section {
+      padding: 0 12rem 7.5rem 12rem;
+  
+      .row {
+        .image img {
+          width: 30rem;
+        }
+      }
+    }
+  }
+  
+  @media (max-width: 1220px) {
+    .header .row {
+      padding-right: 3rem;
+      padding-left: 3rem;
+    }
+  
+    section {
+      padding-right: 3rem;
+      padding-left: 3rem;
+    }
+  }
+  
+  // TABLET
+  @media (max-width: 860px) {
+    .header {
+      min-height: unset;
+  
+      .row {
+        margin-top: 7rem;
+        margin-right: 1.5rem;
+        margin-bottom: 1rem;
+        margin-left: 1.5rem;
+        padding: 0;
+    
+        .title {
+          width: 100%;
+          font-size: 3rem;
+          line-height: 130%;
+    
+          p {
+            max-width: 100%;
+            width: 100%;
+            font-size: 0.875rem;
+            margin-top: 0.5rem;
+          }
+        }
+      }
+    }
+  
+    section {
+      padding: 0 1.5rem 3.75rem 1.5rem;
+  
+      &:nth-of-type(1) {
+        padding-top: 3.75rem;
+      }
+  
+      ::ng-deep app-yt-card {
+        position: relative;
+        width: 100%;
+        max-height: 13rem;
+  
+        iframe {
+          width: 100%;
+          max-height: 100%;
+        }
+  
+        #overlay {
+          width: 100%;
+          max-height: 100%;
+        }
+  
+        #overlay {
+          position: absolute;
+          top: 0;
+  
+  
+          img {
+            width: 4rem;
+            height: 4rem;
+          }
+        }
+      }
+  
+      .description {
+        display: flex;
+        flex-direction: column;
+  
+        .description-title {
+          align-items: center;
+          font-size: 2rem;
+          line-height: 100%;
+          margin-top: 1rem;
+          margin-bottom: 0.5rem;
+  
+          p {
+            align-self: flex-end;
+            font-size: 1.25rem;
+            line-height: 100%;
+            color: rgb(82, 139, 190);
+          }
+        }
+  
+        .description-body {
+          font-size: 0.875rem;
+        }
+      }
+    }
+  }
+  
+  @media (max-width: 570px) {
+    section ::ng-deep app-yt-card {
+      max-width: 408.75px;
+      max-height: 230px;
+    }
+  }
+  
+  @media (max-width: 570px) {
+    section ::ng-deep app-yt-card {
+      max-width: 408.75px;
+      max-height: 230px;
+    }
+  }
+  
+  
+  @media (max-width: 440px) {
+    section ::ng-deep app-yt-card {
+      max-width: 327px;
+      max-height: 184px;
+    }
+  }

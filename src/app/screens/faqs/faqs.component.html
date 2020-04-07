@@ -12,17 +12,28 @@
 </div>
 
 <section id="faqs-professor">
-  <div class="row">
-    <div class="image">
-      <p class="title">
-        Sou professor
-      </p>
-    </div>
 
-    <app-faqs-professor></app-faqs-professor>
-  </div>  
+    <div class="aside">
+      <h1>FAQ's Para</h1>
+      <div fxLayout="column" >
+      <ng-template ngFor let-item [ngForOf]="stakeholder$ | async">
+          <app-select-card (selectedEmitter)="getSelected($event)" [data]="item" [fxFlexOrder]="item.order"></app-select-card>
+      </ng-template> 
+      </div>
+
+      <h1>FAQ's por Plataforma</h1>
+      <div fxLayout="column" >
+      <ng-template ngFor let-item [ngForOf]="providers$ | async">
+          <app-select-card (selectedEmitter)="getSelected($event)" [data]="item" [fxFlexOrder]="item.order"></app-select-card>
+      </ng-template> 
+      </div>
+     
+  </div>
+
+    <app-faqs-professor [data]="faqs"></app-faqs-professor>
+
 </section>
-
+<!-- 
 <section id="faqs-estudante">
   <div class="row">
     <div fxHide.xs="true" class="image">
@@ -45,4 +56,4 @@
 
     <app-faqs-pai></app-faqs-pai>
   </div>  
-</section>
+</section> -->

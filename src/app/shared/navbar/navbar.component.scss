@@ -86,6 +86,9 @@
     .content {
       --color:  #5A98D0;
     }
+    .blog {
+      --color: #6402B0;
+    }
   }
 
   .drawer-opener,
@@ -266,7 +269,9 @@
           &.pais {
             --color: #3772FF;
           }
-      
+          &.blog {
+            --color: #6402B0;
+          }
           &.help {
             --color: #EAC116;
           }

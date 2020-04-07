@@ -13,8 +13,23 @@
 
         <div class="aside">
             <h1>Conteúdos Para</h1>
-            <div *ngFor="let item of stakeholder$ | async">
-                <app-select-card (selectedEmitter)="getSelected($event)" [data]="item"></app-select-card>
+            <div fxLayout="column" >
+            <ng-template ngFor let-item [ngForOf]="stakeholder$ | async">
+                <app-select-card (selectedEmitter)="getSelected($event)" [data]="item" [fxFlexOrder]="item.order"></app-select-card>
+            </ng-template> 
+            </div>
+
+            <h1>Plataformas</h1>
+            <div fxLayout="column" >
+            <ng-template ngFor let-item [ngForOf]="providers$ | async">
+                <app-select-card (selectedEmitter)="getSelected($event)" [data]="item" [fxFlexOrder]="item.order"></app-select-card>
+            </ng-template> 
+            </div>
+            <h1>Por Temáticas</h1>
+            <div fxLayout="column" >
+            <ng-template ngFor let-item [ngForOf]="tags$ | async">
+                <app-select-card (selectedEmitter)="getSelected($event)" [data]="item" [fxFlexOrder]="item.order"></app-select-card>
+            </ng-template> 
             </div>
         </div>
  

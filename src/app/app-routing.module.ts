@@ -8,6 +8,8 @@ import { ContentComponent } from './screens/content/content.component';
 import { ProfessorComponent } from './screens/professor/professor.component';
 import { AlunoComponent } from './screens/aluno/aluno.component';
 import { PaiComponent } from './screens/pai/pai.component';
+import { ContentItemResolver } from './resolvers/contentItem.resolver';
+import { BlogComponent } from './screens/blog/blog.component';
 
 
 const routes: Routes = [
@@ -16,9 +18,10 @@ const routes: Routes = [
    
   ]
   },
-  {path: 'professor/:id', component: ProfessorComponent},
-  {path: 'aluno/:id', component: AlunoComponent},
-  {path: 'pais/:id', component: PaiComponent},
+  {path: 'professor/:slug', component: ProfessorComponent, resolve:{ contentItem: ContentItemResolver}},
+  {path: 'aluno/:slug', component: AlunoComponent, resolve:{ contentItem: ContentItemResolver}},
+  {path: 'pais/:slug', component: PaiComponent, resolve:{ contentItem: ContentItemResolver}},
+  {path: 'blog',component: BlogComponent},
   {path: 'faqs',component: FAQsComponent},
   {path: 'sobre',component: AboutComponent},
   {path: 'privacidade', component: PrivacyComponent}

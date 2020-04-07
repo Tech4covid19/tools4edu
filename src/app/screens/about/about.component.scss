@@ -117,7 +117,7 @@ section {
 
 .tech4covidcard-wrapper {
 
-  padding: 0rem 12rem 8rem 120px;
+  
 
   .title{
     margin-bottom: 10px;
@@ -183,34 +183,7 @@ section {
 
 // MOBILE VERSION
 @media (max-width: 860px) {
-  .header .row {
-    flex-direction: column;
-    align-items: flex-start;
-    padding: 0;
-    margin-top: 10rem;
-    margin-right: 1.5rem;
-    margin-bottom: 1rem;
-    margin-left: 1.5rem;
-
-    .title {
-      max-width: 50%;
-      margin-bottom: 2rem;
-
-      p {
-        font-size: 0.875rem;
-        line-height: 130%;
-        margin-top: 0.5rem;
-      }
-
-      + div {
-        img {
-          max-width: 75%;
-          display: block;
-          margin: 0 auto;
-        }
-      }
-    }
-  }
+  
 
   section {
     padding: 1.875rem 1.5rem 1.875rem 1.5rem;
@@ -309,20 +282,64 @@ section {
       height: 148.5px;
     }
 
-    ::ng-deep app-yt-card {
-      position: relative;
-      width: 264px;
-      height: 148.5px;
+    
+  }
+}
+@media (max-width: 860px) {
+  .header {
+    min-height: unset;
 
-      iframe {
-        width: 264px;
-        height: 148.5px;
+    .row {
+      margin-top: 7rem;
+      margin-right: 1.5rem;
+      margin-bottom: 1rem;
+      margin-left: 1.5rem;
+      padding: 0;
+  
+      .title {
+        width: 100%;
+        font-size: 3rem;
+        line-height: 130%;
+  
+        p {
+          max-width: 100%;
+          width: 100%;
+          font-size: 0.875rem;
+          margin-top: 0.5rem;
+        }
+      }
+    }
+  }
+
+  section {
+    padding: 0 1.5rem 3.75rem 1.5rem;
+
+    &:nth-of-type(1) {
+      padding-top: 3.75rem;
+    }
+
+   
+    .description {
+      display: flex;
+      flex-direction: column;
+
+      .description-title {
+        align-items: center;
+        font-size: 2rem;
+        line-height: 100%;
+        margin-top: 1rem;
+        margin-bottom: 0.5rem;
+
+        p {
+          align-self: flex-end;
+          font-size: 1.25rem;
+          line-height: 100%;
+          color: rgb(82, 139, 190);
+        }
       }
 
-      #overlay {
-        top: -152.5px;
-        width: 264px;
-        height: 148.5px;
+      .description-body {
+        font-size: 0.875rem;
       }
     }
   }

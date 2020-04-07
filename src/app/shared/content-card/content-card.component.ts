@@ -1,5 +1,6 @@
 import { Component, OnInit, Input, OnChanges, SimpleChanges } from '@angular/core';
 import { Router } from '@angular/router';
+import { ContentItemStore } from 'src/app/store/content-item.store';
 
 @Component({
   selector: 'app-content-card',
@@ -8,11 +9,13 @@ import { Router } from '@angular/router';
 })
 export class ContentCardComponent implements OnInit, OnChanges {
   @Input( 'data' ) data
-  constructor(private router: Router) { }
+  item: any;
+  constructor(private router: Router, private store: ContentItemStore) { }
 
 
   ngOnChanges(changes: SimpleChanges): void {
- 
+      if(this.data)
+        this.item = this.data
       
   }
 
@@ -20,6 +23,7 @@ export class ContentCardComponent implements OnInit, OnChanges {
     console.log(this.data)
   }
   navigateTo() {
-    this.router.navigate([this.data.stakeholder.title.toLowerCase(), this.data.id])
+    this.store.setActive(this.data.id)
+    this.router.navigate([this.data.stakeholder.code.toLowerCase(), this.data.slug])
   }
 }

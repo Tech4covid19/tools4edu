@@ -1,10 +1,5 @@
-import { Component, OnInit, Query } from '@angular/core';
-import { Apollo, QueryRef } from 'apollo-angular';
-import gql from 'graphql-tag';
-import { map } from 'rxjs/operators';
-import { Observable } from 'apollo-link';
-import { Subscription } from 'apollo-client/util/Observable';
-import { ActivatedRoute } from '@angular/router';
+import { Component, OnInit } from '@angular/core';
+import { ContentItemQuery } from 'src/app/store/content-item.query';
 
 
 @Component({
@@ -15,38 +10,11 @@ import { ActivatedRoute } from '@angular/router';
 export class PaiComponent implements OnInit {
 
   videos$: any;
-  query: any;
+  constructor(private query: ContentItemQuery) {
 
-  constructor(private apollo: Apollo, private route: ActivatedRoute) {    this.query = gql`
-    
-  query getVideo {
-     contentItems {
-       id
-       title
-       text
-       videoUrl
-       videoTime
-       stakeholder {
-         title
-       }
-     }
-   }
- 
- `;
-}
+  }
 
-ngOnInit() {
-
- this.videos$ =  this.apollo
- .watchQuery({
-   query: this.query,
-   variables: {
-     videoId: this.route.snapshot.params.id
-   }
- })
- .valueChanges.pipe(map((result:any) => 
-     result.data.contentItems.find(item => item.id === this.route.snapshot.params.id)
- )
- )
-}
+ ngOnInit() {
+   this.videos$ = this.query.selectActive()
+ }
 }

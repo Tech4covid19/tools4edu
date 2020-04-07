@@ -53,7 +53,11 @@ export class YtCardComponent implements OnInit, OnChanges {
   }
   ngOnChanges() {
     if(this.videoIdOut)
-      this.loader()
+      setTimeout(() => {
+        this.loader()
+        console.log(this.videoIdOut)
+      }, 500);
+      
   }
 
   loader() {
