@@ -23,6 +23,8 @@ export class ContentComponent implements OnInit {
   uniqueProvider: any[];
   providerArray: any[] = [];
   tags$: any;
+  uniqueTags: any[];
+  tagArray: any[] = [];
 
   constructor(private service: ContentItemService, private route: ActivatedRoute, private apollo: Apollo) {
 
@@ -33,7 +35,7 @@ export class ContentComponent implements OnInit {
     this.route.queryParams
     .subscribe( params => {
         let ids = (params.filter === 'all') ? [] : params.filter
-        this.videos$ =  this.service.getContentItems(ids, [])
+        this.videos$ =  this.service.getContentItems(ids, [], [])
 
       })
 
@@ -82,23 +84,41 @@ export class ContentComponent implements OnInit {
    )
    }
    getSelected(event){
-     console.log(event)
+     console.log(event);
+
      if(event.add && event.data.__typename.toLowerCase() === 'stakeholder')
       this.stakeholderIds.push(event.data.id)
+
      if(!event.add && event.data.__typename.toLowerCase() === 'stakeholder') {
       const index = this.stakeholderIds.indexOf(event.data.id)
       if (index !== -1) this.stakeholderIds.splice(index, 1);
      }
-      this.unique = [...new Set(this.stakeholderIds)];
-      if(event.add && event.data.__typename.toLowerCase() === 'provider') {
+
+     this.unique = [...new Set(this.stakeholderIds)];
+
+     if(event.add && event.data.__typename.toLowerCase() === 'provider') {
       this.providerArray.push(event.data.id)
-      }
+     }
+
      if(!event.add && event.data.__typename.toLowerCase() === 'provider') {
       const index = this.providerArray.indexOf(event.data.id)
       if (index !== -1) this.providerArray.splice(index, 1);
      }
+
       this.uniqueProvider = [...new Set(this.providerArray)];
-      this.videos$ = this.service.getContentItems(this.unique, this.uniqueProvider)
+
+     if (event.add && event.data.__typename.toLowerCase() === 'contenttag') {
+       this.tagArray.push(event.data.id);
+     }
+
+     if (!event.add && event.data.__typename.toLowerCase() === 'contenttag') {
+       const index = this.tagArray.indexOf(event.data.id);
+       if (index !== -1) this.tagArray.splice(index, 1);
+     }
+
+     this.uniqueTags = [...new Set(this.tagArray)];
+
+      this.videos$ = this.service.getContentItems(this.unique, this.uniqueProvider, this.uniqueTags)
     }
 
 }

@@ -12,13 +12,13 @@ export class ContentItemService extends NgEntityService<ContentItemState> {
   constructor(protected store: ContentItemStore, private apollo: Apollo) {
     super(store);
   }
-  getContentItems(ids, providersIds) {
+  getContentItems(stakeholderIds, providersIds, tagIds) {
     this.query = gql`
-    query getContent($stakeholdersIds: [String!], $providersIds: [String!]) {
+    query getContent($stakeholdersIds: [String!], $providersIds: [String!], $tagIds: [String!]) {
      contentItems(
       stakeholderIds:$stakeholdersIds,
       providerIds:$providersIds,
-
+      tagIds:$tagIds
       startAt:0
     ) {
       id,
@@ -44,18 +44,19 @@ export class ContentItemService extends NgEntityService<ContentItemState> {
         id
       }
     }
-  
+
   }`;
     return  this.apollo
     .watchQuery({
       query: this.query,
       variables: {
-        stakeholdersIds: ids,
-        providersIds: providersIds
+        stakeholdersIds: stakeholderIds,
+        providersIds: providersIds,
+        tagIds: tagIds,
       }
- 
+
     })
-    .valueChanges.pipe(tap((result:any) => 
+    .valueChanges.pipe(tap((result:any) =>
        this.store.set(result.data.contentItems)
     ), map((result:any) => result.data.contentItems ))
   }
@@ -86,7 +87,7 @@ export class ContentItemService extends NgEntityService<ContentItemState> {
         id
       }
     }
-  
+
   }`;
 
   return  this.apollo
@@ -111,7 +112,7 @@ export class ContentItemService extends NgEntityService<ContentItemState> {
       order,
       question,
       answer,
-  
+
       stakeholder {
         id
         code
