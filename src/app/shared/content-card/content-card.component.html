@@ -1,6 +1,6 @@
 <div class="content" [ngClass]="{'pai': item.stakeholder?.id == '5e7cdd721c9d44000054f36a', 'alunoa': item.id === '5e8947249724b26d80287f6c', 'professor': item.stakeholder?.id == '5e7cdd531c9d44000054f369', 'aluno': item.stakeholder?.id == '5e7cdd031c9d44000054f368'}" (click)="navigateTo()">
     <div *ngIf="(item.provider !== null) then renderlogo else nonrenderlogo">
-       
+
     </div>
     <ng-template #renderlogo>
     <div  class="provider" >
@@ -12,7 +12,13 @@
         <img src="assets/content/5e8baf38d6c91771a843097e.png">
     </div>
     </ng-template>
-    <div class="title">{{ item?.title }} <div class="time">{{ item?.videoTime}} min</div></div>
+    <div class="text-wrapper">
+      <div class="title">
+        {{ item?.title }}
+        <div class="time">{{ item?.videoTime}} min</div>
+      </div>
+
+    </div>
     <div class="saber">
       Saber mais
       <svg width="21" height="16" viewBox="0 0 21 16" fill="none" xmlns="http://www.w3.org/2000/svg">
