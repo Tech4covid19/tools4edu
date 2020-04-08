@@ -4,6 +4,7 @@ import { Router } from '@angular/router';
 import { Apollo } from 'apollo-angular';
 import gql from 'graphql-tag';
 import { map } from 'rxjs/operators';
+import { BlogArticleService } from '../../store/blog-article/blog-article.service';
 
 @Component({
   selector: 'app-home',
@@ -12,7 +13,11 @@ import { map } from 'rxjs/operators';
 })
 export class HomeComponent implements OnInit {
   stakeholders$: any;
-  constructor(private router: Router, private apollo: Apollo) { }
+  blogArticles$: any;
+
+  constructor(
+    private router: Router, private apollo: Apollo, private blogArticlesService: BlogArticleService
+  ) { }
 
   ngOnInit() {
     this.stakeholders$ = this.apollo
@@ -23,10 +28,12 @@ export class HomeComponent implements OnInit {
           title,
         }
        }`,
-     }) .valueChanges.pipe(map((result:any) => 
+     }) .valueChanges.pipe(map((result:any) =>
      result.data.stakeholders
       )
-    )  
+    )
+
+    this.blogArticles$ = this.blogArticlesService.getBlogArticlesForHome();
   }
   goTo(stakeholder) {
     this.router.navigate(['conteudo'], { queryParams: { filter: stakeholder } })

@@ -183,6 +183,29 @@
   }
 }
 
+.blog-articles {
+  margin-top: 5px;
+  margin-bottom: 120px;
+  margin-left: 13%;
+  margin-right: 96px;
+  font-family: Amatic SC;
+  font-style: normal;
+  font-weight: bold;
+  font-size: 64px;
+  line-height: 74px;
+  letter-spacing: 0.04em;
+  color: #1F3F68;
+
+  .title {
+    margin-bottom: 40px;
+  }
+
+  .article-container {
+    display: flex;
+    flex-wrap: wrap;
+  }
+}
+
 .plataformas {
   display: flex;
   flex-direction: column;
@@ -291,7 +314,8 @@
   }
 
   .testemunhos,
-  .plataformas {
+  .plataformas,
+  .blog-articles {
     .title {
       width: 100%;
       font-size: 2.5rem;

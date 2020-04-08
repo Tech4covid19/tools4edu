@@ -56,6 +56,19 @@
   <app-carousel></app-carousel>
 </div>
 
+<div class="blog-articles">
+  <div class="title">
+    Blog
+  </div>
+
+  <div class="article-container">
+    <ng-template ngFor let-blogArticle [ngForOf]="blogArticles$ | async">
+      <app-blog-card [data]="blogArticle"></app-blog-card>
+    </ng-template>
+  </div>
+
+</div>
+
 <div class="plataformas">
   <div class="title">
     Plataformas Suportadas

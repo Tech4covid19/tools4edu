@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import { BlogArticleStore } from './blog-article.store';
-import { map, tap } from 'rxjs/operators';
+import { map, take, tap } from 'rxjs/operators';
 import { Apollo } from 'apollo-angular';
 import gql from 'graphql-tag';
 
@@ -43,6 +43,19 @@ export class BlogArticleService {
 
   constructor(private store: BlogArticleStore,
               private apollo: Apollo) {
+  }
+
+  getBlogArticlesForHome() {
+    // TODO: Add Limit variable to BlogArticles
+    return this.apollo
+      .watchQuery({
+        query: GET_BLOG_ARTICLES
+      })
+      .valueChanges
+      .pipe(
+        map((result: any) => result.data.blogArticles),
+        take(3)
+      )
   }
 
   getBlogArticles () {
