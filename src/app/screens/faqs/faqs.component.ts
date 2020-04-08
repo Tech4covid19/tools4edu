@@ -19,17 +19,17 @@ export class FAQsComponent implements OnInit {
   providers$: any;
   tags$: any;
   faqs$: any;
-  faqs: any;
+  faqs: any 
   constructor(private apollo: Apollo, private service: ContentItemService) { }
 
   ngOnInit() {
     const professorId = '5e7cdd531c9d44000054f369'
     const providerId = '5e7cdc4c1c9d44000054f367'
-    this.stakeholderIds.push(professorId)
-    this.providerArray.push(providerId)
+    // this.stakeholderIds.push(professorId)
+    // this.providerArray.push(providerId)
     this.faqs$ = this.service.getFaqs( this.stakeholderIds, this.providerArray)
-    this.faqs$
-      .subscribe(arg => this.faqs = arg);
+     this.faqs$
+       .subscribe(arg => this.faqs = arg);
 
     this.stakeholder$ = this.apollo
      .watchQuery({

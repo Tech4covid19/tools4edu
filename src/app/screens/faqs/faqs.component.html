@@ -29,9 +29,12 @@
       </div>
      
   </div>
-
+  <div *ngIf="faqs?.length > 0; then show else resume"></div>
+    
+  <ng-template #show>
     <app-faqs-professor [data]="faqs"></app-faqs-professor>
-
+  </ng-template>
+  <ng-template #resume> <p>Selecione os Filtros de interesse localizados ao lado esquerdo, de acordo com o tipo de plataforma e se é Professor, Aluno ou Encarregado de Educação.</p></ng-template>
 </section>
 <!-- 
 <section id="faqs-estudante">

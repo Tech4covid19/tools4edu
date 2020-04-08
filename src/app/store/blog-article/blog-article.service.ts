@@ -7,13 +7,15 @@ import gql from 'graphql-tag';
 const GET_BLOG_ARTICLES = gql`
   query GetBlogArticles {
     blogArticles {
+      id,
       title,
       author,
       images,
       text,
       slug,
+      summary,
       published,
-     
+      createdAt
     }
   }
 `;
@@ -21,13 +23,15 @@ const GET_BLOG_ARTICLES = gql`
 const GET_BLOG_ARTICLE = gql`
   query GetBlogArticle($slug: String!) {
     blogArticle(slug: $slug) {
+      id,
       title,
       author,
       images,
       text,
       slug,
+      summary,
       published,
-     
+      createdAt
     }
   }
 `;
@@ -58,14 +62,15 @@ export class BlogArticleService {
       .watchQuery({
         query: GET_BLOG_ARTICLE,
         variables: {
-          slug
+          slug: slug
         }
       })
       .valueChanges
       .pipe(
         tap(( result: any ) => [
+          console.log(result),
           this.store.add(result.data.blogArticle),
-          this.store.setActive(result.data.blogArticle.slug)
+          this.store.setActive(result.data.blogArticle.id)
         ]),
         map( (result: any) => result.data.blogArticle )
       )

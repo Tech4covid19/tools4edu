@@ -63,11 +63,12 @@ section {
     }
 
     .row {
-      display: grid;
-      grid-template-columns: repeat(auto-fill, minmax(345px, 1fr));
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
 
       app-blog-card {
-        //flex: 1 1 33.3%;
+        flex: 1 1 50%;
       }
 
       .image {
@@ -135,8 +136,11 @@ section {
     display: flex;
     align-items: flex-end;
   }
+
+
+
   app-content-card {
-    flex: 1 1 32%;
+    flex: 1 1 30%;
   }
   // WIDER SCREENS
   @media (max-width: 1720px) {

@@ -1,5 +1,5 @@
 import { BrowserModule } from '@angular/platform-browser';
-import { NgModule } from '@angular/core';
+import { NgModule, LOCALE_ID } from '@angular/core';
 import { FlexLayoutModule } from '@angular/flex-layout';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -28,6 +28,11 @@ import { ContentItemResolver } from './resolvers/contentItem.resolver';
 import { BlogComponent } from './screens/blog/blog.component';
 import { BlogArticleResolver } from './resolvers/blog-article.resolver';
 import { BlogArticleComponent } from './screens/blog-article/blog-article.component';
+
+import localeDeAt from '@angular/common/locales/pt-PT';
+import { registerLocaleData } from '@angular/common';
+
+registerLocaleData(localeDeAt);
 const uri = 'https://cnom3x70jk.execute-api.eu-central-1.amazonaws.com/dev/graphql'; // <-- add the URL of the GraphQL server here
 export function createApollo(httpLink: HttpLink) {
   return {
@@ -73,6 +78,7 @@ export function createApollo(httpLink: HttpLink) {
       useFactory: createApollo,
       deps: [HttpLink],
     },
+    { provide: LOCALE_ID, useValue: "pt-PT" },
     { provide: NG_ENTITY_SERVICE_CONFIG, useValue: { baseUrl: 'https://cnom3x70jk.execute-api.eu-central-1.amazonaws.com/dev/graphql' }},
   ],
   bootstrap: [AppComponent]

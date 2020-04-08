@@ -1,1 +1,23 @@
-<p>blog-article works!</p>
+<div class="header">
+    <div class="row">
+      <div class="title">
+        Blog
+        <p>
+            Descubra passo a passo como usar a ferramenta Zoom* para as suas aulas. Começamos por esta ferramenta porque foi a indicada como prioritária no inquérito que fizemos aos professores. Em breve publicaremos guias para outras plataformas, além de novos conteúdos que o ajudarão a usar a tecnologia para criar aulas à distância cada vez mais motivadoras para os alunos e para si.
+        </p>
+      </div>
+    </div>
+  </div>
+  <section class="first">
+    <div class="thumbnail">
+        <img [src]="article.images[0]">
+    </div>
+    <div class="title">
+        <h1>{{ article?.title }}</h1> <p>{{ article?.createdAt | date }}</p>
+        
+    </div>
+    <h2>{{ article?.author }}</h2>
+    <div class="row" [innerHTML]="article?.text"></div>
+
+  </section>
+

@@ -27,6 +27,7 @@ export class ContentItemService extends NgEntityService<ContentItemState> {
       slug
       videoUrl,
       videoTime,
+      type,
       stakeholder{
         title,
         code,
@@ -110,6 +111,7 @@ export class ContentItemService extends NgEntityService<ContentItemState> {
       order,
       question,
       answer,
+  
       stakeholder {
         id
         code
