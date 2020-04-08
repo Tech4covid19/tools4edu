@@ -13,9 +13,7 @@ export class BlogArticleComponent implements OnInit {
   constructor(private query: BlogArticleQuery) { }
 
   ngOnInit() {
-    this.article = this.query.getActive()
-
-    console.log(this.article)
+    this.article = this.query.getActive();
   }
 
 }

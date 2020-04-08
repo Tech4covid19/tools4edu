@@ -9,12 +9,15 @@
     </div>
   </div>
   <section class="first">
+    <div class="conteudos" [routerLink]="['/blog']" routerLinkActive="router-link-active" >
+      <p>< Voltar para Artigos</p>
+    </div>
     <div class="thumbnail">
         <img [src]="article.images[0]">
     </div>
     <div class="title">
         <h1>{{ article?.title }}</h1> <p>{{ article?.createdAt | date }}</p>
-        
+
     </div>
     <h2>{{ article?.author }}</h2>
     <div class="row" [innerHTML]="article?.text"></div>
