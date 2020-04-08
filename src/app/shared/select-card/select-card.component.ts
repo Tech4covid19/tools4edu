@@ -7,19 +7,25 @@ import { Component, OnInit, HostListener, HostBinding, Input, OnChanges, SimpleC
   styleUrls: ['./select-card.component.scss']
 })
 export class SelectCardComponent implements OnInit, OnChanges {
-  @Input() data
-  @Output () selectedEmitter = new EventEmitter()
-  @HostBinding('class.selected') 
+  @Input() data;
+  @Input() forceSelect;
+
+  @Output () selectedEmitter = new EventEmitter();
+  @HostBinding('class.selected')
   selected: boolean;
   item: any;
 
   constructor() { }
 
   ngOnInit() {
+    if (this.forceSelect) {
+      this.selected = true;
+    }
   }
+
   @HostListener('click')
   select() {
-    this.selected = !this.selected
+    this.selected = !this.selected;
     if(this.selected) {
     this.selectedEmitter.emit({data:this.item, add: true})
     }

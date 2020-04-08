@@ -26,6 +26,8 @@ export class ContentComponent implements OnInit {
   uniqueTags: any[];
   tagArray: any[] = [];
 
+  initialStakeholderIds: string[];
+
   constructor(private service: ContentItemService, private route: ActivatedRoute, private apollo: Apollo) {
 
   }
@@ -34,9 +36,9 @@ export class ContentComponent implements OnInit {
   ngOnInit() {
     this.route.queryParams
     .subscribe( params => {
-        let ids = (params.filter === 'all') ? [] : params.filter
+        let ids = (params.filter === 'all') ? [] : params.filter;
+        this.initialStakeholderIds = ids;
         this.videos$ =  this.service.getContentItems(ids, [], [])
-
       })
 
      this.stakeholder$ = this.apollo
