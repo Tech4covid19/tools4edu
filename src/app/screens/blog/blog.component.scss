@@ -66,10 +66,7 @@ section {
         display: flex;
         flex-direction: row;
         justify-content: center;
-
-      app-blog-card {
-        flex: 1 1 50%;
-      }
+      flex-wrap: wrap;
 
       .image {
         flex-basis: 60%;

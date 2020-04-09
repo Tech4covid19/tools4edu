@@ -6,6 +6,7 @@ import { ActivatedRoute, Router } from '@angular/router';
 import { ThrowStmt } from '@angular/compiler';
 import { ContentItemStore } from 'src/app/store/content-item/content-item.store';
 import { ContentItemService } from 'src/app/store/content-item/content-item.service';
+import { BlockUI, NgBlockUI } from 'ng-block-ui';
 
 @Component({
   selector: 'app-content',
@@ -28,12 +29,16 @@ export class ContentComponent implements OnInit {
 
   initialStakeholderIds: string[];
 
+  @BlockUI() blockUI: NgBlockUI;
+
   constructor(private service: ContentItemService, private route: ActivatedRoute, private apollo: Apollo) {
 
   }
 
 
   ngOnInit() {
+    // this.blockUI.start();
+
     this.route.queryParams
     .subscribe( params => {
         let ids = (params.filter === 'all') ? [] : params.filter;

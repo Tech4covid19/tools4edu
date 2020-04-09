@@ -33,13 +33,10 @@
             </div>
         </div>
 
-    <div class="row">
-        <ng-template ngFor let-video [ngForOf]="videos$ | async">
-            <app-content-card [data]="video"></app-content-card>
-        </ng-template>
-
-
-
-    </div>
+      <div class="row">
+          <ng-template ngFor let-video [ngForOf]="videos$ | async">
+              <app-content-card [data]="video"></app-content-card>
+          </ng-template>
+      </div>
   </section>
 

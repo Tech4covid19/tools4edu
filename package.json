@@ -55,6 +55,7 @@
     "jquery": "^3.4.1",
     "mediaelement": "^4.2.16",
     "mediaelement-plugins": "^2.5.1",
+    "ng-block-ui": "^2.1.8",
     "ngx-owl-carousel-o": "^3.0.0",
     "ngx-youtube-player": "^7.1.1",
     "rxjs": "~6.5.4",
