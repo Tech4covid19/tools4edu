@@ -5,6 +5,7 @@ export interface ContentItem {
   slug: string;
   videoUrl: string;
   videoTime: string;
+  imageUrl: string;
   stakeholder: Stakeholder
   provider: Provider
   tags: Tag[]

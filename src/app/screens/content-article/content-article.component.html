@@ -1,0 +1,24 @@
+<div class="header">
+  <div class="row">
+    <div class="title">
+      Conteúdos
+      <p>
+        Descubra conteúdos preparados para o ajudar a utilizar ferramentas tecnológicas indicadas pelo ME. Encontre ainda conteúdos sobre metodologias e ferramentas de apoio que ajudarão a melhorar a experiência para todos.
+      </p>
+    </div>
+  </div>
+</div>
+<section class="first">
+  <div class="conteudos" [routerLink]="['/conteudo']" routerLinkActive="router-link-active" >
+    <p>< Voltar para Conteudo</p>
+  </div>
+  <div class="thumbnail">
+    <img [src]="article?.imageUrl">
+  </div>
+  <div class="title">
+    <h1>{{ article?.title }}</h1>
+  </div>
+  <div class="row" [innerHTML]="article?.text"></div>
+
+</section>
+

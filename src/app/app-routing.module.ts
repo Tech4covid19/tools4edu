@@ -12,14 +12,13 @@ import { ContentItemResolver } from './resolvers/contentItem.resolver';
 import { BlogComponent } from './screens/blog/blog.component';
 import { BlogArticleResolver } from './resolvers/blog-article.resolver';
 import { BlogArticleComponent } from './screens/blog-article/blog-article.component';
+import { ContentArticleComponent } from './screens/content-article/content-article.component';
 
 
 const routes: Routes = [
   {path: '',component: HomeComponent},
-  {path: 'conteudo',component: ContentComponent, children:[
-
-  ]
-  },
+  {path: 'conteudo',component: ContentComponent},
+  {path: 'conteudo/:slug', component: ContentArticleComponent, resolve: { contentItem: ContentItemResolver }},
   {path: 'professor/:slug', component: ProfessorComponent, resolve:{ contentItem: ContentItemResolver}},
   {path: 'aluno/:slug', component: AlunoComponent, resolve:{ contentItem: ContentItemResolver}},
   {path: 'pais/:slug', component: PaiComponent, resolve:{ contentItem: ContentItemResolver}},

@@ -31,6 +31,7 @@ import { BlogArticleComponent } from './screens/blog-article/blog-article.compon
 
 import localeDeAt from '@angular/common/locales/pt-PT';
 import { registerLocaleData } from '@angular/common';
+import { ContentArticleComponent } from './screens/content-article/content-article.component';
 
 registerLocaleData(localeDeAt);
 const uri = 'https://cnom3x70jk.execute-api.eu-central-1.amazonaws.com/dev/graphql'; // <-- add the URL of the GraphQL server here
@@ -54,6 +55,7 @@ export function createApollo(httpLink: HttpLink) {
     ContentComponent,
     BlogComponent,
     BlogArticleComponent,
+    ContentArticleComponent,
   ],
   imports: [
     BrowserModule,

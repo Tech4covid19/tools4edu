@@ -18,11 +18,35 @@
       transform: scale(1.0225);
     }
 
+    &.article {
+      background-repeat: no-repeat;
+      mask:  url(./../../../assets/content/stakeholder.png) no-repeat;
+      background-size: 131%;
+      background-position: 97% 35%;
+      position: relative;
+
+      .overlay {
+        width: 80%;
+        height: 290px;
+        position: absolute;
+        bottom: 45px;
+        left: 0;
+        background: linear-gradient(0deg, #5A98D0 0%, rgba(90, 152, 208, 0) 59.37%);
+        z-index: -1;
+      }
+
+      .text-wrapper {
+        span {
+          white-space: nowrap;
+          text-overflow: ellipsis;
+        }
+      }
+    }
+
     &.professor {
       background: url(./../../../assets/content/stakeholder.png) no-repeat;;
       mask:  url(./../../../assets/content/stakeholder.png) no-repeat;
       mask-size: cover;
-
     }
 
     &.aluno {
@@ -47,6 +71,11 @@
         border-top-left-radius: 100px;
         transform: translate(-52px, -65px);
         mask:  url(./../../../assets/content/stakeholder.png) no-repeat;
+
+        &.fake {
+          opacity: 0;
+        }
+
         img {
             height: auto;
             position: relative;
@@ -72,6 +101,13 @@
       //max-width: 234px;
       display: flex;
       justify-content: space-between;
+      span {
+        font-family: Amatic SC;
+        font-style: normal;
+        font-weight: bold;
+        font-size: 24px;
+        color: #FFF;
+      }
 
       .time {
         font-size: 16px;

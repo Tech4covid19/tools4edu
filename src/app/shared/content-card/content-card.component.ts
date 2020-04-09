@@ -23,7 +23,7 @@ export class ContentCardComponent implements OnInit, OnChanges {
     console.log(this.data)
   }
   navigateTo() {
-    this.store.setActive(this.data.id)
-    this.router.navigate([this.data.stakeholder.code.toLowerCase(), this.data.slug])
+    this.store.setActive(this.data.id);
+    this.router.navigate([this.data.type === 'CONTENT-TUTORIAL-VIDEO' ? this.data.stakeholder.code.toLowerCase() : 'conteudo', this.data.slug])
   }
 }

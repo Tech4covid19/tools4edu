@@ -15,7 +15,7 @@
             <h1>Conteúdos Para</h1>
             <div fxLayout="column" >
             <ng-template ngFor let-item [ngForOf]="stakeholder$ | async">
-                <app-select-card [forceSelect]="initialStakeholderIds.includes(item.id)" (selectedEmitter)="getSelected($event)" [data]="item" [fxFlexOrder]="item.order"></app-select-card>
+                <app-select-card [forceSelect]="initialStakeholderIds ? initialStakeholderIds.includes(item.id) : false" (selectedEmitter)="getSelected($event)" [data]="item" [fxFlexOrder]="item.order"></app-select-card>
             </ng-template>
             </div>
 
