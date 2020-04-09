@@ -15,7 +15,7 @@
 
 <div class="buttons">
   <ng-template ngFor let-data [ngForOf]="stakeholders$ | async">
-  <div class="professor" [ngClass]="{'pai': data.id == '5e7cdd721c9d44000054f36a', 'professor': data.id == '5e7cdd531c9d44000054f369', 'aluno': data.id == '5e7cdd031c9d44000054f368'}" (click)="goTo(data.id)">
+  <div class="" [ngStyle]="{'order': data.order}" [ngClass]="{'pai': data.id == '5e7cdd721c9d44000054f36a', 'professor': data.id == '5e7cdd531c9d44000054f369', 'aluno': data.id == '5e7cdd031c9d44000054f368'}" (click)="goTo(data.id)">
     <div class="title">Sou {{ data.title }}</div>
     <div class="saber">
       Saber mais

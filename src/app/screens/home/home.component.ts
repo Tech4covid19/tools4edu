@@ -26,6 +26,7 @@ export class HomeComponent implements OnInit {
         stakeholders{
           id,
           title,
+          order
         }
        }`,
      }) .valueChanges.pipe(map((result:any) =>
