@@ -3,6 +3,9 @@
   display: flex;
   flex-direction: column;
   background:  url(./../../../assets/sobre/header_background.png);
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
   margin: 0;
 
   .row {
@@ -11,7 +14,7 @@
     flex-direction: row;
     justify-content: flex-start;
     align-items: center;
-    padding: 8rem 12rem 2.5rem 12rem;
+    padding: 120px 12rem 2.5rem;
 
     .title {
       font-family: Amatic SC;
@@ -21,6 +24,7 @@
       line-height: 74px;
       letter-spacing: 0.04em;
       color: #fff;
+      margin-top: 257px;
 
       p {
         font-family: Barlow;
@@ -51,7 +55,7 @@ section {
     flex-basis: 47.5%;
     display: flex;
     flex-direction: column;
-    
+
     p {
       font-family: Barlow;
       font-style: normal;
@@ -67,10 +71,10 @@ section {
       }
 
       &.strong {
-        font-weight: 900;  
+        font-weight: 900;
       }
     }
-    
+
     h1 {
       font-family: Amatic SC;
       font-style: normal;
@@ -88,7 +92,7 @@ section {
   display: flex;
   justify-content: center;
   flex-direction: row;
-  padding-bottom: 3.75rem;
+  padding-bottom: 60px;
 
   .video {
     display: flex;
@@ -103,8 +107,8 @@ section {
 
   ::ng-deep app-yt-card {
     width: 1056px;
-    height: 594px;  
-    
+    height: 594px;
+
     &:hover {
       color: linear-gradient(0deg, rgba(255, 136, 17, 0.7) 0%, rgba(255, 136, 17, 0) 23.58%)
     }
@@ -112,9 +116,16 @@ section {
 }
 
 .tech4covidcard-wrapper {
+
+  
+
+  .title{
+    margin-bottom: 10px;
+  };
+
   .card {
     max-width: 527px;
-    min-height: 392px;
+    min-height: 300px;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -155,12 +166,12 @@ section {
       position: relative;
       width: 696.96px;
       height: 392.04px;
-  
+
       iframe {
         width: 696.96px;
         height: 392.04px;
       }
-  
+
       #overlay {
         top: -396px;
         width: 696.96px;
@@ -172,34 +183,7 @@ section {
 
 // MOBILE VERSION
 @media (max-width: 860px) {
-  .header .row {
-    flex-direction: column;
-    align-items: flex-start;
-    padding: 0;
-    margin-top: 10rem;
-    margin-right: 1.5rem;
-    margin-bottom: 1rem;
-    margin-left: 1.5rem;
-    
-    .title {
-      max-width: 50%;
-      margin-bottom: 2rem;
-
-      p {
-        font-size: 0.875rem;
-        line-height: 130%;
-        margin-top: 0.5rem;
-      }
-
-      + div {
-        img {
-          max-width: 75%;
-          display: block;
-          margin: 0 auto;
-        }
-      }
-    }
-  }
+  
 
   section {
     padding: 1.875rem 1.5rem 1.875rem 1.5rem;
@@ -241,12 +225,12 @@ section {
       position: relative;
       width: 528px;
       height: 297px;
-  
+
       iframe {
         width: 528px;
         height: 297px;
       }
-  
+
       #overlay {
         top: -300px;
         width: 528px;
@@ -255,7 +239,7 @@ section {
     }
   }
 
-  
+
   .tech4covidcard-wrapper {
     margin: 0;
 
@@ -276,12 +260,12 @@ section {
       position: relative;
       width: 348.48px;
       height: 196.02px;
-  
+
       iframe {
         width: 348.48px;
         height: 196.02px;
       }
-  
+
       #overlay {
         top: -200px;
         width: 348.48px;
@@ -298,20 +282,64 @@ section {
       height: 148.5px;
     }
 
-    ::ng-deep app-yt-card {
-      position: relative;
-      width: 264px;
-      height: 148.5px;
+    
+  }
+}
+@media (max-width: 860px) {
+  .header {
+    min-height: unset;
+
+    .row {
+      margin-top: 7rem;
+      margin-right: 1.5rem;
+      margin-bottom: 1rem;
+      margin-left: 1.5rem;
+      padding: 0;
   
-      iframe {
-        width: 264px;
-        height: 148.5px;
+      .title {
+        width: 100%;
+        font-size: 3rem;
+        line-height: 130%;
+  
+        p {
+          max-width: 100%;
+          width: 100%;
+          font-size: 0.875rem;
+          margin-top: 0.5rem;
+        }
       }
-  
-      #overlay {
-        top: -152.5px;
-        width: 264px;
-        height: 148.5px;
+    }
+  }
+
+  section {
+    padding: 0 1.5rem 3.75rem 1.5rem;
+
+    &:nth-of-type(1) {
+      padding-top: 3.75rem;
+    }
+
+   
+    .description {
+      display: flex;
+      flex-direction: column;
+
+      .description-title {
+        align-items: center;
+        font-size: 2rem;
+        line-height: 100%;
+        margin-top: 1rem;
+        margin-bottom: 0.5rem;
+
+        p {
+          align-self: flex-end;
+          font-size: 1.25rem;
+          line-height: 100%;
+          color: rgb(82, 139, 190);
+        }
+      }
+
+      .description-body {
+        font-size: 0.875rem;
       }
     }
   }

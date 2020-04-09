@@ -4,8 +4,9 @@
   flex-direction: column;
   background: url(./../../../assets/aluno/header-aluno.jpg);
   background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
   margin: 0;
-
   .row {
     height: 21.125rem;
     display: flex;
@@ -22,6 +23,7 @@
       line-height: 74px;
       letter-spacing: 0.04em;
       color: #fff;
+      //margin-top : 257px;
 
       p {
         font-family: Barlow;
@@ -29,9 +31,9 @@
         font-weight: 300;
         font-size: 1.25rem;
         line-height: 130%;
-        max-width: 55%;
+        max-width: 80%;
         color: #fff;
-        margin-top: 2.5rem;
+        margin-top: 1.5rem;
       }
     }
   }
@@ -39,7 +41,18 @@
 
 section {
   padding: 0 16rem 7.5rem 16rem;
-
+  .conteudos {
+    padding-bottom: 3rem;
+    cursor: pointer;
+  p {
+    font-family: Barlow;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 24px;
+    line-height: 24px;
+    color: #1F3F68;
+  }
+}
   &:nth-of-type(1) {
     padding-top: 7.5rem;
   }
@@ -95,11 +108,6 @@ section {
   }
 }
 
-::ng-deep app-yt-card {
-  width: 1056px;
-  height: 594px;         
-}
-
 .time {
   display: flex;
   align-self: flex-end;
@@ -114,14 +122,17 @@ section {
 
 .description-title {
   margin-top: 40px;
+  margin-bottom : 16px;
   display: flex;
   align-items: flex-end;
 }
-
+//  app-yt-card {
+//   transform: translate(0px,-16%);
+// }
 // WIDER SCREENS
 @media (max-width: 1720px) {
   section {
-    padding: 0 12.5rem 7.5rem 12.5rem;
+    // padding: 0 12.5rem 7.5rem 12.5rem;
   }
 }
 
@@ -183,32 +194,32 @@ section {
       padding-top: 3.75rem;
     }
 
-    ::ng-deep app-yt-card {
-      position: relative;
-      width: 100%;
-      max-height: 13rem;
+    // ::ng-deep app-yt-card {
+    //   position: relative;
+    //   width: 100%;
+    //   max-height: 13rem;
 
-      iframe {
-        width: 100%;
-        max-height: 100%;
-      }
+    //   iframe {
+    //     width: 100%;
+    //     max-height: 100%;
+    //   }
 
-      #overlay {
-        width: 100%;
-        max-height: 100%;
-      }
+    //   #overlay {
+    //     width: 100%;
+    //     max-height: 100%;
+    //   }
 
-      #overlay {
-        position: absolute;
-        top: 0;
+    //   #overlay {
+    //     position: absolute;
+    //     top: 0;
 
 
-        img {
-          width: 4rem;
-          height: 4rem;
-        }
-      }
-    }
+    //     img {
+    //       width: 4rem;
+    //       height: 4rem;
+    //     }
+    //   }
+   // }
 
     .description {
       display: flex;
@@ -236,24 +247,24 @@ section {
   }
 }
 
-@media (max-width: 570px) {
-  section ::ng-deep app-yt-card {
-    max-width: 408.75px;
-    max-height: 230px;
-  }
-}
+// @media (max-width: 570px) {
+//   section ::ng-deep app-yt-card {
+//     max-width: 408.75px;
+//     max-height: 230px;
+//   }
+// }
 
-@media (max-width: 570px) {
-  section ::ng-deep app-yt-card {
-    max-width: 408.75px;
-    max-height: 230px;
-  }
-}
+// @media (max-width: 570px) {
+//   section ::ng-deep app-yt-card {
+//     max-width: 408.75px;
+//     max-height: 230px;
+//   }
+// }
 
 
-@media (max-width: 440px) {
-  section ::ng-deep app-yt-card {
-    max-width: 327px;
-    max-height: 184px;
-  }
-}
+// @media (max-width: 440px) {
+//   section ::ng-deep app-yt-card {
+//     max-width: 327px;
+//     max-height: 184px;
+//   }
+// }

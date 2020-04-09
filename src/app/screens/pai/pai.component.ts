@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { ContentItemQuery } from 'src/app/store/content-item/content-item.query';
+
 
 @Component({
   selector: 'app-pai',
@@ -7,9 +9,12 @@ import { Component, OnInit } from '@angular/core';
 })
 export class PaiComponent implements OnInit {
 
-  constructor() { }
+  videos$: any;
+  constructor(private query: ContentItemQuery) {
 
-  ngOnInit() {
   }
 
+ ngOnInit() {
+   this.videos$ = this.query.selectActive()
+ }
 }

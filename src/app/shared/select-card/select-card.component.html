@@ -1,0 +1,6 @@
+<div>
+    <p [ngClass]="{selected: selected}">{{ item?.title }}</p>
+</div>
+<div [ngClass]="{ button: true, selected: selected, deselect: !selected}">
+    <img src="assets/content/cross.svg">
+</div>

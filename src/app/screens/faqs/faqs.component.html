@@ -12,17 +12,31 @@
 </div>
 
 <section id="faqs-professor">
-  <div class="row">
-    <div class="image">
-      <p class="title">
-        Sou professor
-      </p>
-    </div>
 
-    <app-faqs-professor></app-faqs-professor>
-  </div>  
+    <div class="aside">
+      <h1>FAQ's Para</h1>
+      <div fxLayout="column" >
+      <ng-template ngFor let-item [ngForOf]="stakeholder$ | async">
+          <app-select-card (selectedEmitter)="getSelected($event)" [data]="item" [fxFlexOrder]="item.order"></app-select-card>
+      </ng-template> 
+      </div>
+
+      <h1>FAQ's por Plataforma</h1>
+      <div fxLayout="column" >
+      <ng-template ngFor let-item [ngForOf]="providers$ | async">
+          <app-select-card (selectedEmitter)="getSelected($event)" [data]="item" [fxFlexOrder]="item.order"></app-select-card>
+      </ng-template> 
+      </div>
+     
+  </div>
+  <div *ngIf="faqs?.length > 0; then show else resume"></div>
+    
+  <ng-template #show>
+    <app-faqs-professor [data]="faqs"></app-faqs-professor>
+  </ng-template>
+  <ng-template #resume> <p>Selecione os Filtros de interesse localizados ao lado esquerdo, de acordo com o tipo de plataforma e se é Professor, Aluno ou Encarregado de Educação.</p></ng-template>
 </section>
-
+<!-- 
 <section id="faqs-estudante">
   <div class="row">
     <div fxHide.xs="true" class="image">
@@ -45,4 +59,4 @@
 
     <app-faqs-pai></app-faqs-pai>
   </div>  
-</section>
+</section> -->

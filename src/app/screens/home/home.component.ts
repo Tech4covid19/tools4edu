@@ -1,5 +1,10 @@
 import { Component, OnInit } from '@angular/core';
 import { OwlOptions } from 'ngx-owl-carousel-o';
+import { Router } from '@angular/router';
+import { Apollo } from 'apollo-angular';
+import gql from 'graphql-tag';
+import { map } from 'rxjs/operators';
+import { BlogArticleService } from '../../store/blog-article/blog-article.service';
 
 @Component({
   selector: 'app-home',
@@ -7,9 +12,31 @@ import { OwlOptions } from 'ngx-owl-carousel-o';
   styleUrls: ['./home.component.scss']
 })
 export class HomeComponent implements OnInit {
-  constructor() { }
+  stakeholders$: any;
+  blogArticles$: any;
+
+  constructor(
+    private router: Router, private apollo: Apollo, private blogArticlesService: BlogArticleService
+  ) { }
 
   ngOnInit() {
-  }
+    this.stakeholders$ = this.apollo
+     .watchQuery({
+       query: gql`{
+        stakeholders{
+          id,
+          title,
+          order
+        }
+       }`,
+     }) .valueChanges.pipe(map((result:any) =>
+     result.data.stakeholders
+      )
+    )
 
+    this.blogArticles$ = this.blogArticlesService.getBlogArticlesForHome();
+  }
+  goTo(stakeholder) {
+    this.router.navigate(['conteudo'], { queryParams: { filter: stakeholder } })
+  }
 }

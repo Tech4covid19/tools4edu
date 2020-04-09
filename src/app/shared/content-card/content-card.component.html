@@ -1,0 +1,38 @@
+<div class="content" [ngClass]="{
+  'article': item.imageUrl !== '',
+  'pai': item.stakeholder?.id === '5e7cdd721c9d44000054f36a',
+  'professor': item.stakeholder?.id === '5e7cdd531c9d44000054f369',
+  'aluno': item.stakeholder?.id === '5e7cdd031c9d44000054f368'}"
+  [ngStyle]="{'background-image': item.imageUrl !== '' ? 'url(' + item.imageUrl + ')' : null}"
+  (click)="navigateTo()">
+    <div *ngIf="(item.provider !== null) then renderlogo else nonrenderlogo">
+
+    </div>
+    <ng-template #renderlogo>
+    <div  class="provider" >
+        <img src="assets/content/{{ item.provider.id }}.png">
+    </div>
+    </ng-template>
+    <ng-template #nonrenderlogo>
+      <div class="provider" [ngClass]="{'fake': item.imageUrl !== ''}">
+
+      </div>
+    </ng-template>
+    <div class="overlay"></div>
+    <div class="text-wrapper">
+      <div class="title">
+        <span>{{ item?.title }}</span>
+
+        <div class="time" *ngIf="item.videoTime">{{ item?.videoTime}} min</div>
+      </div>
+
+    </div>
+    <div class="saber">
+      Saber mais
+      <svg width="21" height="16" viewBox="0 0 21 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <path d="M14.3 15L20 8L14.3 1" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+        <path d="M20 8H1" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+      </svg>
+    </div>
+
+  </div>
