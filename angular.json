@@ -30,9 +30,15 @@
             "styles": [
               "node_modules/ngx-owl-carousel-o/lib/styles/prebuilt-themes/owl.carousel.min.css",
               "node_modules/ngx-owl-carousel-o/lib/styles/prebuilt-themes/owl.theme.default.min.css",
-              "src/styles.scss"
+              "src/styles.scss",
+              "node_modules/mediaelement/build/mediaelementplayer.min.css"
             ],
-            "scripts": []
+            "scripts": [
+              "node_modules/mediaelement/build/mediaelement-and-player.min.js",
+              "node_modules/mediaelement-plugins/dist/airplay/airplay.min.js",
+              "node_modules/mediaelement-plugins/dist/chromecast/chromecast.min.js",
+              "node_modules/hls.js/dist/hls.js"
+            ]
           },
           "configurations": {
             "production": {
@@ -129,6 +135,7 @@
   },
   "defaultProject": "tools4edu",
   "cli": {
-    "analytics": "fac216f3-2da8-4947-83e3-65554362f4da"
+    "analytics": "fac216f3-2da8-4947-83e3-65554362f4da",
+    "defaultCollection": "@datorama/akita"
   }
 }

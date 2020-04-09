@@ -4,6 +4,8 @@
   flex-direction: column;
   background-image:url(./../../../assets/pai/header-pai.jpg);
   background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
   margin: 0;
 
   .row {
@@ -22,6 +24,7 @@
       line-height: 74px;
       letter-spacing: 0.04em;
       color: #fff;
+      
 
       p {
         font-family: Barlow;
@@ -29,9 +32,9 @@
         font-weight: 300;
         font-size: 1.25rem;
         line-height: 130%;
-        max-width: 55%;
+        max-width: 80%;
         color: #fff;
-        margin-top: 2.5rem;
+        margin-top: 1.5rem;
       }
     }
   }
@@ -39,10 +42,21 @@
 
 section {
   padding: 0 16rem 7.5rem 16rem;
-
-  &:not(:last-of-type) {
-    padding-top: 7.5rem;
+  .conteudos {
+    padding-bottom: 3rem;
+    cursor: pointer;
+  p {
+    font-family: Barlow;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 24px;
+    line-height: 24px;
+    color: #1F3F68;
   }
+}
+&:nth-of-type(1) {
+  padding-top: 7.5rem;
+}
 
   .row {
     display: flex;
@@ -95,10 +109,6 @@ section {
   }
 }
 
-::ng-deep app-yt-card {
-  width: 1056px;
-  height: 594px;         
-}
 
 .time {
   display: flex;
@@ -114,6 +124,7 @@ section {
 
 .description-title {
   margin-top: 40px;
+  margin-bottom : 16px;
   display: flex;
   align-items: flex-end;
 }
@@ -121,7 +132,7 @@ section {
 // WIDER SCREENS
 @media (max-width: 1720px) {
   section {
-    padding: 0 12.5rem 7.5rem 12.5rem;
+    // padding: 0 12.5rem 7.5rem 12.5rem;
   }
 }
 

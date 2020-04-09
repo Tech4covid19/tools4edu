@@ -1,0 +1,17 @@
+<div class="header">
+    <div class="row">
+      <div class="title">
+        Blog
+        <p>
+            Encontre aqui informação, sugestões e partilha de boas-práticas para o ajudar obter os melhores resultados. Iremos manter o nosso Blog sempre actualizado.
+        </p>
+      </div>
+    </div>
+  </div>
+  <section class="first">
+    <div class="row">
+        <ng-template ngFor let-blogArticle [ngForOf]="blogArticles$ | async">
+          <app-blog-card [data]="blogArticle"></app-blog-card>
+        </ng-template>
+    </div>
+  </section>

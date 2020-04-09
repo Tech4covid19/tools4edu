@@ -1,73 +1,22 @@
 <div class="header">
   <div class="row">
     <div class="title">
-      Área do Professor
+      Para Professores
       <p>
-        Descubra passo a passo como usar a ferramenta Zoom para as suas aulas.
-        Começamos por esta ferramenta porque foi a indicada como prioritária no inquérito que fizemos aos professores.
-         Em breve publicaremos guias para outras plataformas, além de novos conteúdos que o ajudarão a usar a tecnologia para criar aulas à distância cada vez mais motivadoras para os alunos e para si.
+        Descubra passo a passo como usar as ferramentas já disponíveis. Continuaremos a publicar
+        guias para outras plataformas, além de novos conteúdos que o ajudarão a usar a tecnologia
+        para criar aulas à distância cada vez mais motivadoras para os alunos e para si.
       </p>
     </div>
   </div>
 </div>
 
 <section id="criar-conta" class="first">
+  <div class="conteudos" [routerLink]="['/conteudo']" [queryParams]="{filter: 'all'}" routerLinkActive="router-link-active" >
+    <p>< Voltar para Conteúdos</p>
+  </div>
   <div class="row">
-    <app-yt-card [videoIdOut]="'_xlRkIevTfQ'"></app-yt-card>
   
-    <div class="description">
-      <h2 class="description-title">
-        Criar conta  <p class="time">2.10 Min</p>
-      </h2>
-
-      <p class="description-body">
-        Neste vídeo, descubra passo a passo como criar a sua conta na<br> plataforma Zoom, de modo a poder utilizá-la para as suas aulas.
-      </p>
-    </div>
-  </div>  
-</section>
-
-<section id="iniciar-aula">
-  <div class="row">
-    <app-yt-card [videoIdOut]="'7jR0fyhtc10'"></app-yt-card>
-    <div class="description">
-      <h2 class="description-title">
-        Preparar aula <p class="time">1.50 Min</p>
-      </h2>
-
-      <p class="description-body">
-        Aprenda como agendar uma aula e informar os seus alunos para que<br> possam participar.
-      </p>
-    </div>
-  </div>  
-</section>
-<section>
-  <div class="row">
-    <app-yt-card [videoIdOut]="'VzKIgF4RPb8'"></app-yt-card>
-    <div class="description">
-      <h2 class="description-title">
-        Realizar a aula <p class="time">1.50 Min</p>
-      </h2>
-
-      <p class="description-body">
-        Veja como usar a plataforma para dar as suas aulas, tirando partido dos <br> diferentes recursos disponíveis para maior interatividade com os alunos.
-      </p>
-    </div>
-  </div>  
-</section>
-
-<section>
-  <div class="row">
-    <app-yt-card [videoIdOut]="'TC0_MjbJ_B4'"></app-yt-card>
-    <div class="description" style="display: contents;">
-      <h2 class="description-title">
-        Reunir com o Encarregado de Educação <p class="time">2.20 Min</p>
-      </h2>
-
-      <p class="description-body">
-        Saiba como contactar os Pais / EE e reunir individualmente com eles<br> quando for preciso.
-      </p>
-
-    </div>
-  </div>  
+    <app-yt-card [videoIdOut]="videos$ | async"></app-yt-card>
+  </div>
 </section>

@@ -9,19 +9,13 @@
   </div>
 </div>
 
-<section>
+<section class="first">
+  <div class="conteudos" [routerLink]="['/conteudo']" [queryParams]="{filter: 'all'}" routerLinkActive="router-link-active" >
+    <p>< Voltar para Conteúdos</p>
+  </div>
   <div class="row">
-    <app-yt-card [videoIdOut]="'a-2cRIrXesk'"></app-yt-card>
-    <div class="description" style="display: contents;">
-      <h2 class="description-title">
-        Participar na aula  <p class="time">1.20 Min</p>
-      </h2>
 
-      <p class="description-body">
-        Neste vídeo, descobre passo a passo como vais saber das aulas<br>
-        marcadas pelo teu professor, como entrar, participar e reencontrar os<br>
-          teus professores e colegas.
-      </p>
-    </div>
+    <app-yt-card [videoIdOut]="videos$ | async"></app-yt-card>
+    
   </div>
 </section>

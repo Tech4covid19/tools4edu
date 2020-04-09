@@ -1,13 +1,12 @@
-<div  class="header" fxLayout="row" fxFlex="100">
+<div  class="header">
   <div class="logo">
     <img src="assets/logo/logo-dark.png" [routerLink]="['/']" />
   </div>
     
   <div class="menu menu-desktop">
     <div [ngClass]="url == '' ? 'active' : ''" class="home" [routerLink]="['/']">Início</div>
-    <div [ngClass]="url == 'professor' ? 'active' : ''" class="professores" [routerLink]="['/professor']">Professor</div>
-    <div [ngClass]="url == 'aluno' ? 'active' : ''" class="aluno" [routerLink]="['/aluno']">Aluno</div>
-    <div [ngClass]="url == 'pai' ? 'active' : ''" class="pais" [routerLink]="['/pai']">Pais/ EE</div>
+    <div [ngClass]="url == 'conteudo?filter=all' ? 'active' : ''" class="content" [routerLink]="['/conteudo']" [queryParams]="{filter: 'all'}">Conteúdo</div>
+    <div [ngClass]="url == 'blog' ? 'active' : ''" class="blog" [routerLink]="['/blog']">Blog</div>
     <div [ngClass]="url == 'faqs' ? 'active' : ''" class="help" [routerLink]="['/faqs']">Ajuda</div>
     <div [ngClass]="url == 'sobre' ? 'active' : ''" class="about" [routerLink]="['/sobre']">Sobre Nós</div>
   </div>
@@ -28,15 +27,15 @@
         Início
       </li>
 
-      <li [ngClass]="url == 'professor' ? 'active' : ''" class="professores" (click)="goTo('/professor')">
-        Professor
+      <li [ngClass]="url == 'conteudo?filter=all' ? 'active' : ''" class="content" (click)="goTo('/conteudo')">
+        Conteúdo
       </li>
-      <li [ngClass]="url == 'aluno' ? 'active' : ''" class="aluno" (click)="goTo('/aluno')">
-        Aluno
+      <li [ngClass]="url == 'blog' ? 'active' : ''" class="blog" (click)="goTo('/blog')">
+        Blog
       </li>
-      <li [ngClass]="url == 'pai' ? 'active' : ''" class="pais" (click)="goTo('/pai')">
+      <!-- <li [ngClass]="url == 'pai' ? 'active' : ''" class="pais" (click)="goTo('/pai')">
         Pai
-      </li>
+      </li> -->
       <li [ngClass]="url == 'faqs' ? 'active' : ''" class="help" (click)="goTo('/faqs')">
         Ajuda
       </li>

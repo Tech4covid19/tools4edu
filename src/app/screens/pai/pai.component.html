@@ -102,34 +102,13 @@
     </div>
   </div>  
 </section> -->
-<section>
+<section class="first">
+  <div class="conteudos" [routerLink]="['/conteudo']" [queryParams]="{filter: 'all'}" routerLinkActive="router-link-active" >
+    <p>< Voltar para Conteúdos</p>
+  </div>
   <div class="row">
-    <app-yt-card [videoIdOut]="'Y15ZpHC4XaA'"></app-yt-card>
-    <div class="description">
-      <h2 class="description-title">
-        Entrar na aula  <p class="time">1.10 Min</p>
-      </h2>
-
-      <p class="description-body">
-        Neste vídeo aprenda o que o seu educando precisa fazer para estar<br>
-        informado das aulas, entrar e participar.
-      </p>
-
-    </div>
+    <app-yt-card [videoIdOut]="videos$ | async"></app-yt-card>
+    
   </div>
 </section>
 
-<section>
-  <div class="row">
-    <app-yt-card [videoIdOut]="'E0WV4gzjc8s'"></app-yt-card>
-    <div class="description">
-      <h2 class="description-title">
-        Contactar o professor  <p class="time">0.50 Min</p>
-      </h2>
-
-      <p class="description-body">
-        Saiba como contatar o professor e reunir com ele quando for preciso.
-      </p>
-    </div>
-  </div>
-</section>

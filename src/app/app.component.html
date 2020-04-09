@@ -1,4 +1,6 @@
-<app-navbar></app-navbar>
-<router-outlet></router-outlet>
 
+<app-navbar></app-navbar>
+<block-ui [delayStart]="500" [delayStop]="500">
+  <router-outlet></router-outlet>
+</block-ui>
 <app-footer></app-footer>

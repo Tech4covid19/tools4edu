@@ -1,0 +1,13 @@
+<div class="content blog-article" (click)="navigateTo()">
+  <div class="title"><div class="date">{{ item?.title }}</div> <div class="time">{{ item?.createdAt | date }}</div></div>
+  <div class="saber">
+    Ver post
+    <svg width="21" height="16" viewBox="0 0 21 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <path d="M14.3 15L20 8L14.3 1" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+      <path d="M20 8H1" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+    </svg>
+  </div>
+</div>
+<div class="text" [innerHTML]="item?.summary">
+
+</div>

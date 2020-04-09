@@ -5,7 +5,7 @@
       <p>
         É uma plataforma de apoio à Comunidade Educativa (Professores, Alunos e Pais/EE)
         que pretende facilitar a compreensão e utilização de ferramentas digitais no processo de ensino,
-        no enquadramento do Covid19. Temos como missão ajudar a assegurar as interações
+        no enquadramento da Covid19. Temos como missão ajudar a assegurar as interações
         e relações entre professores e alunos que contribuem para o seu desenvolvimento e bem-estar.
       </p>
     </div>
@@ -14,44 +14,59 @@
 </div>
 
 <div class="buttons">
-  <div class="professor" [routerLink]="['/professor']">
-    <div class="title">Sou Professor</div>
+  <ng-template ngFor let-data [ngForOf]="stakeholders$ | async">
+  <div class="" [ngStyle]="{'order': data.order}" [ngClass]="{'pai': data.id == '5e7cdd721c9d44000054f36a', 'professor': data.id == '5e7cdd531c9d44000054f369', 'aluno': data.id == '5e7cdd031c9d44000054f368'}" (click)="goTo(data.id)">
+    <div class="title">Sou {{ data.title }}</div>
     <div class="saber">
-      Saber Mais
+      Saber mais
       <svg width="21" height="16" viewBox="0 0 21 16" fill="none" xmlns="http://www.w3.org/2000/svg">
         <path d="M14.3 15L20 8L14.3 1" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
         <path d="M20 8H1" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
       </svg>
     </div>
   </div>
-  <div class="aluno" [routerLink]="['/aluno']">
+</ng-template>
+  <!-- <div class="aluno" (click)="goTo('Aluno')">
     <div class="title">Sou Aluno</div>
     <div class="saber">
-      Saber Mais
+      Saber mais
       <svg width="21" height="16" viewBox="0 0 21 16" fill="none" xmlns="http://www.w3.org/2000/svg">
         <path d="M14.3 15L20 8L14.3 1" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
         <path d="M20 8H1" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
       </svg>
     </div>
   </div>
-  <div class="pai" [routerLink]="['/pai']">
+  <div class="pai" (click)="goTo('Pais')">
     <div class="title">Sou Pai / EE</div>
     <div class="saber">
-      Saber Mais
+      Saber mais
       <svg width="21" height="16" viewBox="0 0 21 16" fill="none" xmlns="http://www.w3.org/2000/svg">
         <path d="M14.3 15L20 8L14.3 1" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
         <path d="M20 8H1" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
       </svg>
     </div>
-  </div>
+  </div> -->
 </div>
 
-<div [hidden]="true" class="testemunhos">
+<div class="testemunhos">
   <div class="title">
     testemunhos
   </div>
 
   <app-carousel></app-carousel>
+</div>
+
+<div class="blog-articles">
+  <div class="title">
+    Blog
+  </div>
+
+  <div class="article-container">
+    <ng-template ngFor let-blogArticle [ngForOf]="blogArticles$ | async">
+      <app-blog-card [data]="blogArticle"></app-blog-card>
+    </ng-template>
+  </div>
+
 </div>
 
 <div class="plataformas">
@@ -60,7 +75,7 @@
   </div>
   <div class="cards" [fxHide.xs]="true">
     <app-card-partners [logo]="'assets/zoom.svg'"></app-card-partners>
-    <app-card-partners [logo]="'assets/brevemente.svg'"></app-card-partners>
+    <app-card-partners [logo]="'assets/teams.svg'"></app-card-partners>
     <app-card-partners [logo]="'assets/brevemente.svg'"></app-card-partners>
     <app-card-partners [logo]="'assets/brevemente.svg'"></app-card-partners>
   </div>
