@@ -19,6 +19,7 @@ import { FlexLayoutModule } from '@angular/flex-layout';
 import { ContentCardComponent } from './content-card/content-card.component';
 import { SelectCardComponent } from './select-card/select-card.component';
 import { BlogCardComponent } from './blog-card/blog-card.component';
+import { GoogleAnalyticsService } from './google-analytics/ga.service';
 
 
 @NgModule({

@@ -74,16 +74,19 @@ section {
             font-style: normal;
             font-weight: bold;
             font-size: 28px;
- 
+
             /* identical to box height, or 116% */
 
             letter-spacing: 0.04em;
 
             /* text/Dark Blue */
-            margin-left: 10px;    
+            margin-left: 10px;
             color: #1F3F68;
         }
-       
+
+  }
+  h1 {
+    margin-bottom: 0;
   }
   h2{
     font-family: Barlow;
@@ -92,7 +95,8 @@ section {
     font-size: 24px;
     line-height: 32px;
     /* identical to box height, or 133% */
-
+    margin-top: 0;
+    margin-bottom: 32px;
 
     /* Primary/Blue */
 
@@ -107,9 +111,9 @@ section {
       padding-top: 7.5rem;
     }
 
-    .row {
-        columns: 2;
-        column-gap: 90px;
+    .article-content {
+        max-width: 1000px;
+        margin: 0 auto;
 
       app-blog-card {
         //flex: 1 1 33.3%;

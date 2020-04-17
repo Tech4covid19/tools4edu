@@ -7,6 +7,7 @@ import { ThrowStmt } from '@angular/compiler';
 import { ContentItemStore } from 'src/app/store/content-item/content-item.store';
 import { ContentItemService } from 'src/app/store/content-item/content-item.service';
 import { BlockUI, NgBlockUI } from 'ng-block-ui';
+import { GoogleAnalyticsService } from '../../shared/google-analytics/ga.service';
 
 @Component({
   selector: 'app-content',
@@ -31,13 +32,15 @@ export class ContentComponent implements OnInit {
 
   @BlockUI() blockUI: NgBlockUI;
 
-  constructor(private service: ContentItemService, private route: ActivatedRoute, private apollo: Apollo) {
+  constructor(private service: ContentItemService, private route: ActivatedRoute, private apollo: Apollo, private ga: GoogleAnalyticsService) {
 
   }
 
 
   ngOnInit() {
     // this.blockUI.start();
+
+    this.ga.recordPageView('Conteudos', '/conteudo');
 
     this.route.queryParams
     .subscribe( params => {
