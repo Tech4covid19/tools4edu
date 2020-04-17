@@ -5,6 +5,7 @@ import { Apollo } from 'apollo-angular';
 import gql from 'graphql-tag';
 import { map } from 'rxjs/operators';
 import { BlogArticleService } from '../../store/blog-article/blog-article.service';
+import { GoogleAnalyticsService } from '../../shared/google-analytics/ga.service';
 
 @Component({
   selector: 'app-home',
@@ -16,10 +17,13 @@ export class HomeComponent implements OnInit {
   blogArticles$: any;
 
   constructor(
-    private router: Router, private apollo: Apollo, private blogArticlesService: BlogArticleService
+    private router: Router, private apollo: Apollo, private blogArticlesService: BlogArticleService, private ga: GoogleAnalyticsService
   ) { }
 
   ngOnInit() {
+
+    this.ga.recordPageView('Home', '/');
+
     this.stakeholders$ = this.apollo
      .watchQuery({
        query: gql`{
