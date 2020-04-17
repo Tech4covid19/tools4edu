@@ -53,7 +53,7 @@ export class BlogArticleService {
       })
       .valueChanges
       .pipe(
-        map((result: any) => result.data.blogArticles),
+        map((result: any) => result.data.blogArticles.filter(ba => ba.published)),
         take(3)
       )
   }
@@ -65,8 +65,8 @@ export class BlogArticleService {
       })
       .valueChanges
       .pipe(
-        tap((result: any) => this.store.set(result.data.blogArticles)),
-        map((result: any) => result.data.blogArticles)
+        map((result: any) => result.data.blogArticles.filter(ba => ba.published) ),
+        tap((blogArticles: any) => this.store.set(blogArticles))
       );
   }
 
@@ -80,12 +80,11 @@ export class BlogArticleService {
       })
       .valueChanges
       .pipe(
-        tap(( result: any ) => [
-          console.log(result),
-          this.store.add(result.data.blogArticle),
-          this.store.setActive(result.data.blogArticle.id)
-        ]),
-        map( (result: any) => result.data.blogArticle )
+        map( (result: any) => result.data.blogArticle),
+        tap(( blogArticle: any ) => [
+          this.store.add(blogArticle),
+          this.store.setActive(blogArticle.id)
+        ])
       )
   }
 }

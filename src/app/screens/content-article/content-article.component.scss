@@ -107,9 +107,10 @@ section {
     padding-top: 7.5rem;
   }
 
-  .row {
-    columns: 2;
-    column-gap: 90px;
+  .content {
+    max-width: 1000px;
+    margin: 0 auto;
+
 
     app-blog-card {
       //flex: 1 1 33.3%;

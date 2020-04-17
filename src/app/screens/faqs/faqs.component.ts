@@ -3,6 +3,7 @@ import gql from 'graphql-tag';
 import { map } from 'rxjs/operators';
 import { Apollo } from 'apollo-angular';
 import { ContentItemService } from 'src/app/store/content-item/content-item.service';
+import { GoogleAnalyticsService } from '../../shared/google-analytics/ga.service';
 
 @Component({
   selector: 'app-faqs',
@@ -19,10 +20,13 @@ export class FAQsComponent implements OnInit {
   providers$: any;
   tags$: any;
   faqs$: any;
-  faqs: any 
-  constructor(private apollo: Apollo, private service: ContentItemService) { }
+  faqs: any
+  constructor(private apollo: Apollo, private service: ContentItemService, private ga: GoogleAnalyticsService) { }
 
   ngOnInit() {
+
+    this.ga.recordPageView('Faqs', '/faqs');
+
     const professorId = '5e7cdd531c9d44000054f369'
     const providerId = '5e7cdc4c1c9d44000054f367'
     // this.stakeholderIds.push(professorId)
