@@ -17,6 +17,8 @@ export class PaiComponent implements OnInit {
 
  ngOnInit() {
    this.videos$ = this.query.selectActive();
-   this.ga.recordPageView(this.videos$.title, `/pais/${this.videos$.slug}`);
+   this.videos$.subscribe((item) => {
+     this.ga.recordPageView(item.title, `/pais/${item.slug}`);
+   })
  }
 }

@@ -15,6 +15,9 @@ export class ProfessorComponent implements OnInit {
 
  ngOnInit() {
    this.videos$ = this.query.selectActive()
-   this.ga.recordPageView(this.videos$.title, `/professor/${this.videos$.slug}`);
+   this.videos$.subscribe((item) => {
+     this.ga.recordPageView(item.title, `/professor/${item.slug}`);
+   })
+
  }
 }
