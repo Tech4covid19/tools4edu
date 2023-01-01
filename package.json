@@ -64,7 +64,7 @@
     "zone.js": "~0.10.2"
   },
   "devDependencies": {
-    "@angular-devkit/build-angular": "~0.900.6",
+    "@angular-devkit/build-angular": "~15.0.4",
     "@angular/cli": "~9.0.6",
     "@angular/compiler-cli": "~9.0.6",
     "@angular/language-service": "~9.0.6",
@@ -85,10 +85,10 @@
     "protractor": "~5.4.3",
     "serverless": "^1.60.0",
     "serverless-apigw-binary": "^0.4.4",
-    "ts-loader": "^6.2.1",
+    "ts-loader": "^9.4.2",
     "ts-node": "~8.3.0",
     "tslint": "~5.18.0",
     "typescript": "~3.7.5",
-    "webpack-cli": "^3.3.10"
+    "webpack-cli": "^5.0.1"
   }
 }
